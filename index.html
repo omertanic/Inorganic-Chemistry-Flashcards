@@ -16,6 +16,22 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600&display=swap">
 <style>
+ .tab-row {
+  max-width: 560px; margin: 0 auto 1.5rem;
+  display: flex; gap: 10px; justify-content: center;
+}
+.subject-tab {
+  font-size: 13px; font-weight: 600; padding: 8px 22px;
+  border-radius: 99px; text-decoration: none;
+  border: 1.5px solid var(--surface-border);
+  background: var(--surface); color: var(--subtext);
+}
+.active-tab {
+  background: var(--text);
+  color: var(--bg);
+  border-color: var(--text);
+}
+ 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
