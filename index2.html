@@ -1,70 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-W9831WCRSP"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-W9831WCRSP');
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-W9831WCRSP');
 </script>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Organic Chemistry — JEE Advanced Flashcards</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<title>Organic Chemistry — Flashcards</title>
+
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600&display=swap">
+
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
-  :root {
-    --bg: #f5f5f0;
-    --surface: #fff;
-    --surface-border: #e8e8e0;
-    --text: #1a1a1a;
-    --subtext: #777;
-    --accent: #378ADD;
-    --accent-light: #E6F1FB;
-    --toggle-bg: #e8e8e0;
-    --toggle-color: #555;
-    --tag-bg: #f0f0e8;
-    --tag-color: #666;
-    --wip-bg: #FFF3DA;
-    --wip-color: #7a4b00;
-    --coming-bg: #f5f5f0;
-    --hover-border: #b5d4f4;
-    --hover-bg: #f7faff;
-    --card-shadow: 0 2px 12px rgba(0,0,0,0.06);
-    --card-shadow-hover: 0 6px 24px rgba(0,0,0,0.10);
-    /* organic accent — warm amber/green */
-    --org-accent: #2d7a4f;
-    --org-accent-light: #e6f5ee;
-  }
+:root {
+  --bg: #f5f5f0;
+  --surface: #fff;
+  --surface-border: #e8e8e0;
+  --text: #1a1a1a;
+  --subtext: #777;
+}
 
-  body.dark {
-    --bg: #131318;
-    --surface: #1e1e26;
-    --surface-border: #2e2e3a;
-    --text: #f0f0f0;
-    --subtext: #999;
-    --accent: #5090e0;
-    --accent-light: #0f2040;
-    --toggle-bg: #2a2a35;
-    --toggle-color: #ddd;
-    --tag-bg: #2a2a35;
-    --tag-color: #aaa;
-    --wip-bg: #221400;
-    --wip-color: #e0b050;
-    --hover-border: #2a4060;
-    --hover-bg: #1a2030;
-    --card-shadow: 0 2px 12px rgba(0,0,0,0.3);
-    --card-shadow-hover: 0 6px 24px rgba(0,0,0,0.5);
-    --org-accent: #50c880;
-    --org-accent-light: #0a2018;
-  }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  padding: 2rem;
+}
 
-  body {
-    font-family: 'DM Sans', -apple-system, sans-serif;
+/* header */
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-family: 'DM Serif Display', serif;
+}
+
+/* tabs */
+.tab-row {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.subject-tab {
+  padding: 8px 20px;
+  border-radius: 999px;
+  border: 1px solid #ccc;
+  text-decoration: none;
+  color: #555;
+}
+
+.active-tab {
+  background: black;
+  color: white;
+}
+
+/* card */
+.chapter-card {
+  display: block;
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  background: white;
+  border-radius: 14px;
+  text-decoration: none;
+  color: black;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Organic Chemistry</h1>
+</header>
+
+<div class="tab-row">
+  <a href="index.html" class="subject-tab">⚗️ Inorganic</a>
+  <a href="index2.html" class="subject-tab active-tab">🧪 Organic</a>
+</div>
+
+<a class="chapter-card" href="flashcards.html?deck=org-ch1-haloalkanes">
+  <h2>Chapter 1</h2>
+  <p>Haloalkanes & Haloarenes</p>
+</a>
+
+</body>
+</html>    font-family: 'DM Sans', -apple-system, sans-serif;
     background: var(--bg);
     min-height: 100vh;
     color: var(--text);
