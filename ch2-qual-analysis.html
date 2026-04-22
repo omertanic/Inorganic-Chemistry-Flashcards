@@ -75,8 +75,11 @@
 <div class="done-screen" id="done" style="display:none;">
   <h2 id="done-title"></h2>
   <p  id="done-sub"></p>
+  <p  id="done-saved" style="font-size:11px;color:#888;margin-bottom:0.75rem;"></p>
   <button class="restart-btn" onclick="restart()">Restart deck</button>
   <button class="restart-btn" onclick="practiceMissed()" id="practice-missed" style="display:none;margin-top:8px;">🔁 Practice missed</button>
+  <br>
+  <button class="restart-btn" onclick="clearAndRestart()" style="margin-top:10px;font-size:11px;opacity:0.5;">🗑 Clear saved progress</button>
 </div>
 
 <script src="cards-ch2.js"></script>
