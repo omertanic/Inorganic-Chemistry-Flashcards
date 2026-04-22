@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Organic Chemistry — JEE Advanced Flashcards</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="style.css">
+<style>
+  body { padding: 1.5rem 1rem; max-width: 600px; margin: 0 auto; }
+  header { margin-bottom: 2rem; }
+  h1 { font-size: 24px; margin-bottom: 4px; }
+  .subtitle { color: var(--subtext); font-size: 14px; }
+  
+  .chapter-list { display: flex; flex-direction: column; gap: 12px; }
+  .chapter-card { 
+    display: block; text-decoration: none; color: inherit;
+    background: var(--surface); border: 1px solid var(--surface-border);
+    padding: 1rem; border-radius: 12px; transition: transform 0.1s;
+  }
+  .chapter-card:active { transform: scale(0.98); }
+  .chapter-num { font-size: 11px; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: 0.5px; }
+  .chapter-title { font-size: 17px; font-weight: 600; margin: 4px 0; }
+  .chapter-desc { font-size: 13px; color: var(--subtext); line-height: 1.4; }
+  
+  .tag-row { display: flex; gap: 6px; margin-top: 8px; flex-wrap: wrap; }
+  .tag { font-size: 10px; background: #f0f0f0; padding: 2px 8px; border-radius: 4px; color: #555; }
+  
+  .coming { opacity: 0.6; pointer-events: none; background: #f9f9f9; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Organic Chemistry</h1>
+  <p class="subtitle">JEE Advanced Revision Decks</p>
+</header>
+
+<div class="chapter-list">
+  
+  <a href="org-ch1-haloalkanes.html" class="chapter-card">
+    <div class="chapter-num">Chapter 1</div>
+    <div class="chapter-title">Haloalkanes & Haloarenes</div>
+    <div class="chapter-desc">SN1/SN2 mechanisms, Grignard reagents, and Nucleophilic Aromatic Substitution.</div>
+    <div class="tag-row">
+      <span class="tag">SN1/SN2</span><span class="tag">E1/E2</span><span class="tag">Aryl Halides</span>
+    </div>
+  </a>
+
+  <a href="org-ch2-aep.html" class="chapter-card">
+    <div class="chapter-num">Chapter 2</div>
+    <div class="chapter-title">Alcohols, Phenols & Ethers</div>
+    <div class="chapter-desc">Hydroboration, Pinacol-Pinacolone, and Reimer-Tiemann reactions.</div>
+    <div class="tag-row">
+      <span class="tag">Dehydration</span><span class="tag">Phenol Rxns</span><span class="tag">Ethers</span>
+    </div>
+  </a>
+
+  <a href="org-ch3-akc.html" class="chapter-card">
+    <div class="chapter-num">Chapter 3</div>
+    <div class="chapter-title">Aldehydes, Ketones & Acids</div>
+    <div class="chapter-desc">Aldol, Cannizzaro, and Nucleophilic Additions from your L1-L4 notes.</div>
+    <div class="tag-row">
+      <span class="tag">Carbonyls</span><span class="tag">Named Rxns</span><span class="tag">HVZ</span>
+    </div>
+  </a>
+
+  <a href="org-ch4-amines.html" class="chapter-card">
+    <div class="chapter-num">Chapter 4</div>
+    <div class="chapter-title">Amines & Nitrogen Compounds</div>
+    <div class="chapter-desc">Basicity orders, Hoffmann Bromamide, and Diazonium salt transformations.</div>
+    <div class="tag-row">
+      <span class="tag">Basicity</span><span class="tag">Diazonium</span><span class="tag">Amides</span>
+    </div>
+  </a>
+
+  <a href="org-ch5-biomolecules.html" class="chapter-card">
+    <div class="chapter-num">Chapter 5</div>
+    <div class="chapter-title">Biomolecules</div>
+    <div class="chapter-desc">Carbohydrate proofs, Mutarotation, Amino Acids (pI), and Proteins.</div>
+    <div class="tag-row">
+      <span class="tag">Glucose</span><span class="tag">Peptides</span><span class="tag">Zwitterions</span>
+    </div>
+  </a>
+
+  <div class="chapter-card coming">
+    <div class="chapter-num">Chapter 6</div>
+    <div class="chapter-title">GOC & Isomerism</div>
+    <div class="chapter-desc">Electronic effects and Stereochemistry fundamentals.</div>
+    <div class="tag-row"><span class="tag">Coming Soon</span></div>
+  </div>
+
+</div>
+
+<footer>
+  <p style="text-align:center; font-size:12px; color:#999; margin-top:2rem;">
+    Based on Class Lecture Notes 2026
+  </p>
+</footer>
+
+</body>
+</html>
