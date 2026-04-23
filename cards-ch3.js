@@ -90,7 +90,7 @@ window.CARDS = [
   { cat:'b13-boron', cl:'c-pb13',
     f:'Boron preparation: from borax (step by step)?', fs:'',
     b:'Na₂B₄O₇ + 2HCl + 5H₂O → 4H₃BO₃ + 2NaCl\n2H₃BO₃ → B₂O₃ + 3H₂O\nB₂O₃ + 3Mg → 2B + 3MgO',
-    bs:'', n:'Van Arkel's method: 2BI₃ → 2B + 3I₂↑ (purest B, red hot W/Ta)' },
+    bs:'', n:'Van Arkels method: 2BI₃ → 2B + 3I₂↑ (purest B, red hot W/Ta)' },
 
   { cat:'b13-boron', cl:'c-pb13',
     f:'BCl₃ vs AlCl₃ — which dimerises and why?', fs:'Trihalide dimerization',
