@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W9831WCRSP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-W9831WCRSP');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ch 3 — P-Block Elements · JEE Advanced</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  body { padding: 1rem; }
+  .page-header { position: relative; display: flex; align-items: center; justify-content: center; margin-bottom: 2px; }
+  h1 { font-size: 18px; font-weight: 600; color: var(--text); text-align: center; }
+  .subtitle { font-size: 12px; color: var(--subtext); text-align: center; margin-bottom: 0.75rem; }
+  .top-bar { display: flex; align-items: center; gap: 10px; margin-bottom: 0.75rem; }
+
+  /* P-Block group badge colours */
+  .c-pb13 { background:#E8F4FB; color:#0e4f7a; }
+  .c-pb14 { background:#EAF3DE; color:#3B6D11; }
+  .c-pb15 { background:#FAEEDA; color:#633806; }
+  .c-pb16 { background:#FAECE7; color:#712B13; }
+  .c-pb17 { background:#EEEDFE; color:#3C3489; }
+  .c-pb18 { background:#E1F5EE; color:#085041; }
+
+  body.dark .c-pb13 { background:#081828; color:#70b0e0; }
+  body.dark .c-pb14 { background:#0e2210; color:#70c050; }
+  body.dark .c-pb15 { background:#2a1a08; color:#e8a050; }
+  body.dark .c-pb16 { background:#220c08; color:#e09070; }
+  body.dark .c-pb17 { background:#12103a; color:#a090f8; }
+  body.dark .c-pb18 { background:#061a14; color:#50d0a0; }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <a href="index.html" class="back-link">← All chapters</a>
+  <h1>P-Block Elements</h1>
+  <button class="dark-toggle" onclick="toggleDark()" id="dark-btn">🌙</button>
+</div>
+<p class="subtitle">Groups 13–18 — JEE Advanced 2026</p>
+
+<div class="filter-row" id="filters"></div>
+
+<div class="score-row">
+  <span class="pill p-got"  id="s-got">Got: 0</span>
+  <span class="pill p-nope" id="s-nope">Practice: 0</span>
+  <span class="pill p-left" id="s-left">Left: 0</span>
+</div>
+
+<div class="top-bar">
+  <div class="progress-bar"><div class="progress-fill" id="prog-fill" style="width:0%"></div></div>
+  <div class="prog-text" id="prog-text">1 / ?</div>
+</div>
+
+<div class="card-area">
+  <div class="card-wrap" onclick="flip()">
+    <div class="card-inner" id="card-inner">
+      <div class="face front">
+        <div class="cat-badge" id="f-cat"></div>
+        <div class="face-tag">Reactant / Condition</div>
+        <div class="face-main" id="f-main"></div>
+        <div class="face-sub"  id="f-sub"></div>
+        <div class="face-hint">Tap to reveal →</div>
+      </div>
+      <div class="face back">
+        <div class="face-tag">Product / Key point</div>
+        <div class="face-main" id="b-main"></div>
+        <div class="face-sub"  id="b-sub"></div>
+        <div class="face-note" id="b-note"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<button class="btn-flip" id="flip-btn" onclick="flip()">Reveal answer</button>
+<div class="btn-row" id="btn-row" style="display:none;">
+  <button class="btn btn-nope" onclick="next(false)">Need practice</button>
+  <button class="btn btn-got"  onclick="next(true)">Got it</button>
+</div>
+<div class="done-screen" id="done" style="display:none;">
+  <h2 id="done-title"></h2>
+  <p  id="done-sub"></p>
+  <p  id="done-saved" style="font-size:11px;color:#888;margin-bottom:0.75rem;"></p>
+  <button class="restart-btn" onclick="restart()">Restart deck</button>
+  <button class="restart-btn" onclick="practiceMissed()" id="practice-missed" style="display:none;margin-top:8px;">🔁 Practice missed</button>
+  <br>
+  <button class="restart-btn" onclick="clearAndRestart()" style="margin-top:10px;font-size:11px;opacity:0.5;">🗑 Clear saved progress</button>
+</div>
+
+<script src="cards-ch3.js"></script>
+<script src="engine.js"></script>
+<script>
+  window.DECK_ID = 'ch3-pblock';
+  initDeck();
+</script>
+</body>
+</html>
