@@ -124,8 +124,8 @@ body.dark .p-left { background: #0f2040; color: #80b8f0; }
 
 /* ── BUTTONS ── */
 .btn-flip { display: block; width: 100%; max-width: 600px; margin: 0 auto 0.6rem; font-size: 13px; padding: 9px; border-radius: 10px; border: 1px solid var(--flip-border); background: var(--flip-bg); color: var(--flip-color); cursor: pointer; font-weight: 500; }
-.btn-row  { display: flex; gap: 8px; justify-content: center; max-width: 600px; margin: 0 auto 0.75rem; }
-.btn { font-size: 13px; padding: 9px 22px; border-radius: 10px; border: 1px solid var(--btn-border); background: var(--btn-bg); cursor: pointer; font-weight: 500; flex: 1; color: var(--text); }
+.btn-row  { display: flex; gap: 10px; justify-content: center; max-width: 600px; margin: 0 auto 0.75rem; padding: 0 4px; }
+.btn { font-size: 15px; padding: 14px 22px; border-radius: 14px; border: 1px solid var(--btn-border); background: var(--btn-bg); cursor: pointer; font-weight: 600; flex: 1; color: var(--text); min-height: 52px; touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
 .btn-got  { border-color: #1D9E75; color: #0F6E56; background: #f0fdf7; }
 .btn-nope { border-color: #D85A30; color: #993C1D; background: #fdf3f0; }
 body.dark .btn-got  { background: #0a2018; color: #40c890; border-color: #1D9E75; }
