@@ -293,13 +293,18 @@ body.dark .c-qa-hg2  { background:#180a28; color:#c080e8; }
 /* ── DOTS GRID ── */
 #grid-dots {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(5, minmax(0, 52px));
   gap: 10px;
   padding: 16px;
   overflow-y: auto;
   flex: 1;
+  justify-content: start;
 }
+
 .grid-dot {
+  width: 100%;
+  max-width: 52px;
+  max-height: 52px;
   aspect-ratio: 1;
   border-radius: 50%;
   border: none;
