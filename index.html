@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <!-- Google tag (gtag.js) -->
+<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-W9831WCRSP"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -11,110 +11,129 @@
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JEE Advanced Flashcards</title>
+<title>JEE Advanced Flashcards — Inorganic Chemistry</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Sora:wght@400;600;700&display=swap">
 <style>
-.tab-row {
-  max-width: 560px; margin: 0 auto 1.5rem;
-  display: flex; gap: 10px; justify-content: center;
-}
-.subject-tab {
-  font-size: 13px; font-weight: 600; padding: 8px 22px;
-  border-radius: 99px; text-decoration: none;
-  border: 1.5px solid var(--surface-border);
-  background: var(--surface); color: var(--subtext);
-}
-.active-tab {
-  background: var(--text);
-  color: var(--bg);
-  border-color: var(--text);
-}
-
+/* ── TOKENS (same as style.css but self-contained for index) ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --bg: #f5f5f0;
-  --surface: #fff;
-  --surface-border: #e8e8e0;
-  --text: #1a1a1a;
-  --subtext: #777;
-  --accent: #378ADD;
-  --accent-light: #E6F1FB;
-  --toggle-bg: #e8e8e0;
-  --toggle-color: #555;
-  --tag-bg: #f0f0e8;
-  --tag-color: #666;
+  --font-body: 'Outfit', -apple-system, sans-serif;
+  --font-display: 'Sora', -apple-system, sans-serif;
+  --bg: #F7F7F5;
+  --bg2: #EFEFEC;
+  --surface: #FFFFFF;
+  --surface2: #F4F4F0;
+  --border: #E2E2DC;
+  --text: #18181A;
+  --text2: #5A5A62;
+  --text3: #9A9AA8;
+  --accent: #3D6FFF;
+  --accent-light: #EEF2FF;
+  --tag-bg: #F0F0EA;
+  --tag-color: #707068;
   --wip-bg: #FFF3DA;
-  --wip-color: #7a4b00;
-  --hover-border: #b5d4f4;
-  --hover-bg: #f7faff;
-  --card-shadow: 0 2px 12px rgba(0,0,0,0.06);
-  --card-shadow-hover: 0 6px 24px rgba(0,0,0,0.10);
-  --prog-bg: #e8e8e0;
-  --prog-fill: #378ADD;
-  --prog-got: #1D9E75;
+  --wip-color: #7A4B00;
+  --prog-bg: #E5E5E0;
+  --prog-got: #2EC87A;
+  --shadow-card: 0 1px 4px rgba(0,0,0,.04), 0 6px 24px rgba(0,0,0,.06);
+  --shadow-card-hover: 0 4px 16px rgba(61,111,255,.10), 0 12px 40px rgba(0,0,0,.10);
 }
-
 body.dark {
-  --bg: #131318;
-  --surface: #1e1e26;
-  --surface-border: #2e2e3a;
-  --text: #f0f0f0;
-  --subtext: #999;
-  --accent: #5090e0;
-  --accent-light: #0f2040;
-  --toggle-bg: #2a2a35;
-  --toggle-color: #ddd;
-  --tag-bg: #2a2a35;
-  --tag-color: #aaa;
+  --bg: #0E0E12;
+  --bg2: #16161C;
+  --surface: #1C1C24;
+  --surface2: #22222C;
+  --border: #2E2E3C;
+  --text: #F2F2F8;
+  --text2: #9090A8;
+  --text3: #58586A;
+  --accent: #6691FF;
+  --accent-light: #111630;
+  --tag-bg: #242430;
+  --tag-color: #9090A0;
   --wip-bg: #221400;
-  --wip-color: #e0b050;
-  --hover-border: #2a4060;
-  --hover-bg: #1a2030;
-  --card-shadow: 0 2px 12px rgba(0,0,0,0.3);
-  --card-shadow-hover: 0 6px 24px rgba(0,0,0,0.5);
-  --prog-bg: #2a2a35;
-  --prog-fill: #5090e0;
-  --prog-got: #1D9E75;
+  --wip-color: #E0B050;
+  --prog-bg: #2A2A3A;
+  --prog-got: #2EC87A;
+  --shadow-card: 0 1px 4px rgba(0,0,0,.3), 0 6px 24px rgba(0,0,0,.3);
+  --shadow-card-hover: 0 4px 16px rgba(102,145,255,.15), 0 12px 40px rgba(0,0,0,.5);
 }
 
+html { -webkit-text-size-adjust: 100%; }
 body {
-  font-family: 'DM Sans', -apple-system, sans-serif;
+  font-family: var(--font-body);
   background: var(--bg);
   min-height: 100vh;
   color: var(--text);
-  transition: background 0.25s, color 0.25s;
-  padding: 2rem 1rem 3rem;
+  transition: background 0.3s, color 0.3s;
+  -webkit-font-smoothing: antialiased;
+  padding: 2rem 1rem 4rem;
 }
 
 /* ── HEADER ── */
 header {
-  max-width: 560px; margin: 0 auto 2.5rem;
-  display: flex; flex-direction: column; align-items: center;
-  gap: 4px; position: relative;
+  max-width: 580px;
+  margin: 0 auto 2.5rem;
+  text-align: center;
+  position: relative;
 }
 .logo-tag {
-  font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
-  color: var(--subtext); font-weight: 500; margin-bottom: 4px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 10px;
 }
 h1 {
-  font-family: 'DM Serif Display', Georgia, serif;
-  font-size: clamp(26px, 6vw, 36px);
+  font-family: var(--font-display);
+  font-size: clamp(24px, 6vw, 36px);
+  font-weight: 700;
   color: var(--text);
-  text-align: center;
-  line-height: 1.2;
-  font-weight: 400;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  margin-bottom: 10px;
 }
 .header-sub {
-  font-size: 13px; color: var(--subtext);
-  text-align: center; margin-top: 4px;
+  font-size: 14px;
+  color: var(--text2);
+  line-height: 1.5;
 }
 .dark-toggle {
-  position: absolute; top: 0; right: 0;
-  background: var(--toggle-bg); border: none; border-radius: 99px;
-  color: var(--toggle-color); font-size: 15px; padding: 5px 11px;
-  cursor: pointer; transition: background 0.2s;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 99px;
+  color: var(--text2);
+  font-size: 14px;
+  padding: 7px 13px;
+  cursor: pointer;
+  transition: background 0.2s;
+  line-height: 1;
+}
+.dark-toggle:hover { background: var(--border); }
+
+/* ── STATS BAR ── */
+.stats-bar {
+  max-width: 580px;
+  margin: 0 auto 2rem;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.stat-pill {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 5px 14px;
+  border-radius: 99px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text2);
 }
 
 /* ── CHAPTER GRID ── */
@@ -122,64 +141,92 @@ h1 {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 14px;
-  max-width: 560px;
+  max-width: 580px;
   margin: 0 auto;
 }
 
+/* ── CHAPTER CARD ── */
 .chapter-card {
   background: var(--surface);
-  border: 1px solid var(--surface-border);
-  border-radius: 16px;
-  padding: 1.4rem 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 1.375rem 1.25rem;
   text-decoration: none;
   color: inherit;
-  box-shadow: var(--card-shadow);
-  transition: border-color 0.18s, box-shadow 0.18s, background 0.18s, transform 0.18s;
-  display: flex; flex-direction: column; gap: 10px;
+  box-shadow: var(--shadow-card);
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 .chapter-card:hover {
-  border-color: var(--hover-border);
-  background: var(--hover-bg);
-  box-shadow: var(--card-shadow-hover);
-  transform: translateY(-2px);
+  border-color: rgba(61,111,255,.25);
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-3px);
 }
-.chapter-card.wip { opacity: 0.85; }
+.chapter-card:active { transform: translateY(-1px); }
+
+/* wip card slightly dimmed */
+.chapter-card.wip { opacity: 0.88; }
 
 .card-top {
-  display: flex; align-items: flex-start; justify-content: space-between; gap: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
 }
 .chapter-num {
-  font-size: 11px; font-weight: 600; color: var(--accent);
-  letter-spacing: 0.08em; text-transform: uppercase;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 .wip-badge {
-  font-size: 10px; background: var(--wip-bg); color: var(--wip-color);
-  border-radius: 99px; padding: 2px 9px; font-weight: 500; white-space: nowrap;
+  font-size: 10px;
+  font-weight: 600;
+  background: var(--wip-bg);
+  color: var(--wip-color);
+  border-radius: 99px;
+  padding: 2px 9px;
+  white-space: nowrap;
 }
-
 .chapter-title {
-  font-size: 16px; font-weight: 600; color: var(--text); line-height: 1.3;
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.35;
+  letter-spacing: -0.01em;
 }
 .chapter-desc {
-  font-size: 12px; color: var(--subtext); line-height: 1.5;
+  font-size: 12px;
+  color: var(--text2);
+  line-height: 1.55;
 }
 .chapter-tags {
-  display: flex; flex-wrap: wrap; gap: 5px; margin-top: 2px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
 }
 .tag {
-  font-size: 10px; background: var(--tag-bg); color: var(--tag-color);
-  border-radius: 99px; padding: 2px 9px;
+  font-size: 10px;
+  font-weight: 500;
+  background: var(--tag-bg);
+  color: var(--tag-color);
+  border-radius: 99px;
+  padding: 3px 9px;
 }
 .chapter-count {
-  font-size: 11px; color: var(--subtext); font-weight: 500;
-  margin-top: 2px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text3);
 }
 
-/* ── PROGRESS BAR ── */
-.chapter-progress-wrap {
-  margin-top: 4px;
-}
+/* ── PROGRESS ── */
+.chapter-progress-wrap { margin-top: 2px; }
 .chapter-progress {
   height: 4px;
   background: var(--prog-bg);
@@ -191,34 +238,34 @@ h1 {
   background: var(--prog-got);
   border-radius: 99px;
   width: 0%;
-  transition: width 0.5s ease;
+  transition: width 0.6s ease;
 }
 .chapter-prog-label {
   font-size: 10px;
-  color: var(--subtext);
-  margin-top: 5px;
+  font-weight: 500;
+  color: var(--text3);
+  margin-top: 6px;
   display: flex;
   justify-content: space-between;
 }
-.chapter-prog-label .prog-pct {
-  font-weight: 600;
-  color: var(--prog-got);
-}
-.chapter-prog-label .prog-pct.zero {
-  color: var(--subtext);
-  font-weight: 400;
-}
+.prog-pct { font-weight: 700; color: var(--prog-got); }
+.prog-pct.zero { color: var(--text3); font-weight: 500; }
 
 /* ── COMING SOON ── */
 .chapter-card.coming {
-  border-style: dashed; opacity: 0.5; pointer-events: none; cursor: default;
+  border-style: dashed;
+  opacity: 0.4;
+  pointer-events: none;
 }
-.chapter-card.coming:hover { transform: none; box-shadow: var(--card-shadow); }
 
 /* ── FOOTER ── */
 footer {
-  max-width: 560px; margin: 2.5rem auto 0;
-  text-align: center; font-size: 11px; color: var(--subtext);
+  max-width: 580px;
+  margin: 3rem auto 0;
+  text-align: center;
+  font-size: 11px;
+  color: var(--text3);
+  line-height: 1.7;
 }
 </style>
 </head>
@@ -227,13 +274,9 @@ footer {
 <header>
   <button class="dark-toggle" onclick="toggleDark()" id="dark-btn">🌙</button>
   <div class="logo-tag">JEE Advanced 2026</div>
-  <h1>Inorganic Chemistry Flashcards</h1>
-  <p class="header-sub">Pick a chapter to start drilling</p>
+  <h1>Inorganic Chemistry<br>Flashcards</h1>
+  <p class="header-sub">Pick a chapter — drill, flip, repeat.</p>
 </header>
-
-<div class="tab-row">
-  <a href="index.html" class="subject-tab active-tab">Dev : ryuk_678 on discord</a>
-</div>
 
 <div class="grid">
 
@@ -264,17 +307,18 @@ footer {
   </a>
 
   <!-- Chapter 2 -->
-  <a class="chapter-card wip" href="ch2-qual-analysis.html"
+  <a class="chapter-card" href="ch2-qual-analysis.html"
      data-key="/Inorganic-Chemistry-Flashcards/ch2-qual-analysis.html"
      data-total="130">
     <div class="card-top">
       <span class="chapter-num">Chapter 2</span>
+
     </div>
     <div class="chapter-title">Qualitative Analysis — Cations</div>
-    <div class="chapter-desc">Tests of Cations and reactions</div>
+    <div class="chapter-desc">Tests of cations and reactions across all 7 analytical groups.</div>
     <div class="chapter-tags">
       <span class="tag">Groups 1–7</span>
-      <span class="tag">NH₄⁺ tests</span>
+      <span class="tag">NH₄⁺</span>
       <span class="tag">Pb²⁺</span>
       <span class="tag">Ag⁺</span>
       <span class="tag">Hg₂²⁺</span>
@@ -297,7 +341,7 @@ footer {
       <span class="chapter-num">Chapter 3</span>
     </div>
     <div class="chapter-title">P-Block Elements</div>
-    <div class="chapter-desc">Groups 13–18: B/Al, C/Si, N/P, O/S, halogens, noble gases and all key compounds.</div>
+    <div class="chapter-desc">Groups 13–18: B/Al, C/Si, N/P, O/S, halogens, noble gases and key compounds.</div>
     <div class="chapter-tags">
       <span class="tag">Gr 13–14</span>
       <span class="tag">N &amp; P</span>
@@ -330,7 +374,7 @@ footer {
       <span class="tag">Lanthanides</span>
       <span class="tag">Actinides</span>
     </div>
-    <div class="chapter-count">d &amp; f block</div>
+    <div class="chapter-count">80 cards</div>
     <div class="chapter-progress-wrap">
       <div class="chapter-progress"><div class="chapter-prog-fill"></div></div>
       <div class="chapter-prog-label">
@@ -348,13 +392,12 @@ footer {
       <span class="chapter-num">Chapter 5</span>
     </div>
     <div class="chapter-title">Qualitative Analysis — Anions</div>
-    <div class="chapter-desc">Testing of anions: CO₃²⁻, S²⁻, NO₂⁻, Cl⁻, Br⁻, I⁻, NO₃⁻, C₂O₄²⁻, SO₄²⁻. Solubility rules, soda extract, and all key reactions.</div>
+    <div class="chapter-desc">CO₃²⁻, S²⁻, NO₂⁻, halides, NO₃⁻, C₂O₄²⁻, SO₄²⁻. Soda extract, solubility rules, and all key reactions.</div>
     <div class="chapter-tags">
       <span class="tag">Dil. H₂SO₄</span>
       <span class="tag">Conc. H₂SO₄</span>
       <span class="tag">AgX tests</span>
       <span class="tag">Brown Ring</span>
-      <span class="tag">Layer test</span>
     </div>
     <div class="chapter-count">42 cards</div>
     <div class="chapter-progress-wrap">
@@ -366,20 +409,19 @@ footer {
     </div>
   </a>
 
- <a class="chapter-card" href="ch6-hydrogen-sblock.html"
+  <!-- Chapter 6 -->
+  <a class="chapter-card" href="ch6-hydrogen-sblock.html"
      data-key="/Inorganic-Chemistry-Flashcards/ch6-hydrogen-sblock.html"
      data-total="63">
     <div class="card-top">
       <span class="chapter-num">Chapter 6</span>
     </div>
-    <div class="chapter-title">S block</div>
-    <div class="chapter-desc"></div>
+    <div class="chapter-title">Hydrogen &amp; S-Block</div>
+    <div class="chapter-desc">Hydrogen, H₂O₂, Group 1 &amp; 2 elements — reactions, anomalous properties, and uses.</div>
     <div class="chapter-tags">
-      <span class="tag"></span>
-      <span class="tag"></span>
-      <span class="tag"></span>
-      <span class="tag"></span>
-      <span class="tag"></span>
+      <span class="tag">H₂O₂</span>
+      <span class="tag">Alkali metals</span>
+      <span class="tag">Alkaline earth</span>
     </div>
     <div class="chapter-count">63 cards</div>
     <div class="chapter-progress-wrap">
@@ -389,11 +431,14 @@ footer {
         <span class="prog-pct zero">0%</span>
       </div>
     </div>
-</a>
- 
+  </a>
+
 </div>
 
-<footer>Dark mode preference is saved · progress tracked per chapter</footer>
+<footer>
+  Progress is saved per chapter · Dark mode is remembered<br>
+  Good luck for JEE Advanced 2026 🔥
+</footer>
 
 <script>
 function toggleDark() {
@@ -401,6 +446,7 @@ function toggleDark() {
   document.getElementById('dark-btn').textContent = isDark ? '☀️' : '🌙';
   localStorage.setItem('darkMode', isDark ? '1' : '0');
 }
+// Respect saved dark mode preference
 if (localStorage.getItem('darkMode') === '1') {
   document.body.classList.add('dark');
   document.getElementById('dark-btn').textContent = '☀️';
@@ -413,24 +459,21 @@ document.querySelectorAll('.chapter-card[data-key]').forEach(card => {
   const fill  = card.querySelector('.chapter-prog-fill');
   const seen  = card.querySelector('.prog-seen');
   const pct   = card.querySelector('.prog-pct');
-
   try {
     const data  = JSON.parse(localStorage.getItem(key) || '{}');
-    const got   = Object.values(data).filter(v => v === 'got').length;
-    const nope  = Object.values(data).filter(v => v === 'nope').length;
-    const total_seen = got + nope;
+    const g     = Object.values(data).filter(v => v === 'got').length;
+    const n     = Object.values(data).filter(v => v === 'nope').length;
+    const total_seen = g + n;
     const percent = total > 0 ? Math.round((total_seen / total) * 100) : 0;
-
     if (fill) fill.style.width = percent + '%';
-
     if (total_seen === 0) {
       if (seen) seen.textContent = 'Not started';
       if (pct)  { pct.textContent = '0%'; pct.classList.add('zero'); }
     } else if (total_seen >= total) {
-      if (seen) seen.textContent = got + ' known · ' + nope + ' to review';
+      if (seen) seen.textContent = g + ' known · ' + n + ' to review';
       if (pct)  { pct.textContent = '100%'; pct.classList.remove('zero'); }
     } else {
-      if (seen) seen.textContent = total_seen + ' / ' + total + ' seen · ' + got + ' ✓';
+      if (seen) seen.textContent = total_seen + ' / ' + total + ' seen · ' + g + ' ✓';
       if (pct)  { pct.textContent = percent + '%'; pct.classList.remove('zero'); }
     }
   } catch(e) {}

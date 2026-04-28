@@ -1,18 +1,18 @@
-// ── SHARED FLASHCARD ENGINE ──
+// ── SHARED FLASHCARD ENGINE v2 ──
 // Requires window.CARDS, window.LABELS
 // Optional: window.FILTER_GROUPS for two-level filter
 
 let filtered = [], cur = 0, got = 0, nope = 0, flipped = false;
 let missed = [];
 let activeGroup = null;
-let cardStatuses = {}; // track status per index in current filtered set
+let cardStatuses = {};
+let rapidMode = false;
 
 // ── STORAGE KEY — unique per page ──
 function storageKey() {
   return 'fc_progress_' + (window.DECK_ID || location.pathname);
 }
 
-// ── SAVE: store result for a card (keyed by question text) ──
 function saveResult(card, result) {
   try {
     const raw = localStorage.getItem(storageKey());
@@ -22,7 +22,6 @@ function saveResult(card, result) {
   } catch(e) {}
 }
 
-// ── LOAD: get all saved results ──
 function loadResults() {
   try {
     const raw = localStorage.getItem(storageKey());
@@ -30,18 +29,14 @@ function loadResults() {
   } catch(e) { return {}; }
 }
 
-// ── CLEAR saved progress ──
 function clearProgress() {
   try { localStorage.removeItem(storageKey()); } catch(e) {}
 }
 
-// ── GET saved status for a single card ──
 function getStatus(card) {
-  const data = loadResults();
-  return data[card.f] || null;
+  return loadResults()[card.f] || null;
 }
 
-// ── COUNT saved results across current filtered set ──
 function countSaved() {
   const data = loadResults();
   let g = 0, n = 0;
@@ -124,7 +119,6 @@ function renderSubFilters(grp) {
   grp.cats.forEach(cat => {
     const b = document.createElement('button');
     b.className = 'fb fb-sub';
-    b.style.fontSize = '10px';
     b.textContent = window.LABELS[cat] || cat;
     b.onclick = () => {
       document.querySelectorAll('.fb-sub').forEach(x => x.classList.remove('active'));
@@ -145,33 +139,29 @@ function setFilter(val, btn) {
 
 // ── GRID NAVIGATOR ──
 function buildGridNav() {
-  // Inject overlay + panel if not yet present
   if (!document.getElementById('grid-overlay')) {
-    // overlay backdrop
     const overlay = document.createElement('div');
     overlay.id = 'grid-overlay';
     overlay.onclick = closeGrid;
     document.body.appendChild(overlay);
 
-    // side panel
     const panel = document.createElement('div');
     panel.id = 'grid-panel';
     panel.innerHTML = `
       <div class="grid-header">
         <span id="grid-title">Cards</span>
-        <button class="grid-close-btn" onclick="closeGrid()">✕</button>
+        <button class="grid-close-btn" onclick="closeGrid()">&#x2715;</button>
       </div>
       <div class="grid-legend">
-        <span class="gl-dot gl-unseen"></span>Unseen
-        <span class="gl-dot gl-got"></span>Got it
-        <span class="gl-dot gl-nope"></span>Practice
-        <span class="gl-dot gl-cur"></span>Current
+        <span><span class="gl-dot gl-unseen"></span>Unseen</span>
+        <span><span class="gl-dot gl-got"></span>Got it</span>
+        <span><span class="gl-dot gl-nope"></span>Practice</span>
+        <span><span class="gl-dot gl-cur"></span>Current</span>
       </div>
       <div id="grid-dots"></div>
     `;
     document.body.appendChild(panel);
   }
-
   renderGridDots();
 }
 
@@ -187,21 +177,11 @@ function renderGridDots() {
     const btn = document.createElement('button');
     btn.className = 'grid-dot';
     btn.textContent = i + 1;
-
-    // determine state
     const saved = data[card.f];
-    if (i === cur) {
-      btn.classList.add('gd-cur');
-    } else if (cardStatuses[i] === 'got' || saved === 'got') {
-      btn.classList.add('gd-got');
-    } else if (cardStatuses[i] === 'nope' || saved === 'nope') {
-      btn.classList.add('gd-nope');
-    }
-
-    btn.onclick = () => {
-      jumpTo(i);
-      closeGrid();
-    };
+    if (i === cur)                                           btn.classList.add('gd-cur');
+    else if (cardStatuses[i] === 'got'  || saved === 'got') btn.classList.add('gd-got');
+    else if (cardStatuses[i] === 'nope' || saved === 'nope') btn.classList.add('gd-nope');
+    btn.onclick = () => { jumpTo(i); closeGrid(); };
     container.appendChild(btn);
   });
 }
@@ -211,19 +191,24 @@ function openGrid() {
   document.getElementById('grid-overlay').classList.add('active');
   document.getElementById('grid-panel').classList.add('active');
 }
-
 function closeGrid() {
   const o = document.getElementById('grid-overlay');
   const p = document.getElementById('grid-panel');
   if (o) o.classList.remove('active');
   if (p) p.classList.remove('active');
 }
-
 function jumpTo(index) {
   if (index < 0 || index >= filtered.length) return;
-  cur = index;
-  flipped = false;
-  render();
+  cur = index; flipped = false; render();
+}
+
+// Simple HTML escape to prevent XSS
+function escHtml(str) {
+  if (!str) return '';
+  return String(str)
+    .replace(/&/g,'&amp;')
+    .replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;');
 }
 
 // ── RENDER CARD ──
@@ -234,37 +219,47 @@ function render() {
   const fc = document.getElementById('f-cat');
   fc.textContent = (window.LABELS[c.cat] || c.cat).replace(/-/g, ' ');
   fc.className = 'cat-badge ' + c.cl;
-  document.getElementById('f-main').textContent = c.f;
-  document.getElementById('f-sub').textContent  = c.fs || '';
-  document.getElementById('b-main').textContent = c.b;
-  document.getElementById('b-sub').textContent  = c.bs || '';
+
+  document.getElementById('f-main').innerHTML = escHtml(c.f).replace(/\n/g,'<br>');
+  document.getElementById('f-sub').innerHTML  = escHtml(c.fs || '').replace(/\n/g,'<br>');
+  document.getElementById('b-main').innerHTML = escHtml(c.b).replace(/\n/g,'<br>');
+  document.getElementById('b-sub').innerHTML  = escHtml(c.bs || '').replace(/\n/g,'<br>');
+
   const note = document.getElementById('b-note');
-  note.textContent = c.n || '';
+  note.innerHTML = escHtml(c.n || '').replace(/\n/g,'<br>');
   note.style.display = c.n ? 'block' : 'none';
 
-  // show saved status badge on front face
+  // hint text with saved status
   const hint = document.querySelector('.face-hint');
   const status = getStatus(c);
   if (hint) {
-    if (status === 'got')  hint.textContent = '✅ Previously got it — tap to review';
-    else if (status === 'nope') hint.textContent = '🔁 Previously flagged — tap to review';
-    else hint.textContent = 'Tap to reveal →';
+    if (status === 'got')       hint.innerHTML = '&#x2705; Previously got it &mdash; tap to review';
+    else if (status === 'nope') hint.innerHTML = '&#x1F501; Previously flagged &mdash; tap to review';
+    else                        hint.textContent = 'Tap to reveal  \u2192';
   }
 
-  document.getElementById('card-inner').classList.remove('flipped');
-  document.getElementById('btn-row').style.display  = 'none';
-  document.getElementById('flip-btn').style.display = 'block';
-  document.getElementById('done').style.display     = 'none';
-  document.querySelector('.card-area').style.display = 'block';
+  // rapid mode: auto-reveal back
+  if (rapidMode) {
+    document.getElementById('card-inner').classList.add('flipped');
+    document.getElementById('btn-row').style.display  = 'flex';
+    document.getElementById('flip-btn').style.display = 'none';
+    flipped = true;
+  } else {
+    document.getElementById('card-inner').classList.remove('flipped');
+    document.getElementById('btn-row').style.display  = 'none';
+    document.getElementById('flip-btn').style.display = 'block';
+    flipped = false;
+  }
 
-  // prev/next buttons
+  document.getElementById('done').style.display      = 'none';
+  document.querySelector('.card-area').style.display  = 'block';
+
   const prevBtn = document.getElementById('prev-btn');
   const nextBtn = document.getElementById('next-btn');
   if (prevBtn) prevBtn.disabled = (cur === 0);
   if (nextBtn) nextBtn.disabled = (cur >= filtered.length - 1);
 
   updateStats();
-  flipped = false;
 }
 
 function flip() {
@@ -290,20 +285,13 @@ function next(g) {
   cur++; render();
 }
 
-// go to previous card (no scoring change)
 function prevCard() {
   if (cur <= 0) return;
-  cur--;
-  flipped = false;
-  render();
+  cur--; flipped = false; render();
 }
-
-// go to next card without scoring
 function nextCard() {
   if (cur >= filtered.length - 1) return;
-  cur++;
-  flipped = false;
-  render();
+  cur++; flipped = false; render();
 }
 
 function updateStats() {
@@ -332,20 +320,17 @@ function showDone() {
 
   const pct = filtered.length > 0 ? Math.round((got / filtered.length) * 100) : 0;
   document.getElementById('done-title').textContent =
-    pct >= 80 ? 'Solid! ' + got + '/' + filtered.length + ' correct'
-              : 'Keep grinding — ' + got + '/' + filtered.length;
+    pct >= 80 ? '\uD83C\uDFAF ' + got + '/' + filtered.length + ' \u2014 Solid!'
+              : '\uD83D\uDCDA ' + got + '/' + filtered.length + ' \u2014 Keep grinding';
   document.getElementById('done-sub').textContent =
     pct >= 80 ? 'Great retention. Move to the next category.'
               : 'Review the ones you missed and run the deck again.';
 
   const practiceBtn = document.getElementById('practice-missed');
   if (practiceBtn) {
-    if (missed.length > 0) {
-      practiceBtn.style.display = 'inline-block';
-      practiceBtn.textContent = '🔁 Practice missed (' + missed.length + ')';
-    } else {
-      practiceBtn.style.display = 'none';
-    }
+    practiceBtn.style.display = missed.length > 0 ? 'inline-block' : 'none';
+    if (missed.length > 0)
+      practiceBtn.textContent = '\uD83D\uDD01 Practice missed (' + missed.length + ')';
   }
 
   const saved = countSaved();
@@ -353,15 +338,14 @@ function showDone() {
   const subEl = document.getElementById('done-saved');
   if (subEl) {
     subEl.textContent = totalSeen > 0
-      ? '💾 Saved: ' + saved.got + ' known · ' + saved.nope + ' to review — across all sessions'
+      ? '\uD83D\uDCBE ' + saved.got + ' known \u00B7 ' + saved.nope + ' to review \u2014 all sessions'
       : '';
   }
 }
 
 function practiceMissed() {
   filtered = [...missed];
-  missed = [];
-  cardStatuses = {};
+  missed = []; cardStatuses = {};
   cur = 0; got = 0; nope = 0; flipped = false;
   document.getElementById('done').style.display = 'none';
   document.querySelector('.card-area').style.display = 'block';
@@ -382,40 +366,99 @@ function clearAndRestart() {
   restart();
 }
 
+// ── DARK MODE ──
 function toggleDark() {
   const isDark = document.body.classList.toggle('dark');
-  document.getElementById('dark-btn').textContent = isDark ? '☀️' : '🌙';
+  document.getElementById('dark-btn').textContent = isDark ? '\u2600\uFE0F' : '\uD83C\uDF19';
   localStorage.setItem('darkMode', isDark ? '1' : '0');
 }
-
 function initDark() {
   if (localStorage.getItem('darkMode') === '1') {
     document.body.classList.add('dark');
     const btn = document.getElementById('dark-btn');
-    if (btn) btn.textContent = '☀️';
+    if (btn) btn.textContent = '\u2600\uFE0F';
   }
 }
 
-// ── INJECT NAV BAR (prev / grid / next) into the page ──
+// ── RAPID MODE ──
+function toggleRapid(chk) {
+  rapidMode = chk.checked;
+  document.body.classList.toggle('rapid-mode', rapidMode);
+  render();
+}
+
+// ── INJECT NAV BAR ──
 function injectNavBar() {
-  // Insert after .card-area or before .btn-flip
   const flipBtn = document.getElementById('flip-btn');
   if (!flipBtn) return;
 
+  // keyboard hint (desktop only via CSS)
+  const kbHint = document.createElement('p');
+  kbHint.className = 'kb-hint';
+  kbHint.textContent = 'Space = flip  \u00B7  G = got it  \u00B7  N = need practice  \u00B7  \u2190\u2192 = prev/next';
+  flipBtn.parentNode.insertBefore(kbHint, flipBtn);
+
+  // rapid mode toggle
+  const rapidWrap = document.createElement('div');
+  rapidWrap.className = 'rapid-toggle-wrap';
+  rapidWrap.innerHTML = `
+    <span class="rapid-label">\u26A1 Rapid mode</span>
+    <label class="rapid-toggle">
+      <input type="checkbox" id="rapid-chk" onchange="toggleRapid(this)">
+      <span class="rapid-slider"></span>
+    </label>
+  `;
+  flipBtn.parentNode.insertBefore(rapidWrap, flipBtn);
+
+  // prev / grid / next nav
   const nav = document.createElement('div');
   nav.id = 'card-nav';
   nav.innerHTML = `
-    <button class="nav-btn" id="prev-btn" onclick="prevCard()" title="Previous card">‹ Prev</button>
-    <button class="nav-grid-btn" onclick="openGrid()" title="Jump to card">⊞ All cards</button>
-    <button class="nav-btn" id="next-btn" onclick="nextCard()" title="Next card">Next ›</button>
+    <button class="nav-btn" id="prev-btn" onclick="prevCard()" title="Previous (\u2190)">\u2039 Prev</button>
+    <button class="nav-grid-btn" onclick="openGrid()" title="Jump to card">\u229E All cards</button>
+    <button class="nav-btn" id="next-btn" onclick="nextCard()" title="Next (\u2192)">Next \u203A</button>
   `;
   flipBtn.parentNode.insertBefore(nav, flipBtn);
 }
 
+// ── KEYBOARD NAVIGATION ──
+function initKeyboard() {
+  document.addEventListener('keydown', e => {
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    switch(e.key) {
+      case 'ArrowRight':
+      case 'ArrowDown':
+        e.preventDefault();
+        if (flipped) next(true); else nextCard();
+        break;
+      case 'ArrowLeft':
+      case 'ArrowUp':
+        e.preventDefault();
+        prevCard();
+        break;
+      case ' ':
+        e.preventDefault();
+        if (!flipped) flip();
+        break;
+      case 'g': case 'G':
+        if (flipped) next(true);
+        break;
+      case 'n': case 'N':
+        if (flipped) next(false);
+        break;
+      case 'Escape':
+        closeGrid();
+        break;
+    }
+  });
+}
+
+// ── INIT ──
 function initDeck() {
   initDark();
   filtered = [...window.CARDS];
   buildFilters();
   injectNavBar();
+  initKeyboard();
   render();
 }
