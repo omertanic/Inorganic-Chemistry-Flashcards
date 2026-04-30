@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Polymers — JEE Advanced</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0d0d0d;
+  --s1: #141414;
+  --s2: #1c1c1c;
+  --border: #2a2a2a;
+  --text: #e8e8e0;
+  --muted: #666;
+  --dim: #333;
+  --amber: #f0b040;
+  --green: #4ecb8d;
+  --blue: #5599ee;
+  --coral: #ee6655;
+  --purple: #aa88ff;
+  --pink: #ee88bb;
+  --mono: 'IBM Plex Mono', monospace;
+  --sans: 'IBM Plex Sans', sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:14px;padding:1.5rem 1rem 3rem;}
+
+.header{text-align:center;margin-bottom:2rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border);}
+.header h1{font-family:var(--mono);font-size:18px;font-weight:700;color:var(--amber);letter-spacing:.1em;text-transform:uppercase;}
+.header p{font-size:12px;color:var(--muted);margin-top:6px;font-family:var(--mono);}
+
+/* Section headers */
+.section-title{font-family:var(--mono);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin:2rem 0 0.75rem;padding-left:4px;border-left:3px solid var(--amber);}
+
+/* Main table */
+.tbl{width:100%;border-collapse:collapse;margin-bottom:2rem;font-size:12.5px;}
+.tbl th{font-family:var(--mono);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);padding:8px 10px;border-bottom:1px solid var(--border);text-align:left;white-space:nowrap;}
+.tbl td{padding:9px 10px;border-bottom:1px solid #1e1e1e;vertical-align:top;line-height:1.5;}
+.tbl tr:hover td{background:#181818;}
+.name{font-weight:500;color:var(--text);}
+.mono-sm{font-family:var(--mono);font-size:11px;color:var(--blue);}
+.tag{display:inline-block;font-family:var(--mono);font-size:9px;font-weight:700;padding:1px 6px;border-radius:3px;text-transform:uppercase;letter-spacing:.05em;white-space:nowrap;}
+.t-add{background:#1a2a10;color:var(--green);}
+.t-con{background:#1a1a30;color:var(--blue);}
+.t-nat{background:#2a1a10;color:var(--amber);}
+.t-semi{background:#2a1020;color:var(--pink);}
+.t-tp{background:#201a10;color:#d4a840;}
+.t-ts{background:#1a1020;color:var(--purple);}
+.t-el{background:#102010;color:var(--green);}
+.use{color:var(--muted);font-size:12px;}
+.highlight{color:var(--coral);font-weight:500;}
+.monomer-txt{color:var(--green);font-size:12px;}
+
+/* Key facts box */
+.facts-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:2rem;}
+.fact-card{background:var(--s1);border:1px solid var(--border);border-radius:8px;padding:1rem;}
+.fact-card h3{font-family:var(--mono);font-size:10px;font-weight:700;color:var(--amber);text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;}
+.fact-card ul{list-style:none;display:flex;flex-direction:column;gap:5px;}
+.fact-card li{font-size:12px;color:var(--muted);padding-left:12px;position:relative;line-height:1.5;}
+.fact-card li::before{content:'→';position:absolute;left:0;color:var(--dim);}
+.fact-card li strong{color:var(--text);}
+
+/* Linkage types */
+.linkage-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:2rem;}
+.lcard{flex:1;min-width:140px;background:var(--s1);border:1px solid var(--border);border-radius:8px;padding:0.75rem;}
+.lcard-title{font-family:var(--mono);font-size:10px;font-weight:700;color:var(--purple);text-transform:uppercase;margin-bottom:6px;}
+.lcard p{font-size:12px;color:var(--muted);line-height:1.6;}
+.lcard strong{color:var(--text);}
+
+/* Imp tricks */
+.tricks{background:#0f1a0f;border:1px solid #1e3a1e;border-radius:8px;padding:1rem 1.25rem;margin-bottom:2rem;}
+.tricks h3{font-family:var(--mono);font-size:10px;font-weight:700;color:var(--green);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;}
+.tricks ul{list-style:none;display:flex;flex-direction:column;gap:7px;}
+.tricks li{font-size:12.5px;color:var(--muted);padding-left:14px;position:relative;line-height:1.5;}
+.tricks li::before{content:'⚡';position:absolute;left:0;font-size:10px;}
+.tricks li strong{color:var(--green);}
+
+@media(max-width:500px){.facts-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Polymers — JEE Advanced</h1>
+  <p>Chapter 15 · Quick Reference · All testable content</p>
+</div>
+
+<!-- TRICKS FIRST -->
+<div class="tricks">
+  <h3>⚡ Memory tricks before the table</h3>
+  <ul>
+    <li><strong>Nylon 6,6</strong> = two 6-carbon monomers (hexamethylenediamine + adipic acid). "6,6 = two hexes shaking hands"</li>
+    <li><strong>Nylon 6</strong> = one monomer (caprolactam), ring opens. "6 alone, breaks its own ring"</li>
+    <li><strong>Buna-S</strong> = Butadiene + Styrene. <strong>Buna-N</strong> = Butadiene + Acrylonitrile (Nitrile). S=Styrene, N=Nitrile.</li>
+    <li><strong>Bakelite</strong> = Phenol + Formaldehyde. "Bake it in a mould" → thermosetting, can't remould</li>
+    <li><strong>Dacron/Terylene</strong> = ethylene glycol + terephthalic acid → polyester (ester linkage)</li>
+    <li><strong>Teflon</strong> = tetrafluoroethylene. All F's → nothing sticks → non-stick pan</li>
+    <li><strong>Vulcanisation</strong> = sulphur crosslinks at 373–415K. Makes rubber harder + less sticky</li>
+    <li><strong>Natural rubber</strong> = cis-1,4-polyisoprene. <strong>Gutta percha</strong> = trans-1,4-polyisoprene (hard, non-elastic)</li>
+  </ul>
+</div>
+
+<div class="section-title">Main Polymer Table</div>
+<table class="tbl">
+  <thead>
+    <tr>
+      <th>Polymer</th>
+      <th>Monomer(s)</th>
+      <th>Type</th>
+      <th>Linkage</th>
+      <th>Thermo</th>
+      <th>Uses</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Addition Homopolymers -->
+    <tr>
+      <td><span class="name">Polythene (LDP)</span></td>
+      <td><span class="monomer-txt">Ethylene (ethene)</span></td>
+      <td><span class="tag t-add">Addition</span></td>
+      <td><span class="mono-sm">C–C</span></td>
+      <td><span class="tag t-tp">Thermo-plastic</span></td>
+      <td><span class="use">Squeeze bottles, flexible pipes, wire insulation</span></td>
+    </tr>
+    <tr>
+      <td><span class="name">Polythene (HDP)</span></td>
+      <td><span class="monomer-txt">Ethylene (Ziegler-Natta cat.)</span></td>
+      <td><span class="tag t-add">Addition</span></td>
+      <td><span class="mono-sm">C–C</span></td>
+      <td><span class="tag t-tp">Thermo-plastic</span></td>
+      <td><span class="use">Buckets, dustbins, bottles, pipes</span></td>
+    </tr>
+    <tr>
+      <td><span class="name">Teflon (PTFE)</span></td>
+      <td><span class="monomer-txt">Tetrafluoroethylene (CF₂=CF₂)</span></td>
+      <td><span class="tag t-add">Addition</span></td>
+      <td><span class="mono-sm">C–C</span></td>
+      <td><span class="tag t-tp">Thermo-plastic</span></td>
+      <td><span class="use">Non-stick utensils, oil seals, gaskets</span></td>
+    </tr>
+    <tr>
+      <td><span class="name">Polyacrylonitrile (Orlon/Acrilan)</span></td>
+      <td><span class="monomer-txt">Acrylonitrile (CH₂=CH–CN)</span></td>
+      <td><span class="tag t-add">Addition</span></td>
+      <td><span class="mono-sm">C–C</span></td>
+      <td><span class="tag t-tp">Thermo-plastic</span></td>
+      <td><span class="use">Substitute for wool, commercial fibres</span></td>
+    </tr>
+    <tr>
+      <td><span class="name">Polystyrene</span></td>
+      <td><span class="monomer-txt">Styrene (C₆H₅–CH=CH₂)</span></td>
+      <td><span class="tag t-add">Addition</span></td>
+      <td><span class="mono-sm">C–C</span></td>
+      <td><span class="tag t-tp">Thermo-plastic</span></td>
+      <td><span class="use">Packaging, disposable cups</span></td>
+    </tr>
+    <tr>
+      <td><span class="name">PVC</span></td>
+      <td><span class="monomer-txt">Vinyl chloride (CH₂=CHCl)</span></td>
+      <td><span class="tag t-add">Addition</span></td>
+      <td><span class="mono-sm">C–C</span></td>
+      <td><span class="tag t-tp">Thermo-plastic</span></td>
+      <td><span class="use">Pipes, floor tiles, raincoats, handbags</span></td>
+    </tr>
+    <!-- Addition Copolymers (Rubbers) -->
+    <tr>
+      <td><span class="name">Buna-S (SBR)</span></td>
+      <td><span class="monomer-txt">1,3-Butadiene + Styrene</span></td>
+      <td><span class="tag t-add">Addition</span> <span class="tag t-el">Elastomer</span></td>
+      <td><span class="mono-sm">C–C</span></td>
+      <td>—</td>
+      <td><span class="use">Auto tyres, floor tiles, footwear, cable insulation</span></td>
+    </tr>
+    <tr>
+      <td><span class="name">Buna-N (NBR)</span></td>
+      <td><span class="monomer-txt">1,3-Butadiene + Acrylonitrile</span></td>
+      <td><span class="tag t-add">Addition</span> <span class="tag t-el">Elastomer</span></td>
+      <td><span class="mono-sm">C–C</span></td>
+      <td>—</td>
+      <td><span class="use">Oil-resistant rubber articles</span></td>
+    </tr>
+    <tr>
+      <td><span class="name">Neoprene</span></td>
+      <td><span class="monomer-txt">Chloroprene (2-chloro-1,3-butadiene)</span></td>
+      <td><span class="tag t-add">Addition</span> <span class="tag t-el">Elastomer</span></td>
+      <td><span class="mono-sm">C–C</span></td>
+      <td>—</td>
+      <td><span class="use">Wet suits, hoses, gaskets (flame resistant)</span></td>
+    </tr>
+    <!-- Natural -->
+    <tr>
+      <td><span class="name">Natural Rubber</span></td>
+      <td><span class="monomer-txt">Isoprene (2-methyl-1,3-butadiene) — <span class="highlight">cis</span></span></td>
+      <td><span class="tag t-nat">Natural</span> <span class="tag t-el">Elastomer</span></td>
+      <td><span class="mono-sm">C–C</span></td>
+      <td>—</td>
+      <td><span class="use">Tyres, gloves (after vulcanisation)</span></td>
+    </tr>
+    <tr>
+      <td><span class="name">Gutta Percha</span></td>
+      <td><span class="monomer-txt">Isoprene — <span class="highlight">trans</span></span></td>
+      <td><span class="tag t-nat">Natural</span></td>
+      <td><span class="mono-sm">C–C</span></td>
+      <td>—</td>
+      <td><span class="use">Hard, non-elastic — golf balls, dental</span></td>
+    </tr>
+    <!-- Condensation -->
+    <tr>
+      <td><span class="name">Nylon 6,6</span></td>
+      <td><span class="monomer-txt">Hexamethylenediamine + Adipic acid</span></td>
+      <td><span class="tag t-con">Condensation</span></td>
+      <td><span class="mono-sm">–CO–NH– (amide)</span></td>
+      <td><span class="tag t-tp">Thermo-plastic</span></td>
+      <td><span class="use">Sheets, bristles, textile, parachutes</span></td>
+    </tr>
+    <tr>
+      <td><span class="name">Nylon 6</span></td>
+      <td><span class="monomer-txt">Caprolactam (ring opening)</span></td>
+      <td><span class="tag t-con">Condensation</span></td>
+      <td><span class="mono-sm">–CO–NH– (amide)</span></td>
+      <td><span class="tag t-tp">Thermo-plastic</span></td>
+      <td><span class="use">Tyre cords, fabrics, ropes</span></td>
+    </tr>
+    <tr>
+      <td><span class="name">Dacron / Terylene</span></td>
+      <td><span class="monomer-txt">Ethylene glycol + Terephthalic acid</span></td>
+      <td><span class="tag t-con">Condensation</span></td>
+      <td><span class="mono-sm">–CO–O– (ester)</span></td>
+      <td><span class="tag t-tp">Thermo-plastic</span></td>
+      <td><span class="use">Crease-resistant fabric, safety helmets</span></td>
+    </tr>
+    <tr>
+      <td><span class="name">Bakelite</span></td>
+      <td><span class="monomer-txt">Phenol + Formaldehyde</span></td>
+      <td><span class="tag t-con">Condensation</span></td>
+      <td><span class="mono-sm">–CH₂– (methylene)</span></td>
+      <td><span class="tag t-ts">Thermo-setting</span></td>
+      <td><span class="use">Combs, switches, handles, electrical items</span></td>
+    </tr>
+    <tr>
+      <td><span class="name">Melamine-formaldehyde</span></td>
+      <td><span class="monomer-txt">Melamine + Formaldehyde</span></td>
+      <td><span class="tag t-con">Condensation</span></td>
+      <td><span class="mono-sm">–CH₂–N–</span></td>
+      <td><span class="tag t-ts">Thermo-setting</span></td>
+      <td><span class="use">Unbreakable crockery, floor tiles</span></td>
+    </tr>
+    <!-- Semi-synthetic -->
+    <tr>
+      <td><span class="name">Rayon (Artificial silk)</span></td>
+      <td><span class="monomer-txt">Cellulose (treated with NaOH + CS₂)</span></td>
+      <td><span class="tag t-semi">Semi-synthetic</span></td>
+      <td><span class="mono-sm">glycosidic</span></td>
+      <td>—</td>
+      <td><span class="use">Textile, surgical dressings</span></td>
+    </tr>
+    <tr>
+      <td><span class="name">Cellulose acetate</span></td>
+      <td><span class="monomer-txt">Cellulose + acetic anhydride</span></td>
+      <td><span class="tag t-semi">Semi-synthetic</span></td>
+      <td><span class="mono-sm">ester</span></td>
+      <td>—</td>
+      <td><span class="use">Films, photographic films</span></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="section-title">Key Concepts — Frequently Tested</div>
+<div class="facts-grid">
+  <div class="fact-card">
+    <h3>Vulcanisation of Rubber</h3>
+    <ul>
+      <li>Heating raw rubber with <strong>sulphur</strong> at 373–415 K</li>
+      <li>S forms <strong>crosslinks</strong> at double bond sites</li>
+      <li>Tyre rubber: <strong>5% sulphur</strong></li>
+      <li>Fixes: softness at high T, brittleness at low T, water absorption</li>
+      <li>Makes rubber harder, elastic, durable</li>
+    </ul>
+  </div>
+  <div class="fact-card">
+    <h3>Addition vs Condensation</h3>
+    <ul>
+      <li><strong>Addition</strong>: unsaturated monomers, no byproduct, chain growth</li>
+      <li><strong>Condensation</strong>: bifunctional monomers, loses small molecule (H₂O, HCl, alcohol)</li>
+      <li>Nylon, Dacron, Bakelite = condensation</li>
+      <li>All rubbers, PVC, Teflon = addition</li>
+    </ul>
+  </div>
+  <div class="fact-card">
+    <h3>Thermoplastic vs Thermosetting</h3>
+    <ul>
+      <li><strong>Thermoplastic</strong>: softens on heating, can remould — linear/slightly branched</li>
+      <li><strong>Thermosetting</strong>: hardens permanently, cannot remould — cross-linked</li>
+      <li>Bakelite, Melamine = thermosetting</li>
+      <li>Nylon, PVC, Polythene = thermoplastic</li>
+    </ul>
+  </div>
+  <div class="fact-card">
+    <h3>LDP vs HDP Polythene</h3>
+    <ul>
+      <li><strong>LDP</strong>: high pressure (1000–2000 atm), 350–570K, free radical, branched</li>
+      <li><strong>HDP</strong>: low pressure (6–7 atm), 333–343K, Ziegler-Natta, linear</li>
+      <li>HDP = harder, more tough, closer packing</li>
+      <li>LDP = flexible, squeeze bottles</li>
+    </ul>
+  </div>
+  <div class="fact-card">
+    <h3>Molecular Forces → Properties</h3>
+    <ul>
+      <li><strong>Elastomers</strong>: weak van der Waals, coiled chains</li>
+      <li><strong>Fibres</strong>: strong H-bonding (nylon) or dipole interactions → high tensile strength</li>
+      <li><strong>Plastics</strong>: intermediate forces</li>
+      <li>Nylon H-bonds → crystalline, high tensile</li>
+    </ul>
+  </div>
+  <div class="fact-card">
+    <h3>Novolac → Bakelite</h3>
+    <ul>
+      <li>Phenol + HCHO (acid cat.) → <strong>Novolac</strong> (linear, used in paints)</li>
+      <li>Novolac + more HCHO → <strong>Bakelite</strong> (cross-linked)</li>
+      <li>Bakelite = infusible solid, thermosetting</li>
+      <li>Melamine = harder than Bakelite</li>
+    </ul>
+  </div>
+</div>
+
+<div class="section-title">Linkage Types — JEE Favourite</div>
+<div class="linkage-row">
+  <div class="lcard">
+    <div class="lcard-title">Amide linkage –CO–NH–</div>
+    <p><strong>Nylon 6,6</strong> and <strong>Nylon 6</strong><br>Also in proteins (peptide bond)</p>
+  </div>
+  <div class="lcard">
+    <div class="lcard-title">Ester linkage –CO–O–</div>
+    <p><strong>Dacron/Terylene</strong><br>Also in fats, waxes</p>
+  </div>
+  <div class="lcard">
+    <div class="lcard-title">Glycosidic linkage</div>
+    <p><strong>Cellulose, Starch</strong><br>Natural polysaccharides</p>
+  </div>
+  <div class="lcard">
+    <div class="lcard-title">Methylene –CH₂– bridge</div>
+    <p><strong>Bakelite</strong><br>Cross-links phenol rings</p>
+  </div>
+</div>
+
+<div class="section-title">Natural Polymers (don't ignore)</div>
+<table class="tbl">
+  <thead>
+    <tr><th>Polymer</th><th>Monomer</th><th>Linkage</th><th>Note</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="name">Starch</span></td>
+      <td><span class="monomer-txt">α-glucose</span></td>
+      <td><span class="mono-sm">α-glycosidic</span></td>
+      <td><span class="use">Amylose (linear) + Amylopectin (branched)</span></td>
+    </tr>
+    <tr>
+      <td><span class="name">Cellulose</span></td>
+      <td><span class="monomer-txt">β-glucose</span></td>
+      <td><span class="mono-sm">β-glycosidic</span></td>
+      <td><span class="use">Linear, structural (plant cell walls)</span></td>
+    </tr>
+    <tr>
+      <td><span class="name">Proteins</span></td>
+      <td><span class="monomer-txt">α-amino acids</span></td>
+      <td><span class="mono-sm">peptide (–CO–NH–)</span></td>
+      <td><span class="use">Up to 20 different amino acids</span></td>
+    </tr>
+    <tr>
+      <td><span class="name">Nucleic acids</span></td>
+      <td><span class="monomer-txt">Nucleotides</span></td>
+      <td><span class="mono-sm">phosphodiester</span></td>
+      <td><span class="use">DNA, RNA</span></td>
+    </tr>
+  </tbody>
+</table>
+
+<div style="text-align:center;font-family:var(--mono);font-size:11px;color:var(--dim);margin-top:2rem;">
+  JEE Advanced 2026 · Polymers Quick Reference
+</div>
+
+</body>
+  </html>
