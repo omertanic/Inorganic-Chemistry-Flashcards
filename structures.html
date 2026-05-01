@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W9831WCRSP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-W9831WCRSP');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Structure Reference · JEE Advanced Inorganic</title>
+<link rel="stylesheet" href="style.css">
+<style>
+/* ── Page layout ── */
+body { padding: 1rem 1rem 4rem; max-width: 860px; margin: 0 auto; }
+
+.page-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4px;
+}
+h1 { font-size: 18px; font-weight: 600; color: var(--text); text-align: center; }
+.subtitle { font-size: 12px; color: var(--text-2,#5A5A63); text-align: center; margin-bottom: 1.25rem; }
+
+/* ── Section headers ── */
+.section-title {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-3,#9A9AA6);
+  margin: 2rem 0 0.75rem;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--surface-border, #E4E3DC);
+}
+
+/* ── Grid of cards ── */
+.struct-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+/* ── Individual structure card ── */
+.struct-card {
+  background: var(--surface, #fff);
+  border: 1px solid var(--surface-border, #E4E3DC);
+  border-radius: 16px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+.struct-card:hover {
+  border-color: var(--accent-dim, #C7D2FE);
+  box-shadow: 0 4px 20px rgba(79,70,229,0.09);
+}
+
+.struct-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text, #17171A);
+  text-align: center;
+  letter-spacing: -0.01em;
+}
+.struct-iupac {
+  font-size: 10px;
+  color: var(--text-3, #9A9AA6);
+  text-align: center;
+  margin-top: -4px;
+}
+
+/* ── SVG container ── */
+.struct-card svg {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+}
+
+/* ── JEE tag strip ── */
+.jee-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  justify-content: center;
+  margin-top: 2px;
+}
+.jtag {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 99px;
+  background: var(--accent-light, #EEF2FF);
+  color: var(--accent, #4F46E5);
+}
+.jtag.warn { background: #FEF3C7; color: #92400E; }
+.jtag.green { background: #DCFCE7; color: #14532D; }
+.jtag.red { background: #FEE2E2; color: #7F1D1D; }
+body.dark .jtag { background: #1E1B4B; color: #A5B4FC; }
+body.dark .jtag.warn { background: #451A03; color: #FCD34D; }
+body.dark .jtag.green { background: #052E16; color: #4ADE80; }
+body.dark .jtag.red { background: #450A0A; color: #FCA5A5; }
+
+/* ── Fact note ── */
+.struct-note {
+  font-size: 10.5px;
+  color: var(--text-2, #5A5A63);
+  text-align: center;
+  line-height: 1.5;
+  background: var(--surface-2, #F2F1ED);
+  border-radius: 8px;
+  padding: 6px 8px;
+  width: 100%;
+}
+body.dark .struct-note { background: var(--surface-2, #22222A); }
+
+/* ── SVG atom + bond colors ── */
+:root {
+  --atom-P: #7C3AED;
+  --atom-S: #B45309;
+  --atom-N: #1D4ED8;
+  --atom-Cl: #065F46;
+  --atom-Xe: #6D28D9;
+  --atom-O: #DC2626;
+  --atom-H: #374151;
+  --bond: #6B7280;
+  --dbond: #3730A3;
+  --text-on-atom: #ffffff;
+}
+body.dark {
+  --atom-P: #A78BFA;
+  --atom-S: #FCD34D;
+  --atom-N: #93C5FD;
+  --atom-Cl: #6EE7B7;
+  --atom-Xe: #C4B5FD;
+  --atom-O: #FCA5A5;
+  --atom-H: #D1D5DB;
+  --bond: #9CA3AF;
+  --dbond: #818CF8;
+}
+
+/* ── Full-width wide cards (for complex molecules) ── */
+.struct-card.wide {
+  grid-column: span 2;
+}
+@media (max-width: 500px) {
+  .struct-card.wide { grid-column: span 1; }
+}
+
+/* ── Legend box ── */
+.legend {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  background: var(--surface, #fff);
+  border: 1px solid var(--surface-border, #E4E3DC);
+  border-radius: 12px;
+  padding: 10px 14px;
+  margin-bottom: 1rem;
+  font-size: 11px;
+  color: var(--text-2, #5A5A63);
+  align-items: center;
+}
+.legend-item { display: flex; align-items: center; gap: 5px; }
+.leg-dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
+.leg-line { width: 20px; height: 3px; border-radius: 2px; }
+.leg-dline { width: 20px; height: 0; border-top: 3px solid var(--dbond); border-bottom: 1.5px solid var(--dbond); margin: 2px 0; }
+
+/* ── Geometry badge ── */
+.geom-badge {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--text-3, #9A9AA6);
+  letter-spacing: 0.04em;
+}
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <a href="index.html" class="back-link">← All chapters</a>
+  <h1>Structure Reference</h1>
+  <button class="dark-toggle" onclick="toggleDark()" id="dark-btn">🌙</button>
+</div>
+<p class="subtitle">Drawn structures of key inorganic compounds — JEE Advanced 2026</p>
+
+<!-- Legend -->
+<div class="legend">
+  <strong style="font-size:11px;color:var(--text)">Key:</strong>
+  <div class="legend-item"><div class="leg-line" style="background:var(--bond)"></div> Single bond</div>
+  <div class="legend-item"><div class="leg-dline"></div> Double bond (= O)</div>
+  <div class="legend-item"><div class="leg-dot" style="background:var(--atom-P)"></div> P</div>
+  <div class="legend-item"><div class="leg-dot" style="background:var(--atom-S)"></div> S</div>
+  <div class="legend-item"><div class="leg-dot" style="background:var(--atom-N)"></div> N</div>
+  <div class="legend-item"><div class="leg-dot" style="background:var(--atom-O)"></div> O</div>
+  <div class="legend-item"><div class="leg-dot" style="background:var(--atom-Cl)"></div> Cl/Xe</div>
+</div>
+
+<!-- ════════════════════════════════════
+     OXYACIDS OF PHOSPHORUS
+════════════════════════════════════ -->
+<div class="section-title">Oxyacids of Phosphorus</div>
+<div class="struct-grid">
+
+  <!-- H3PO2 -->
+  <div class="struct-card">
+    <div class="struct-name">H₃PO₂</div>
+    <div class="struct-iupac">Hypophosphorous acid</div>
+    <svg viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+      <!-- P=O double bond (top) — two parallel lines -->
+      <line x1="80" y1="76" x2="80" y2="44" stroke="var(--dbond)" stroke-width="2.5"/>
+      <line x1="85" y1="76" x2="85" y2="44" stroke="var(--dbond)" stroke-width="1.5" opacity="0.7"/>
+      <!-- P–H bonds (left and bottom) -->
+      <line x1="68" y1="88" x2="36" y2="88" stroke="var(--bond)" stroke-width="2"/>
+      <line x1="80" y1="100" x2="80" y2="132" stroke="var(--bond)" stroke-width="2"/>
+      <!-- P–OH bond (right) -->
+      <line x1="92" y1="88" x2="118" y2="88" stroke="var(--bond)" stroke-width="2"/>
+      <!-- P atom -->
+      <circle cx="80" cy="88" r="14" fill="var(--atom-P)"/>
+      <text x="80" y="88" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:12px;font-weight:700;font-family:sans-serif">P</text>
+      <!-- =O atom (top) -->
+      <circle cx="80" cy="34" r="12" fill="var(--atom-O)"/>
+      <text x="80" y="34" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:10px;font-weight:600;font-family:sans-serif">O</text>
+      <!-- H atom (left) -->
+      <circle cx="26" cy="88" r="11" fill="var(--atom-H)"/>
+      <text x="26" y="88" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:10px;font-weight:600;font-family:sans-serif">H</text>
+      <!-- H atom (bottom) -->
+      <circle cx="80" cy="142" r="11" fill="var(--atom-H)"/>
+      <text x="80" y="142" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:10px;font-weight:600;font-family:sans-serif">H</text>
+      <!-- OH (right) — O then H -->
+      <circle cx="128" cy="88" r="12" fill="var(--atom-O)"/>
+      <text x="128" y="88" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:9px;font-weight:600;font-family:sans-serif">OH</text>
+      <!-- Labels -->
+      <text x="88" y="18" text-anchor="middle" style="font-size:9px;fill:var(--dbond);font-family:sans-serif">= O</text>
+    </svg>
+    <div class="geom-badge">Tetrahedral P · sp³</div>
+    <div class="jee-tags">
+      <span class="jtag warn">Basicity = 1</span>
+      <span class="jtag red">Strong reducer</span>
+    </div>
+    <div class="struct-note">2 direct P–H bonds (non-acidic). Only 1 P–OH → monobasic. Reduces Cu²⁺, Ag⁺.</div>
+  </div>
+
+  <!-- H3PO3 -->
+  <div class="struct-card">
+    <div class="struct-name">H₃PO₃</div>
+    <div class="struct-iupac">Phosphorous acid</div>
+    <svg viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+      <!-- P=O double bond (top) -->
+      <line x1="80" y1="76" x2="80" y2="44" stroke="var(--dbond)" stroke-width="2.5"/>
+      <line x1="85" y1="76" x2="85" y2="44" stroke="var(--dbond)" stroke-width="1.5" opacity="0.7"/>
+      <!-- P–OH (left) -->
+      <line x1="68" y1="88" x2="36" y2="88" stroke="var(--bond)" stroke-width="2"/>
+      <!-- P–OH (right) -->
+      <line x1="92" y1="88" x2="124" y2="88" stroke="var(--bond)" stroke-width="2"/>
+      <!-- P–H (bottom) -->
+      <line x1="80" y1="100" x2="80" y2="132" stroke="var(--bond)" stroke-width="2"/>
+      <!-- P atom -->
+      <circle cx="80" cy="88" r="14" fill="var(--atom-P)"/>
+      <text x="80" y="88" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:12px;font-weight:700;font-family:sans-serif">P</text>
+      <!-- =O (top) -->
+      <circle cx="80" cy="34" r="12" fill="var(--atom-O)"/>
+      <text x="80" y="34" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:10px;font-weight:600;font-family:sans-serif">O</text>
+      <!-- OH left -->
+      <circle cx="26" cy="88" r="12" fill="var(--atom-O)"/>
+      <text x="26" y="88" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:9px;font-weight:600;font-family:sans-serif">OH</text>
+      <!-- OH right -->
+      <circle cx="134" cy="88" r="12" fill="var(--atom-O)"/>
+      <text x="134" y="88" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:9px;font-weight:600;font-family:sans-serif">OH</text>
+      <!-- H bottom -->
+      <circle cx="80" cy="142" r="11" fill="var(--atom-H)"/>
+      <text x="80" y="142" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:10px;font-weight:600;font-family:sans-serif">H</text>
+      <text x="88" y="18" text-anchor="middle" style="font-size:9px;fill:var(--dbond);font-family:sans-serif">= O</text>
+    </svg>
+    <div class="geom-badge">Tetrahedral P · sp³</div>
+    <div class="jee-tags">
+      <span class="jtag warn">Basicity = 2</span>
+      <span class="jtag red">Reducer</span>
+    </div>
+    <div class="struct-note">1 direct P–H (non-acidic), 2 P–OH → dibasic. Reducing but weaker than H₃PO₂.</div>
+  </div>
+
+  <!-- H3PO4 -->
+  <div class="struct-card">
+    <div class="struct-name">H₃PO₄</div>
+    <div class="struct-iupac">Orthophosphoric acid</div>
+    <svg viewBox="0 0 160 170" xmlns="http://www.w3.org/2000/svg">
+      <!-- P=O (top) double bond -->
+      <line x1="80" y1="76" x2="80" y2="44" stroke="var(--dbond)" stroke-width="2.5"/>
+      <line x1="85" y1="76" x2="85" y2="44" stroke="var(--dbond)" stroke-width="1.5" opacity="0.7"/>
+      <!-- P–OH (left) -->
+      <line x1="68" y1="88" x2="36" y2="88" stroke="var(--bond)" stroke-width="2"/>
+      <!-- P–OH (right) -->
+      <line x1="92" y1="88" x2="124" y2="88" stroke="var(--bond)" stroke-width="2"/>
+      <!-- P–OH (bottom) -->
+      <line x1="80" y1="100" x2="80" y2="132" stroke="var(--bond)" stroke-width="2"/>
+      <!-- P atom -->
+      <circle cx="80" cy="88" r="14" fill="var(--atom-P)"/>
+      <text x="80" y="88" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:12px;font-weight:700;font-family:sans-serif">P</text>
+      <!-- =O top -->
+      <circle cx="80" cy="34" r="12" fill="var(--atom-O)"/>
+      <text x="80" y="34" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:10px;font-weight:600;font-family:sans-serif">O</text>
+      <!-- OH left -->
+      <circle cx="26" cy="88" r="12" fill="var(--atom-O)"/>
+      <text x="26" y="88" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:9px;font-weight:600;font-family:sans-serif">OH</text>
+      <!-- OH right -->
+      <circle cx="134" cy="88" r="12" fill="var(--atom-O)"/>
+      <text x="134" y="88" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:9px;font-weight:600;font-family:sans-serif">OH</text>
+      <!-- OH bottom -->
+      <circle cx="80" cy="142" r="12" fill="var(--atom-O)"/>
+      <text x="80" y="142" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:9px;font-weight:600;font-family:sans-serif">OH</text>
+      <text x="88" y="18" text-anchor="middle" style="font-size:9px;fill:var(--dbond);font-family:sans-serif">= O</text>
+    </svg>
+    <div class="geom-badge">Tetrahedral P · sp³</div>
+    <div class="jee-tags">
+      <span class="jtag warn">Basicity = 3</span>
+      <span class="jtag green">Non-reducing</span>
+    </div>
+    <div class="struct-note">No P–H bonds → non-reducing. 3 P–OH → tribasic/triprotic.</div>
+  </div>
+
+  <!-- H4P2O7 -->
+  <div class="struct-card wide">
+    <div class="struct-name">H₄P₂O₇</div>
+    <div class="struct-iupac">Pyrophosphoric acid (formed by condensation of 2 H₃PO₄)</div>
+    <svg viewBox="0 0 320 160" xmlns="http://www.w3.org/2000/svg">
+      <!-- LEFT P=O double bond -->
+      <line x1="80" y1="74" x2="80" y2="42" stroke="var(--dbond)" stroke-width="2.5"/>
+      <line x1="85" y1="74" x2="85" y2="42" stroke="var(--dbond)" stroke-width="1.5" opacity="0.7"/>
+      <!-- LEFT P–OH (left) -->
+      <line x1="66" y1="86" x2="34" y2="86" stroke="var(--bond)" stroke-width="2"/>
+      <!-- LEFT P–OH (bottom) -->
+      <line x1="80" y1="100" x2="80" y2="130" stroke="var(--bond)" stroke-width="2"/>
+      <!-- P–O–P bridge -->
+      <line x1="94" y1="86" x2="136" y2="86" stroke="var(--bond)" stroke-width="2"/>
+      <!-- bridge O -->
+      <circle cx="148" cy="86" r="12" fill="var(--atom-O)"/>
+      <text x="148" y="86" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:10px;font-weight:600;font-family:sans-serif">O</text>
+      <!-- O to right P -->
+      <line x1="160" y1="86" x2="202" y2="86" stroke="var(--bond)" stroke-width="2"/>
+
+      <!-- RIGHT P=O double bond -->
+      <line x1="216" y1="74" x2="216" y2="42" stroke="var(--dbond)" stroke-width="2.5"/>
+      <line x1="221" y1="74" x2="221" y2="42" stroke="var(--dbond)" stroke-width="1.5" opacity="0.7"/>
+      <!-- RIGHT P–OH (right) -->
+      <line x1="230" y1="86" x2="262" y2="86" stroke="var(--bond)" stroke-width="2"/>
+      <!-- RIGHT P–OH (bottom) -->
+      <line x1="216" y1="100" x2="216" y2="130" stroke="var(--bond)" stroke-width="2"/>
+
+      <!-- LEFT P atom -->
+      <circle cx="80" cy="86" r="14" fill="var(--atom-P)"/>
+      <text x="80" y="86" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:12px;font-weight:700;font-family:sans-serif">P</text>
+      <!-- RIGHT P atom -->
+      <circle cx="216" cy="86" r="14" fill="var(--atom-P)"/>
+      <text x="216" y="86" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:12px;font-weight:700;font-family:sans-serif">P</text>
+
+      <!-- =O top-left -->
+      <circle cx="80" cy="32" r="12" fill="var(--atom-O)"/>
+      <text x="80" y="32" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:10px;font-weight:600;font-family:sans-serif">O</text>
+      <!-- =O top-right -->
+      <circle cx="216" cy="32" r="12" fill="var(--atom-O)"/>
+      <text x="216" y="32" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:10px;font-weight:600;font-family:sans-serif">O</text>
+
+      <!-- OH left-left -->
+      <circle cx="24" cy="86" r="12" fill="var(--atom-O)"/>
+      <text x="24" y="86" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:9px;font-weight:600;font-family:sans-serif">OH</text>
+      <!-- OH left-bottom -->
+      <circle cx="80" cy="140" r="12" fill="var(--atom-O)"/>
+      <text x="80" y="140" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:9px;font-weight:600;font-family:sans-serif">OH</text>
+      <!-- OH right-right -->
+      <circle cx="272" cy="86" r="12" fill="var(--atom-O)"/>
+      <text x="272" y="86" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:9px;font-weight:600;font-family:sans-serif">OH</text>
+      <!-- OH right-bottom -->
+      <circle cx="216" cy="140" r="12" fill="var(--atom-O)"/>
+      <text x="216" y="140" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:9px;font-weight:600;font-family:sans-serif">OH</text>
+
+      <!-- double bond labels -->
+      <text x="90" y="16" text-anchor="middle" style="font-size:9px;fill:var(--dbond);font-family:sans-serif">= O</text>
+      <text x="226" y="16" text-anchor="middle" style="font-size:9px;fill:var(--dbond);font-family:sans-serif">= O</text>
+      <!-- bridge label -->
+      <text x="148" y="108" text-anchor="middle" style="font-size:9px;fill:var(--text-2,#5A5A63);font-family:sans-serif">bridge</text>
+    </svg>
+    <div class="geom-badge">2 tetrahedral P · P–O–P bridge · sp³</div>
+    <div class="jee-tags">
+      <span class="jtag warn">Basicity = 4</span>
+      <span class="jtag green">Non-reducing</span>
+    </div>
+    <div class="struct-note">Two H₃PO₄ joined by –O– bridge losing H₂O. No P–H → non-reducing. 4 P–OH groups → tetrabasic.</div>
+  </div>
+
+</div><!-- end struct-grid -->
+
+<!-- ════════════════════════════════════
+     OXYACIDS OF SULPHUR
+════════════════════════════════════ -->
+<div class="section-title">Oxyacids of Sulphur</div>
+<div class="struct-grid">
+
+  <!-- H2SO3 -->
+  <div class="struct-card">
+    <div class="struct-name">H₂SO₃</div>
+    <div class="struct-iupac">Sulphurous acid</div>
+    <svg viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+      <!-- S=O (top-left diagonal) double bond -->
+      <line x1="72" y1="76" x2="46" y2="50" stroke="var(--dbond)" stroke-width="2.5"/>
+      <line x1="77" y1="73" x2="51" y2="47" stroke="var(--dbond)" stroke-width="1.5" opacity="0.7"/>
+      <!-- S–OH left -->
+      <line x1="68" y1="90" x2="36" y2="104" stroke="var(--bond)" stroke-width="2"/>
+      <!-- S–OH right -->
+      <line x1="92" y1="90" x2="124" y2="104" stroke="var(--bond)" stroke-width="2"/>
+      <!-- lone pair indicator (dashed arc, top) -->
+      <path d="M78 72 Q90 58 96 72" fill="none" stroke="var(--text-3,#9A9AA6)" stroke-width="1.2" stroke-dasharray="3 2"/>
+
+      <!-- S atom -->
+      <circle cx="80" cy="86" r="14" fill="var(--atom-S)"/>
+      <text x="80" y="86" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:12px;font-weight:700;font-family:sans-serif">S</text>
+      <!-- =O top-left -->
+      <circle cx="38" cy="42" r="12" fill="var(--atom-O)"/>
+      <text x="38" y="42" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:10px;font-weight:600;font-family:sans-serif">O</text>
+      <!-- OH left -->
+      <circle cx="26" cy="112" r="12" fill="var(--atom-O)"/>
+      <text x="26" y="112" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:9px;font-weight:600;font-family:sans-serif">OH</text>
+      <!-- OH right -->
+      <circle cx="134" cy="112" r="12" fill="var(--atom-O)"/>
+      <text x="134" y="112" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:9px;font-weight:600;font-family:sans-serif">OH</text>
+      <!-- label -->
+      <text x="22" y="28" text-anchor="middle" style="font-size:9px;fill:var(--dbond);font-family:sans-serif">= O</text>
+      <text x="90" y="66" style="font-size:8px;fill:var(--text-3,#9A9AA6);font-family:sans-serif">LP</text>
+    </svg>
+    <div class="geom-badge">Pyramidal S · sp³ · 1 lone pair</div>
+    <div class="jee-tags">
+      <span class="jtag warn">Basicity = 2</span>
+      <span class="jtag red">Reducer</span>
+    </div>
+    <div class="struct-note">S has 1 lone pair. Pyramidal shape. Reducing agent — S goes from +4 to +6.</div>
+  </div>
+
+  <!-- H2SO4 -->
+  <div class="struct-card">
+    <div class="struct-name">H₂SO₄</div>
+    <div class="struct-iupac">Sulphuric acid</div>
+    <svg viewBox="0 0 160 165" xmlns="http://www.w3.org/2000/svg">
+      <!-- S=O top-left double bond -->
+      <line x1="72" y1="74" x2="46" y2="48" stroke="var(--dbond)" stroke-width="2.5"/>
+      <line x1="77" y1="70" x2="51" y2="44" stroke="var(--dbond)" stroke-width="1.5" opacity="0.7"/>
+      <!-- S=O top-right double bond -->
+      <line x1="88" y1="74" x2="114" y2="48" stroke="var(--dbond)" stroke-width="2.5"/>
+      <line x1="83" y1="70" x2="109" y2="44" stroke="var(--dbond)" stroke-width="1.5" opacity="0.7"/>
+      <!-- S–OH left -->
+      <line x1="68" y1="90" x2="36" y2="110" stroke="var(--bond)" stroke-width="2"/>
+      <!-- S–OH right -->
+      <line x1="92" y1="90" x2="124" y2="110" stroke="var(--bond)" stroke-width="2"/>
+
+      <!-- S atom -->
+      <circle cx="80" cy="84" r="14" fill="var(--atom-S)"/>
+      <text x="80" y="84" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:12px;font-weight:700;font-family:sans-serif">S</text>
+      <!-- =O top-left -->
+      <circle cx="38" cy="40" r="12" fill="var(--atom-O)"/>
+      <text x="38" y="40" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:10px;font-weight:600;font-family:sans-serif">O</text>
+      <!-- =O top-right -->
+      <circle cx="122" cy="40" r="12" fill="var(--atom-O)"/>
+      <text x="122" y="40" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:10px;font-weight:600;font-family:sans-serif">O</text>
+      <!-- OH left -->
+      <circle cx="26" cy="118" r="12" fill="var(--atom-O)"/>
+      <text x="26" y="118" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:9px;font-weight:600;font-family:sans-serif">OH</text>
+      <!-- OH right -->
+      <circle cx="134" cy="118" r="12" fill="var(--atom-O)"/>
+      <text x="134" y="118" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:9px;font-weight:600;font-family:sans-serif">OH</text>
+      <!-- labels -->
+      <text x="22" y="26" text-anchor="middle" style="font-size:9px;fill:var(--dbond);font-family:sans-serif">= O</text>
+      <text x="138" y="26" text-anchor="middle" style="font-size:9px;fill:var(--dbond);font-family:sans-serif">= O</text>
+    </svg>
+    <div class="geom-badge">Tetrahedral S · sp³ · S(+6)</div>
+    <div class="jee-tags">
+      <span class="jtag warn">Basicity = 2</span>
+      <span class="jtag green">Oxidiser (conc.)</span>
+    </div>
+    <div class="struct-note">2 S=O (non-acidic) + 2 S–OH (acidic). Strong diprotic acid. Conc. H₂SO₄ is strong oxidiser and dehydrating agent.</div>
+  </div>
+
+  <!-- H2S2O7 Oleum -->
+  <div class="struct-card wide">
+    <div class="struct-name">H₂S₂O₇</div>
+    <div class="struct-iupac">Pyrosulphuric acid (Oleum) — H₂SO₄ + SO₃</div>
+    <svg viewBox="0 0 320 155" xmlns="http://www.w3.org/2000/svg">
+      <!-- LEFT S=O x2 -->
+      <line x1="72" y1="73" x2="46" y2="47" stroke="var(--dbond)" stroke-width="2.5"/>
+      <line x1="77" y1="69" x2="51" y2="43" stroke="var(--dbond)" stroke-width="1.5" opacity="0.7"/>
+      <line x1="88" y1="73" x2="114" y2="47" stroke="var(--dbond)" stroke-width="2.5"/>
+      <line x1="83" y1="69" x2="109" y2="43" stroke="var(--dbond)" stroke-width="1.5" opacity="0.7"/>
+      <!-- LEFT S–OH (bottom) -->
+      <line x1="80" y1="98" x2="80" y2="128" stroke="var(--bond)" stroke-width="2"/>
+      <!-- S–O–S bridge -->
+      <line x1="94" y1="84" x2="136" y2="84" stroke="var(--bond)" stroke-width="2"/>
+      <circle cx="148" cy="84" r="12" fill="var(--atom-O)"/>
+      <text x="148" y="84" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:10px;font-weight:600;font-family:sans-serif">O</text>
+      <line x1="160" y1="84" x2="202" y2="84" stroke="var(--bond)" stroke-width="2"/>
+
+      <!-- RIGHT S=O x2 -->
+      <line x1="208" y1="73" x2="182" y2="47" stroke="var(--dbond)" stroke-width="2.5"/>
+      <line x1="213" y1="69" x2="187" y2="43" stroke="var(--dbond)" stroke-width="1.5" opacity="0.7"/>
+      <line x1="224" y1="73" x2="250" y2="47" stroke="var(--dbond)" stroke-width="2.5"/>
+      <line x1="219" y1="69" x2="245" y2="43" stroke="var(--dbond)" stroke-width="1.5" opacity="0.7"/>
+      <!-- RIGHT S–OH (bottom) -->
+      <line x1="216" y1="98" x2="216" y2="128" stroke="var(--bond)" stroke-width="2"/>
+
+      <!-- LEFT S atom -->
+      <circle cx="80" cy="84" r="14" fill="var(--atom-S)"/>
+      <text x="80" y="84" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:12px;font-weight:700;font-family:sans-serif">S</text>
+      <!-- RIGHT S atom -->
+      <circle cx="216" cy="84" r="14" fill="var(--atom-S)"/>
+      <text x="216" y="84" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:12px;font-weight:700;font-family:sans-serif">S</text>
+
+      <!-- =O atoms left -->
+      <circle cx="38" cy="38" r="11" fill="var(--atom-O)"/>
+      <text x="38" y="38" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:9px;font-weight:600;font-family:sans-serif">O</text>
+      <circle cx="122" cy="38" r="11" fill="var(--atom-O)"/>
+      <text x="122" y="38" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:9px;font-weight:600;font-family:sans-serif">O</text>
+      <!-- =O atoms right -->
+      <circle cx="174" cy="38" r="11" fill="var(--atom-O)"/>
+      <text x="174" y="38" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:9px;font-weight:600;font-family:sans-serif">O</text>
+      <circle cx="258" cy="38" r="11" fill="var(--atom-O)"/>
+      <text x="258" y="38" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:9px;font-weight:600;font-family:sans-serif">O</text>
+
+      <!-- OH left bottom -->
+      <circle cx="80" cy="138" r="12" fill="var(--atom-O)"/>
+      <text x="80" y="138" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:9px;font-weight:600;font-family:sans-serif">OH</text>
+      <!-- OH right bottom -->
+      <circle cx="216" cy="138" r="12" fill="var(--atom-O)"/>
+      <text x="216" y="138" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:9px;font-weight:600;font-family:sans-serif">OH</text>
+
+      <text x="148" y="104" text-anchor="middle" style="font-size:9px;fill:var(--text-2,#5A5A63);font-family:sans-serif">bridge</text>
+    </svg>
+    <div class="geom-badge">2 tetrahedral S · S–O–S bridge · both S(+6)</div>
+    <div class="jee-tags">
+      <span class="jtag warn">Basicity = 2</span>
+      <span class="jtag red">Fuming H₂SO₄</span>
+    </div>
+    <div class="struct-note">Formed when SO₃ dissolves in H₂SO₄. Each S has 2 S=O + 1 S–OH + 1 bridging S–O–S. Very strong oxidiser.</div>
+  </div>
+
+  <!-- H2S2O8 Persulphuric -->
+  <div class="struct-card wide">
+    <div class="struct-name">H₂S₂O₈</div>
+    <div class="struct-iupac">Peroxodisulphuric acid (Marshall's acid)</div>
+    <svg viewBox="0 0 340 155" xmlns="http://www.w3.org/2000/svg">
+      <!-- LEFT S=O x2 -->
+      <line x1="80" y1="72" x2="54" y2="46" stroke="var(--dbond)" stroke-width="2.5"/>
+      <line x1="85" y1="68" x2="59" y2="42" stroke="var(--dbond)" stroke-width="1.5" opacity="0.7"/>
+      <line x1="96" y1="72" x2="122" y2="46" stroke="var(--dbond)" stroke-width="2.5"/>
+      <line x1="91" y1="68" x2="117" y2="42" stroke="var(--dbond)" stroke-width="1.5" opacity="0.7"/>
+      <!-- LEFT S–OH -->
+      <line x1="80" y1="98" x2="80" y2="128" stroke="var(--bond)" stroke-width="2"/>
+      <!-- S–O–O–S peroxy bridge -->
+      <line x1="102" y1="84" x2="138" y2="84" stroke="var(--bond)" stroke-width="2"/>
+      <circle cx="150" cy="84" r="11" fill="var(--atom-O)" opacity="0.9"/>
+      <text x="150" y="84" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:9px;font-weight:600;font-family:sans-serif">O</text>
+      <line x1="161" y1="84" x2="175" y2="84" stroke="var(--bond)" stroke-width="2"/>
+      <circle cx="187" cy="84" r="11" fill="var(--atom-O)" opacity="0.9"/>
+      <text x="187" y="84" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:9px;font-weight:600;font-family:sans-serif">O</text>
+      <line x1="198" y1="84" x2="234" y2="84" stroke="var(--bond)" stroke-width="2"/>
+
+      <!-- RIGHT S=O x2 -->
+      <line x1="240" y1="72" x2="214" y2="46" stroke="var(--dbond)" stroke-width="2.5"/>
+      <line x1="245" y1="68" x2="219" y2="42" stroke="var(--dbond)" stroke-width="1.5" opacity="0.7"/>
+      <line x1="256" y1="72" x2="282" y2="46" stroke="var(--dbond)" stroke-width="2.5"/>
+      <line x1="251" y1="68" x2="277" y2="42" stroke="var(--dbond)" stroke-width="1.5" opacity="0.7"/>
+      <!-- RIGHT S–OH -->
+      <line x1="248" y1="98" x2="248" y2="128" stroke="var(--bond)" stroke-width="2"/>
+
+      <!-- S atoms -->
+      <circle cx="88" cy="84" r="14" fill="var(--atom-S)"/>
+      <text x="88" y="84" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:12px;font-weight:700;font-family:sans-serif">S</text>
+      <circle cx="248" cy="84" r="14" fill="var(--atom-S)"/>
+      <text x="248" y="84" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:12px;font-weight:700;font-family:sans-serif">S</text>
+
+      <!-- =O atoms -->
+      <circle cx="46" cy="38" r="11" fill="var(--atom-O)"/>
+      <text x="46" y="38" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:9px;font-weight:600;font-family:sans-serif">O</text>
+      <circle cx="130" cy="38" r="11" fill="var(--atom-O)"/>
+      <text x="130" y="38" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:9px;font-weight:600;font-family:sans-serif">O</text>
+      <circle cx="206" cy="38" r="11" fill="var(--atom-O)"/>
+      <text x="206" y="38" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:9px;font-weight:600;font-family:sans-serif">O</text>
+      <circle cx="290" cy="38" r="11" fill="var(--atom-O)"/>
+      <text x="290" y="38" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:9px;font-weight:600;font-family:sans-serif">O</text>
+
+      <!-- OH atoms -->
+      <circle cx="80" cy="138" r="12" fill="var(--atom-O)"/>
+      <text x="80" y="138" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:9px;font-weight:600;font-family:sans-serif">OH</text>
+      <circle cx="248" cy="138" r="12" fill="var(--atom-O)"/>
+      <text x="248" y="138" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:9px;font-weight:600;font-family:sans-serif">OH</text>
+
+      <!-- peroxy label -->
+      <text x="168" y="104" text-anchor="middle" style="font-size:9px;fill:var(--atom-O);font-family:sans-serif;font-weight:600">–O–O–</text>
+    </svg>
+    <div class="geom-badge">–O–O– peroxy bridge · S(+6) · both sp³</div>
+    <div class="jee-tags">
+      <span class="jtag warn">Basicity = 2</span>
+      <span class="jtag red">Contains O–O</span>
+      <span class="jtag green">Strong oxidiser</span>
+    </div>
+    <div class="struct-note">Has O–O peroxide linkage (like H₂O₂). This is what makes it a strong oxidiser. S is +6 in both halves.</div>
+  </div>
+
+</div>
+
+<!-- ════════════════════════════════════
+     OXYACIDS OF CHLORINE
+════════════════════════════════════ -->
+<div class="section-title">Oxyacids of Chlorine (HClO → HClO₄)</div>
+<div class="struct-grid">
+
+  <!-- HClO -->
+  <div class="struct-card">
+    <div class="struct-name">HClO</div>
+    <div class="struct-iupac">Hypochlorous acid</div>
+    <svg viewBox="0 0 160 120" xmlns="http://www.w3.org/2000/svg">
+      <line x1="54" y1="60" x2="86" y2="60" stroke="var(--bond)" stroke-width="2"/>
+      <line x1="100" y1="60" x2="132" y2="60" stroke="var(--bond)" stroke-width="2"/>
+      <circle cx="44" cy="60" r="12" fill="var(--atom-H)"/>
+      <text x="44" y="60" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:10px;font-weight:600;font-family:sans-serif">H</text>
+      <circle cx="68" cy="60" r="16" fill="var(--atom-O)"/>
+      <text x="68" y="60" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:11px;font-weight:700;font-family:sans-serif">O</text>
+      <circle cx="116" cy="60" r="16" fill="var(--atom-Cl)"/>
+      <text x="116" y="60" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:10px;font-weight:700;font-family:sans-serif">Cl</text>
+      <!-- lone pairs on Cl -->
+      <text x="116" y="30" text-anchor="middle" style="font-size:8px;fill:var(--atom-Cl);font-family:sans-serif">: :</text>
+    </svg>
+    <div class="geom-badge">Cl(+1) · no Cl=O</div>
+    <div class="jee-tags">
+      <span class="jtag warn">0 Cl=O bonds</span>
+      <span class="jtag">Weakest acid</span>
+    </div>
+    <div class="struct-note">No Cl=O. Cl has 3 lone pairs. Weakest of the 4 chlorine oxyacids. Cl oxidation state: +1.</div>
+  </div>
+
+  <!-- HClO2 -->
+  <div class="struct-card">
+    <div class="struct-name">HClO₂</div>
+    <div class="struct-iupac">Chlorous acid</div>
+    <svg viewBox="0 0 160 150" xmlns="http://www.w3.org/2000/svg">
+      <!-- Cl=O double bond (top) -->
+      <line x1="90" y1="74" x2="90" y2="44" stroke="var(--dbond)" stroke-width="2.5"/>
+      <line x1="95" y1="74" x2="95" y2="44" stroke="var(--dbond)" stroke-width="1.5" opacity="0.7"/>
+      <!-- Cl–OH -->
+      <line x1="74" y1="88" x2="44" y2="108" stroke="var(--bond)" stroke-width="2"/>
+      <!-- lone pair dashes (top right) -->
+      <text x="104" y="70" style="font-size:8px;fill:var(--atom-Cl);font-family:sans-serif">: :</text>
+
+      <circle cx="90" cy="88" r="16" fill="var(--atom-Cl)"/>
+      <text x="90" y="88" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:10px;font-weight:700;font-family:sans-serif">Cl</text>
+      <circle cx="90" cy="34" r="12" fill="var(--atom-O)"/>
+      <text x="90" y="34" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:10px;font-weight:600;font-family:sans-serif">O</text>
+      <circle cx="34" cy="116" r="12" fill="var(--atom-O)"/>
+      <text x="34" y="116" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:9px;font-weight:600;font-family:sans-serif">OH</text>
+      <text x="98" y="18" text-anchor="middle" style="font-size:9px;fill:var(--dbond);font-family:sans-serif">= O</text>
+    </svg>
+    <div class="geom-badge">Cl(+3) · 1 Cl=O · bent</div>
+    <div class="jee-tags">
+      <span class="jtag warn">1 Cl=O bond</span>
+      <span class="jtag">2 lone pairs on Cl</span>
+    </div>
+    <div class="struct-note">Cl(+3). 1 Cl=O + 1 Cl–OH. Cl has 2 lone pairs. Bent geometry. JEE 2015 asked: Cl=O bonds in HClO₂ + HClO₃ = 2 ✓</div>
+  </div>
+
+  <!-- HClO3 -->
+  <div class="struct-card">
+    <div class="struct-name">HClO₃</div>
+    <div class="struct-iupac">Chloric acid</div>
+    <svg viewBox="0 0 160 155" xmlns="http://www.w3.org/2000/svg">
+      <!-- Cl=O left double bond -->
+      <line x1="72" y1="74" x2="46" y2="48" stroke="var(--dbond)" stroke-width="2.5"/>
+      <line x1="77" y1="70" x2="51" y2="44" stroke="var(--dbond)" stroke-width="1.5" opacity="0.7"/>
+      <!-- Cl=O right double bond -->
+      <line x1="108" y1="74" x2="134" y2="48" stroke="var(--dbond)" stroke-width="2.5"/>
+      <line x1="103" y1="70" x2="129" y2="44" stroke="var(--dbond)" stroke-width="1.5" opacity="0.7"/>
+      <!-- Cl–OH bottom -->
+      <line x1="90" y1="104" x2="90" y2="132" stroke="var(--bond)" stroke-width="2"/>
+      <!-- 1 lone pair on Cl (top) -->
+      <text x="90" y="65" text-anchor="middle" style="font-size:8px;fill:var(--atom-Cl);font-family:sans-serif">:</text>
+
+      <circle cx="90" cy="88" r="16" fill="var(--atom-Cl)"/>
+      <text x="90" y="88" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:10px;font-weight:700;font-family:sans-serif">Cl</text>
+      <circle cx="38" cy="40" r="12" fill="var(--atom-O)"/>
+      <text x="38" y="40" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:10px;font-weight:600;font-family:sans-serif">O</text>
+      <circle cx="142" cy="40" r="12" fill="var(--atom-O)"/>
+      <text x="142" y="40" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:10px;font-weight:600;font-family:sans-serif">O</text>
+      <circle cx="90" cy="142" r="12" fill="var(--atom-O)"/>
+      <text x="90" y="142" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:9px;font-weight:600;font-family:sans-serif">OH</text>
+    </svg>
+    <div class="geom-badge">Cl(+5) · 2 Cl=O · pyramidal</div>
+    <div class="jee-tags">
+      <span class="jtag warn">2 Cl=O bonds</span>
+      <span class="jtag">1 lone pair on Cl</span>
+    </div>
+    <div class="struct-note">Cl(+5). 2 Cl=O + 1 Cl–OH. Pyramidal (1 lone pair). JEE 2015: lone pairs on HClO₂+HClO₃ = 2+1 = 3 ✓</div>
+  </div>
+
+  <!-- HClO4 -->
+  <div class="struct-card">
+    <div class="struct-name">HClO₄</div>
+    <div class="struct-iupac">Perchloric acid</div>
+    <svg viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+      <!-- Cl=O top double bond -->
+      <line x1="90" y1="72" x2="90" y2="42" stroke="var(--dbond)" stroke-width="2.5"/>
+      <line x1="95" y1="72" x2="95" y2="42" stroke="var(--dbond)" stroke-width="1.5" opacity="0.7"/>
+      <!-- Cl=O left double bond -->
+      <line x1="74" y1="84" x2="44" y2="84" stroke="var(--dbond)" stroke-width="2.5"/>
+      <line x1="74" y1="79" x2="44" y2="79" stroke="var(--dbond)" stroke-width="1.5" opacity="0.7"/>
+      <!-- Cl=O right double bond -->
+      <line x1="106" y1="84" x2="136" y2="84" stroke="var(--dbond)" stroke-width="2.5"/>
+      <line x1="106" y1="89" x2="136" y2="89" stroke="var(--dbond)" stroke-width="1.5" opacity="0.7"/>
+      <!-- Cl–OH bottom -->
+      <line x1="90" y1="100" x2="90" y2="130" stroke="var(--bond)" stroke-width="2"/>
+
+      <circle cx="90" cy="86" r="16" fill="var(--atom-Cl)"/>
+      <text x="90" y="86" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:10px;font-weight:700;font-family:sans-serif">Cl</text>
+      <circle cx="90" cy="32" r="12" fill="var(--atom-O)"/>
+      <text x="90" y="32" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:10px;font-weight:600;font-family:sans-serif">O</text>
+      <circle cx="34" cy="84" r="12" fill="var(--atom-O)"/>
+      <text x="34" y="84" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:10px;font-weight:600;font-family:sans-serif">O</text>
+      <circle cx="146" cy="84" r="12" fill="var(--atom-O)"/>
+      <text x="146" y="84" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:10px;font-weight:600;font-family:sans-serif">O</text>
+      <circle cx="90" cy="140" r="12" fill="var(--atom-O)"/>
+      <text x="90" y="140" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:9px;font-weight:600;font-family:sans-serif">OH</text>
+      <text x="98" y="16" text-anchor="middle" style="font-size:9px;fill:var(--dbond);font-family:sans-serif">= O</text>
+    </svg>
+    <div class="geom-badge">Cl(+7) · 3 Cl=O · tetrahedral · sp³</div>
+    <div class="jee-tags">
+      <span class="jtag warn">3 Cl=O bonds</span>
+      <span class="jtag green">0 lone pairs on Cl</span>
+      <span class="jtag red">Strongest acid</span>
+    </div>
+    <div class="struct-note">Cl(+7). sp³ hybridised (JEE 2015 ✓). 3 Cl=O + 1 Cl–OH. Strongest oxyacid — no lone pairs on Cl, perfect tetrahedral.</div>
+  </div>
+
+</div>
+
+<!-- ════════════════════════════════════
+     KEY SHAPES — VSEPR QUICK REF
+════════════════════════════════════ -->
+<div class="section-title">Key Molecular Shapes (VSEPR) — Frequently Asked</div>
+<div class="struct-grid">
+
+  <!-- XeF4 -->
+  <div class="struct-card">
+    <div class="struct-name">XeF₄</div>
+    <div class="struct-iupac">Xenon tetrafluoride</div>
+    <svg viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+      <!-- 4 Xe–F bonds (square planar) -->
+      <line x1="80" y1="64" x2="80" y2="34" stroke="var(--bond)" stroke-width="2"/>
+      <line x1="80" y1="96" x2="80" y2="126" stroke="var(--bond)" stroke-width="2"/>
+      <line x1="64" y1="80" x2="34" y2="80" stroke="var(--bond)" stroke-width="2"/>
+      <line x1="96" y1="80" x2="126" y2="80" stroke="var(--bond)" stroke-width="2"/>
+      <!-- lone pair arcs (above and below Xe, shown as dashed) -->
+      <path d="M68 72 Q54 58 68 54" fill="none" stroke="var(--text-3,#9A9AA6)" stroke-width="1.2" stroke-dasharray="3 2"/>
+      <path d="M68 88 Q54 102 68 106" fill="none" stroke="var(--text-3,#9A9AA6)" stroke-width="1.2" stroke-dasharray="3 2"/>
+      <!-- Xe -->
+      <circle cx="80" cy="80" r="16" fill="var(--atom-Xe)"/>
+      <text x="80" y="80" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:11px;font-weight:700;font-family:sans-serif">Xe</text>
+      <!-- F atoms -->
+      <circle cx="80" cy="24" r="11" fill="var(--atom-Cl)"/>
+      <text x="80" y="24" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:9px;font-weight:600;font-family:sans-serif">F</text>
+      <circle cx="80" cy="136" r="11" fill="var(--atom-Cl)"/>
+      <text x="80" y="136" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:9px;font-weight:600;font-family:sans-serif">F</text>
+      <circle cx="24" cy="80" r="11" fill="var(--atom-Cl)"/>
+      <text x="24" y="80" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:9px;font-weight:600;font-family:sans-serif">F</text>
+      <circle cx="136" cy="80" r="11" fill="var(--atom-Cl)"/>
+      <text x="136" y="80" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:9px;font-weight:600;font-family:sans-serif">F</text>
+      <!-- LP labels -->
+      <text x="50" y="63" style="font-size:8px;fill:var(--text-3,#9A9AA6);font-family:sans-serif">LP</text>
+      <text x="50" y="100" style="font-size:8px;fill:var(--text-3,#9A9AA6);font-family:sans-serif">LP</text>
+    </svg>
+    <div class="geom-badge">Square planar · sp³d² · 2 axial LP</div>
+    <div class="jee-tags">
+      <span class="jtag">6 electron pairs</span>
+      <span class="jtag green">Non-polar</span>
+    </div>
+    <div class="struct-note">sp³d² (6 pairs total = 4 bonds + 2 lone pairs). Square planar shape. Lone pairs occupy axial positions → non-polar molecule.</div>
+  </div>
+
+  <!-- ClF3 -->
+  <div class="struct-card">
+    <div class="struct-name">ClF₃</div>
+    <div class="struct-iupac">Chlorine trifluoride</div>
+    <svg viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+      <!-- Cl–F top (axial) -->
+      <line x1="80" y1="64" x2="80" y2="34" stroke="var(--bond)" stroke-width="2"/>
+      <!-- Cl–F bottom (axial) -->
+      <line x1="80" y1="96" x2="80" y2="126" stroke="var(--bond)" stroke-width="2"/>
+      <!-- Cl–F equatorial (right) — slightly bent -->
+      <line x1="96" y1="78" x2="128" y2="70" stroke="var(--bond)" stroke-width="2"/>
+      <!-- 2 lone pairs (equatorial) -->
+      <path d="M65 80 Q44 68 50 58" fill="none" stroke="var(--text-3,#9A9AA6)" stroke-width="1.2" stroke-dasharray="3 2"/>
+      <path d="M65 82 Q44 94 50 104" fill="none" stroke="var(--text-3,#9A9AA6)" stroke-width="1.2" stroke-dasharray="3 2"/>
+      <!-- Cl -->
+      <circle cx="80" cy="80" r="16" fill="var(--atom-Cl)"/>
+      <text x="80" y="80" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:10px;font-weight:700;font-family:sans-serif">Cl</text>
+      <!-- F atoms -->
+      <circle cx="80" cy="24" r="11" fill="var(--atom-Cl)"/>
+      <text x="80" y="24" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:9px;font-weight:600;font-family:sans-serif">F</text>
+      <circle cx="80" cy="136" r="11" fill="var(--atom-Cl)"/>
+      <text x="80" y="136" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:9px;font-weight:600;font-family:sans-serif">F</text>
+      <circle cx="138" cy="66" r="11" fill="var(--atom-Cl)"/>
+      <text x="138" y="66" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:9px;font-weight:600;font-family:sans-serif">F</text>
+      <!-- LP labels -->
+      <text x="38" y="62" style="font-size:8px;fill:var(--text-3,#9A9AA6);font-family:sans-serif">LP</text>
+      <text x="38" y="100" style="font-size:8px;fill:var(--text-3,#9A9AA6);font-family:sans-serif">LP</text>
+    </svg>
+    <div class="geom-badge">T-shaped · sp³d · 2 equatorial LP</div>
+    <div class="jee-tags">
+      <span class="jtag">5 electron pairs</span>
+      <span class="jtag red">Polar</span>
+    </div>
+    <div class="struct-note">sp³d (trig bipyramidal electron geometry). 2 lone pairs occupy equatorial → T-shaped. Polar molecule.</div>
+  </div>
+
+  <!-- H2O2 -->
+  <div class="struct-card">
+    <div class="struct-name">H₂O₂</div>
+    <div class="struct-iupac">Hydrogen peroxide</div>
+    <svg viewBox="0 0 160 150" xmlns="http://www.w3.org/2000/svg">
+      <!-- dihedral angle shown by perspective bonds -->
+      <line x1="60" y1="80" x2="30" y2="55" stroke="var(--bond)" stroke-width="2"/>
+      <line x1="60" y1="80" x2="100" y2="80" stroke="var(--bond)" stroke-width="2.5"/>
+      <line x1="100" y1="80" x2="130" y2="105" stroke="var(--bond)" stroke-width="2"/>
+      <!-- O atoms -->
+      <circle cx="60" cy="80" r="14" fill="var(--atom-O)"/>
+      <text x="60" y="80" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:11px;font-weight:700;font-family:sans-serif">O</text>
+      <circle cx="100" cy="80" r="14" fill="var(--atom-O)"/>
+      <text x="100" y="80" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:11px;font-weight:700;font-family:sans-serif">O</text>
+      <!-- H atoms -->
+      <circle cx="20" cy="47" r="11" fill="var(--atom-H)"/>
+      <text x="20" y="47" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:10px;font-weight:600;font-family:sans-serif">H</text>
+      <circle cx="140" cy="113" r="11" fill="var(--atom-H)"/>
+      <text x="140" y="113" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:10px;font-weight:600;font-family:sans-serif">H</text>
+      <!-- dihedral angle label -->
+      <path d="M 72 68 A 14 14 0 0 1 88 68" fill="none" stroke="var(--dbond)" stroke-width="1.5"/>
+      <text x="80" y="58" text-anchor="middle" style="font-size:9px;fill:var(--dbond);font-family:sans-serif">111.5°</text>
+      <!-- O–O–H angle -->
+      <text x="30" y="110" style="font-size:8px;fill:var(--text-2,#5A5A63);font-family:sans-serif">∠HOO = 96.5°</text>
+      <!-- non-planar label -->
+      <text x="80" y="138" text-anchor="middle" style="font-size:9px;fill:var(--text-3,#9A9AA6);font-family:sans-serif">non-planar (open book)</text>
+    </svg>
+    <div class="geom-badge">Non-planar · dihedral 111.5° · sp³ O</div>
+    <div class="jee-tags">
+      <span class="jtag">O–O single bond</span>
+      <span class="jtag red">Oxidiser &amp; reducer</span>
+      <span class="jtag warn">O in –1 state</span>
+    </div>
+    <div class="struct-note">Open-book structure. NOT planar. Dihedral angle 111.5° (gas), ~94° (solid). O is sp³. Acts as both oxidiser and reducer.</div>
+  </div>
+
+  <!-- N2O3 -->
+  <div class="struct-card">
+    <div class="struct-name">N₂O₃</div>
+    <div class="struct-iupac">Dinitrogen trioxide</div>
+    <svg viewBox="0 0 180 140" xmlns="http://www.w3.org/2000/svg">
+      <!-- O=N double bond left -->
+      <line x1="50" y1="70" x2="22" y2="50" stroke="var(--dbond)" stroke-width="2.5"/>
+      <line x1="55" y1="66" x2="27" y2="46" stroke="var(--dbond)" stroke-width="1.5" opacity="0.7"/>
+      <!-- N–N bond -->
+      <line x1="66" y1="70" x2="114" y2="70" stroke="var(--bond)" stroke-width="2.5"/>
+      <!-- N=O right double bond -->
+      <line x1="126" y1="62" x2="154" y2="42" stroke="var(--dbond)" stroke-width="2.5"/>
+      <line x1="130" y1="66" x2="158" y2="46" stroke="var(--dbond)" stroke-width="1.5" opacity="0.7"/>
+      <!-- N–O right single -->
+      <line x1="126" y1="78" x2="154" y2="98" stroke="var(--bond)" stroke-width="2"/>
+
+      <!-- N atoms -->
+      <circle cx="58" cy="70" r="14" fill="var(--atom-N)"/>
+      <text x="58" y="70" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:11px;font-weight:700;font-family:sans-serif">N</text>
+      <circle cx="122" cy="70" r="14" fill="var(--atom-N)"/>
+      <text x="122" y="70" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:11px;font-weight:700;font-family:sans-serif">N</text>
+
+      <!-- O atoms -->
+      <circle cx="14" cy="42" r="12" fill="var(--atom-O)"/>
+      <text x="14" y="42" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:10px;font-weight:600;font-family:sans-serif">O</text>
+      <circle cx="162" cy="34" r="12" fill="var(--atom-O)"/>
+      <text x="162" y="34" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:10px;font-weight:600;font-family:sans-serif">O</text>
+      <circle cx="162" cy="106" r="12" fill="var(--atom-O)"/>
+      <text x="162" y="106" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:10px;font-weight:600;font-family:sans-serif">O</text>
+
+      <!-- lone pair on left N -->
+      <text x="44" y="52" style="font-size:8px;fill:var(--atom-N);font-family:sans-serif">:</text>
+      <text x="80" y="118" text-anchor="middle" style="font-size:9px;fill:var(--text-3,#9A9AA6);font-family:sans-serif">N–N bond + N=O</text>
+    </svg>
+    <div class="geom-badge">Contains N–N bond · N(+2) &amp; N(+4)</div>
+    <div class="jee-tags">
+      <span class="jtag warn">Has N–N bond</span>
+      <span class="jtag">JEE 2009 asked</span>
+    </div>
+    <div class="struct-note">Contains N–N bond. Also has N₂O and N₂O₄. JEE 2009 directly asked which nitrogen oxides contain N–N bonds → N₂O, N₂O₃, N₂O₄.</div>
+  </div>
+
+</div>
+
+<!-- ════════════════════════════════════
+     BORON STRUCTURES
+════════════════════════════════════ -->
+<div class="section-title">Boron Compounds (Frequently Asked)</div>
+<div class="struct-grid">
+
+  <!-- B(OH)3 / H3BO3 -->
+  <div class="struct-card">
+    <div class="struct-name">H₃BO₃</div>
+    <div class="struct-iupac">Orthoboric acid</div>
+    <svg viewBox="0 0 160 155" xmlns="http://www.w3.org/2000/svg">
+      <!-- B–OH x3 (trigonal planar) -->
+      <line x1="80" y1="66" x2="80" y2="36" stroke="var(--bond)" stroke-width="2"/>
+      <line x1="68" y1="86" x2="42" y2="110" stroke="var(--bond)" stroke-width="2"/>
+      <line x1="92" y1="86" x2="118" y2="110" stroke="var(--bond)" stroke-width="2"/>
+
+      <!-- B atom -->
+      <circle cx="80" cy="80" r="14" fill="#B45309"/>
+      <text x="80" y="80" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:12px;font-weight:700;font-family:sans-serif">B</text>
+
+      <!-- OH atoms -->
+      <circle cx="80" cy="26" r="12" fill="var(--atom-O)"/>
+      <text x="80" y="26" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:9px;font-weight:600;font-family:sans-serif">OH</text>
+      <circle cx="32" cy="118" r="12" fill="var(--atom-O)"/>
+      <text x="32" y="118" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:9px;font-weight:600;font-family:sans-serif">OH</text>
+      <circle cx="128" cy="118" r="12" fill="var(--atom-O)"/>
+      <text x="128" y="118" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:9px;font-weight:600;font-family:sans-serif">OH</text>
+
+      <!-- empty p orbital indicator (dashed circle on B) -->
+      <circle cx="80" cy="80" r="20" fill="none" stroke="var(--dbond)" stroke-width="1" stroke-dasharray="3 2" opacity="0.5"/>
+      <text x="80" y="142" text-anchor="middle" style="font-size:8px;fill:var(--dbond);font-family:sans-serif">empty p-orbital</text>
+    </svg>
+    <div class="geom-badge">Trigonal planar · sp² · Lewis acid</div>
+    <div class="jee-tags">
+      <span class="jtag warn">Lewis acid (NOT Brønsted)</span>
+      <span class="jtag green">H-bonding layers</span>
+    </div>
+    <div class="struct-note">B is sp² with empty p-orbital → Lewis acid. Accepts OH⁻ from water. NOT self-ionising. Layered structure with H-bonds between layers (JEE 2014).</div>
+  </div>
+
+  <!-- Diborane B2H6 -->
+  <div class="struct-card wide">
+    <div class="struct-name">B₂H₆</div>
+    <div class="struct-iupac">Diborane — 3-centre 2-electron (3c2e) bonds</div>
+    <svg viewBox="0 0 320 155" xmlns="http://www.w3.org/2000/svg">
+      <!-- terminal H on B1 (top, bottom) -->
+      <line x1="90" y1="68" x2="90" y2="38" stroke="var(--bond)" stroke-width="2"/>
+      <line x1="90" y1="92" x2="90" y2="122" stroke="var(--bond)" stroke-width="2"/>
+      <!-- terminal H on B2 (top, bottom) -->
+      <line x1="230" y1="68" x2="230" y2="38" stroke="var(--bond)" stroke-width="2"/>
+      <line x1="230" y1="92" x2="230" y2="122" stroke="var(--bond)" stroke-width="2"/>
+
+      <!-- bridging H (banana bonds) — curved -->
+      <path d="M104 80 Q160 52 216 80" fill="none" stroke="var(--dbond)" stroke-width="2" stroke-dasharray="4 2"/>
+      <path d="M104 80 Q160 108 216 80" fill="none" stroke="var(--dbond)" stroke-width="2" stroke-dasharray="4 2"/>
+
+      <!-- bridge H atoms -->
+      <circle cx="160" cy="56" r="11" fill="var(--atom-H)"/>
+      <text x="160" y="56" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:9px;font-weight:600;font-family:sans-serif">H</text>
+      <circle cx="160" cy="104" r="11" fill="var(--atom-H)"/>
+      <text x="160" y="104" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:9px;font-weight:600;font-family:sans-serif">H</text>
+
+      <!-- B atoms -->
+      <circle cx="90" cy="80" r="14" fill="#B45309"/>
+      <text x="90" y="80" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:12px;font-weight:700;font-family:sans-serif">B</text>
+      <circle cx="230" cy="80" r="14" fill="#B45309"/>
+      <text x="230" y="80" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:12px;font-weight:700;font-family:sans-serif">B</text>
+
+      <!-- terminal H atoms -->
+      <circle cx="90" cy="28" r="11" fill="var(--atom-H)"/>
+      <text x="90" y="28" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:9px;font-weight:600;font-family:sans-serif">H</text>
+      <circle cx="90" cy="132" r="11" fill="var(--atom-H)"/>
+      <text x="90" y="132" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:9px;font-weight:600;font-family:sans-serif">H</text>
+      <circle cx="230" cy="28" r="11" fill="var(--atom-H)"/>
+      <text x="230" y="28" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:9px;font-weight:600;font-family:sans-serif">H</text>
+      <circle cx="230" cy="132" r="11" fill="var(--atom-H)"/>
+      <text x="230" y="132" text-anchor="middle" dominant-baseline="central" fill="white" style="font-size:9px;font-weight:600;font-family:sans-serif">H</text>
+
+      <!-- labels -->
+      <text x="42" y="80" text-anchor="middle" style="font-size:8px;fill:var(--text-2,#5A5A63);font-family:sans-serif">terminal</text>
+      <text x="160" y="28" text-anchor="middle" style="font-size:8px;fill:var(--dbond);font-family:sans-serif">3c2e bridge</text>
+      <text x="278" y="80" text-anchor="middle" style="font-size:8px;fill:var(--text-2,#5A5A63);font-family:sans-serif">terminal</text>
+    </svg>
+    <div class="geom-badge">2 bridging H (3c2e) · 4 terminal H · B is sp³</div>
+    <div class="jee-tags">
+      <span class="jtag warn">Banana bonds</span>
+      <span class="jtag">Electron deficient</span>
+      <span class="jtag red">JEE favourite</span>
+    </div>
+    <div class="struct-note">4 terminal B–H (normal 2c2e) + 2 bridging B–H–B (3c2e, banana bonds). B is sp³. Each bridge H has partial bonds to both B atoms. Hydrolysis gives B(OH)₃ + H₂.</div>
+  </div>
+
+</div>
+
+<footer style="margin-top:3rem;font-size:11px;color:var(--text-3,#9A9AA6);text-align:center;padding-bottom:2rem;">
+  Structures based on JEE Advanced PYQs 2009–2024 · Double bonds shown as two parallel lines · Dashed = lone pairs or 3c2e bonds
+</footer>
+
+<script>
+function toggleDark() {
+  const isDark = document.body.classList.toggle('dark');
+  document.getElementById('dark-btn').textContent = isDark ? '☀️' : '🌙';
+  localStorage.setItem('darkMode', isDark ? '1' : '0');
+}
+if (localStorage.getItem('darkMode') === '1') {
+  document.body.classList.add('dark');
+  document.getElementById('dark-btn').textContent = '☀️';
+}
+</script>
+</body>
+</html>
