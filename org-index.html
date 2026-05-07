@@ -10,234 +10,106 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Sora:wght@400;600;700&display=swap">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
 :root {
   --font-body: 'Outfit', -apple-system, sans-serif;
   --font-display: 'Sora', -apple-system, sans-serif;
-  --bg: #F7F7F5;
-  --bg2: #EFEFEC;
-  --surface: #FFFFFF;
-  --surface2: #F4F4F0;
-  --border: #E2E2DC;
-  --text: #18181A;
-  --text2: #5A5A62;
-  --text3: #9A9AA8;
+  --bg: #F7F7F5; --surface: #FFFFFF; --border: #E2E2DC;
+  --text: #18181A; --text2: #5A5A62; --text3: #9A9AA8;
   --accent: #1F9E6E;
-  --accent-light: #EEFBF5;
-  --tag-bg: #F0F0EA;
-  --tag-color: #707068;
-  --wip-bg: #FFF3DA;
-  --wip-color: #7A4B00;
-  --prog-bg: #E5E5E0;
-  --prog-got: #2EC87A;
+  --tag-bg: #F0F0EA; --tag-color: #707068;
+  --prog-bg: #E5E5E0; --prog-got: #2EC87A;
   --shadow-card: 0 1px 4px rgba(0,0,0,.04), 0 6px 24px rgba(0,0,0,.06);
-  --shadow-card-hover: 0 4px 16px rgba(31,158,110,.12), 0 12px 40px rgba(0,0,0,.10);
+  --shadow-hover: 0 4px 16px rgba(31,158,110,.12), 0 12px 40px rgba(0,0,0,.10);
 }
 body.dark {
-  --bg: #0E0E12;
-  --bg2: #16161C;
-  --surface: #1C1C24;
-  --surface2: #22222C;
-  --border: #2E2E3C;
-  --text: #F2F2F8;
-  --text2: #9090A8;
-  --text3: #58586A;
-  --accent: #30C88A;
-  --accent-light: #0D2218;
-  --tag-bg: #242430;
-  --tag-color: #9090A0;
-  --wip-bg: #221400;
-  --wip-color: #E0B050;
+  --bg: #0E0E12; --surface: #1C1C24; --border: #2E2E3C;
+  --text: #F2F2F8; --text2: #9090A8; --text3: #58586A;
+  --accent: #30C88A; --tag-bg: #242430; --tag-color: #9090A0;
   --prog-bg: #2A2A3A;
-  --prog-got: #2EC87A;
   --shadow-card: 0 1px 4px rgba(0,0,0,.3), 0 6px 24px rgba(0,0,0,.3);
-  --shadow-card-hover: 0 4px 16px rgba(48,200,138,.15), 0 12px 40px rgba(0,0,0,.5);
+  --shadow-hover: 0 4px 16px rgba(48,200,138,.15), 0 12px 40px rgba(0,0,0,.5);
 }
-
 html { -webkit-text-size-adjust: 100%; }
 body {
-  font-family: var(--font-body);
-  background: var(--bg);
-  min-height: 100vh;
-  color: var(--text);
-  transition: background 0.3s, color 0.3s;
-  -webkit-font-smoothing: antialiased;
-  padding: 2rem 1rem 4rem;
+  font-family: var(--font-body); background: var(--bg);
+  min-height: 100vh; color: var(--text);
+  transition: background .3s, color .3s;
+  -webkit-font-smoothing: antialiased; padding: 2rem 1rem 4rem;
 }
-
 header {
-  max-width: 580px;
-  margin: 0 auto 2.5rem;
-  text-align: center;
-  position: relative;
+  max-width: 600px; margin: 0 auto 2rem;
+  text-align: center; position: relative;
 }
 .logo-tag {
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 10px;
+  font-size: 10px; font-weight: 700; letter-spacing: .18em;
+  text-transform: uppercase; color: var(--accent); margin-bottom: 10px;
 }
 h1 {
   font-family: var(--font-display);
   font-size: clamp(24px, 6vw, 36px);
-  font-weight: 700;
-  color: var(--text);
-  letter-spacing: -0.03em;
-  line-height: 1.15;
-  margin-bottom: 10px;
+  font-weight: 700; color: var(--text);
+  letter-spacing: -.03em; line-height: 1.15; margin-bottom: 10px;
 }
-.header-sub {
-  font-size: 14px;
-  color: var(--text2);
-  line-height: 1.5;
-}
-.nav-link {
-  font-size: 12px;
-  color: var(--accent);
-  text-decoration: none;
-  display: inline-block;
-  margin-bottom: 12px;
-}
-.nav-link:hover { text-decoration: underline; }
+.header-sub { font-size: 14px; color: var(--text2); line-height: 1.5; }
 .dark-toggle {
-  position: absolute;
-  top: 0;
-  right: 0;
-  background: var(--surface2);
-  border: 1px solid var(--border);
-  border-radius: 99px;
-  color: var(--text2);
-  font-size: 14px;
-  padding: 7px 13px;
-  cursor: pointer;
-  transition: background 0.2s;
-  line-height: 1;
+  position: absolute; top: 0; right: 0;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 99px; color: var(--text2);
+  font-size: 14px; padding: 7px 13px; cursor: pointer; line-height: 1;
 }
-.dark-toggle:hover { background: var(--border); }
+.switch-link {
+  display: inline-block; margin-top: 14px;
+  padding: 8px 18px; background: transparent;
+  border: 1.5px solid var(--accent); color: var(--accent);
+  font-family: var(--font-body); font-size: 12px; font-weight: 600;
+  border-radius: 99px; text-decoration: none;
+  transition: background .18s, color .18s;
+}
+.switch-link:hover { background: var(--accent); color: #fff; }
+
+.stats-row {
+  display: flex; justify-content: center; gap: 10px;
+  flex-wrap: wrap; max-width: 600px; margin: 0 auto 1.75rem;
+}
+.s-pill {
+  font-size: 11px; font-weight: 600; padding: 5px 16px;
+  border-radius: 99px; background: var(--surface);
+  border: 1px solid var(--border); color: var(--text2);
+}
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 14px;
-  max-width: 580px;
-  margin: 0 auto;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 14px; max-width: 600px; margin: 0 auto;
 }
-
 .chapter-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 1.375rem 1.25rem;
-  text-decoration: none;
-  color: inherit;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 20px; padding: 1.375rem 1.25rem;
+  text-decoration: none; color: inherit;
   box-shadow: var(--shadow-card);
-  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  cursor: pointer;
+  transition: border-color .2s, box-shadow .2s, transform .2s;
+  display: flex; flex-direction: column; gap: 10px;
   -webkit-tap-highlight-color: transparent;
 }
 .chapter-card:hover {
   border-color: rgba(31,158,110,.3);
-  box-shadow: var(--shadow-card-hover);
-  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover); transform: translateY(-3px);
 }
 .chapter-card:active { transform: translateY(-1px); }
-.chapter-card.coming {
-  border-style: dashed;
-  opacity: 0.4;
-  pointer-events: none;
-}
-
-.card-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-}
-.chapter-num {
-  font-size: 10px;
-  font-weight: 700;
-  color: var(--accent);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-.wip-badge {
-  font-size: 10px;
-  font-weight: 600;
-  background: var(--wip-bg);
-  color: var(--wip-color);
-  border-radius: 99px;
-  padding: 2px 9px;
-  white-space: nowrap;
-}
-.chapter-title {
-  font-family: var(--font-display);
-  font-size: 15px;
-  font-weight: 700;
-  color: var(--text);
-  line-height: 1.35;
-  letter-spacing: -0.01em;
-}
-.chapter-desc {
-  font-size: 12px;
-  color: var(--text2);
-  line-height: 1.55;
-}
-.chapter-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
-}
-.tag {
-  font-size: 10px;
-  font-weight: 500;
-  background: var(--tag-bg);
-  color: var(--tag-color);
-  border-radius: 99px;
-  padding: 3px 9px;
-}
-.chapter-count {
-  font-size: 11px;
-  font-weight: 600;
-  color: var(--text3);
-}
+.card-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.chapter-num { font-size: 10px; font-weight: 700; color: var(--accent); letter-spacing: .1em; text-transform: uppercase; }
+.chapter-title { font-family: var(--font-display); font-size: 15px; font-weight: 700; color: var(--text); line-height: 1.35; letter-spacing: -.01em; }
+.chapter-desc { font-size: 12px; color: var(--text2); line-height: 1.55; }
+.chapter-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+.tag { font-size: 10px; font-weight: 500; background: var(--tag-bg); color: var(--tag-color); border-radius: 99px; padding: 3px 9px; }
+.chapter-count { font-size: 11px; font-weight: 600; color: var(--text3); }
 .chapter-progress-wrap { margin-top: 2px; }
-.chapter-progress {
-  height: 4px;
-  background: var(--prog-bg);
-  border-radius: 99px;
-  overflow: hidden;
-}
-.chapter-prog-fill {
-  height: 100%;
-  background: var(--prog-got);
-  border-radius: 99px;
-  width: 0%;
-  transition: width 0.6s ease;
-}
-.chapter-prog-label {
-  font-size: 10px;
-  font-weight: 500;
-  color: var(--text3);
-  margin-top: 6px;
-  display: flex;
-  justify-content: space-between;
-}
+.chapter-progress { height: 4px; background: var(--prog-bg); border-radius: 99px; overflow: hidden; }
+.chapter-prog-fill { height: 100%; background: var(--prog-got); border-radius: 99px; width: 0%; transition: width .6s ease; }
+.chapter-prog-label { font-size: 10px; font-weight: 500; color: var(--text3); margin-top: 6px; display: flex; justify-content: space-between; }
 .prog-pct { font-weight: 700; color: var(--prog-got); }
 .prog-pct.zero { color: var(--text3); font-weight: 500; }
-
-footer {
-  max-width: 580px;
-  margin: 3rem auto 0;
-  text-align: center;
-  font-size: 11px;
-  color: var(--text3);
-  line-height: 1.7;
-}
+footer { max-width: 600px; margin: 3rem auto 0; text-align: center; font-size: 11px; color: var(--text3); line-height: 1.7; }
 </style>
 </head>
 <body>
@@ -247,134 +119,124 @@ footer {
   <div class="logo-tag">JEE Advanced 2026</div>
   <h1>Organic Chemistry<br>Flashcards</h1>
   <p class="header-sub">Developer: u/No_Customer_4480</p>
-  <br>
-  <a href="index.html" class="nav-link">← Inorganic Chemistry</a>
+  <a href="index.html" class="switch-link">⚗️ Switch to Inorganic Chemistry</a>
 </header>
+
+<div class="stats-row">
+  <span class="s-pill" id="sp-total">162 cards total</span>
+  <span class="s-pill" id="sp-known">Known: 0</span>
+  <span class="s-pill" id="sp-review">To review: 0</span>
+</div>
 
 <div class="grid">
 
   <!-- Ch 1 -->
   <a class="chapter-card" href="org-ch1-hydrocarbons.html"
-     data-key="org-ch1-hydrocarbons"
-     data-total="34">
-    <div class="card-top">
-      <span class="chapter-num">Chapter 1</span>
-    </div>
+     data-key="org-ch1-hydrocarbons" data-total="34">
+    <div class="card-top"><span class="chapter-num">Chapter 1</span></div>
     <div class="chapter-title">Hydrocarbons</div>
-    <div class="chapter-desc">Alkane/Alkene/Alkyne prep & reactions — Wurtz, Corey-House, Lindlar's, Birch, ozonolysis, Markovnikov, and more.</div>
+    <div class="chapter-desc">Alkane/Alkene/Alkyne prep & reactions — Wurtz, Corey-House, Lindlar's, Birch, ozonolysis, Markovnikov, syn/anti selectivity.</div>
     <div class="chapter-tags">
-      <span class="tag">Alkanes</span>
-      <span class="tag">Alkenes</span>
-      <span class="tag">Alkynes</span>
-      <span class="tag">Stereo</span>
+      <span class="tag">Alkanes</span><span class="tag">Alkenes</span>
+      <span class="tag">Alkynes</span><span class="tag">Stereo</span>
     </div>
     <div class="chapter-count">34 cards</div>
     <div class="chapter-progress-wrap">
       <div class="chapter-progress"><div class="chapter-prog-fill"></div></div>
-      <div class="chapter-prog-label">
-        <span class="prog-seen">Not started</span>
-        <span class="prog-pct zero">0%</span>
-      </div>
+      <div class="chapter-prog-label"><span class="prog-seen">Not started</span><span class="prog-pct zero">0%</span></div>
     </div>
   </a>
 
   <!-- Ch 2 -->
   <a class="chapter-card" href="org-ch2-sn1sn2.html"
-     data-key="org-ch2-sn1sn2e1e2"
-     data-total="30">
-    <div class="card-top">
-      <span class="chapter-num">Chapter 2</span>
-    </div>
+     data-key="org-ch2-sn1sn2e1e2" data-total="30">
+    <div class="card-top"><span class="chapter-num">Chapter 2</span></div>
     <div class="chapter-title">SN1 · SN2 · E1 · E2</div>
-    <div class="chapter-desc">Substitution & elimination mechanisms, nucleophiles, bases, leaving groups, and all key haloalkane reactions.</div>
+    <div class="chapter-desc">Substitution & elimination mechanisms, nucleophiles, bases, leaving groups, haloalkane reactions — Finkelstein, Swart's, Lucas, Williamson.</div>
     <div class="chapter-tags">
-      <span class="tag">SN1/SN2</span>
-      <span class="tag">E1/E2</span>
-      <span class="tag">Nucleophiles</span>
-      <span class="tag">Leaving Groups</span>
-      <span class="tag">Grignard</span>
+      <span class="tag">SN1/SN2</span><span class="tag">E1/E2</span>
+      <span class="tag">Nucleophiles</span><span class="tag">Leaving Groups</span>
     </div>
     <div class="chapter-count">30 cards</div>
     <div class="chapter-progress-wrap">
       <div class="chapter-progress"><div class="chapter-prog-fill"></div></div>
-      <div class="chapter-prog-label">
-        <span class="prog-seen">Not started</span>
-        <span class="prog-pct zero">0%</span>
-      </div>
+      <div class="chapter-prog-label"><span class="prog-seen">Not started</span><span class="prog-pct zero">0%</span></div>
     </div>
   </a>
 
-  <!-- Ch 3 coming -->
-  <a class="chapter-card coming" href="#">
-    <div class="card-top">
-      <span class="chapter-num">Chapter 3</span>
-      <span class="wip-badge">Coming soon</span>
-    </div>
-    <div class="chapter-title">Alcohols, Ethers & RMgX</div>
-    <div class="chapter-desc">Preparation & reactions of alcohols, ethers, and Grignard reagents.</div>
+  <!-- Ch 3 -->
+  <a class="chapter-card" href="org-ch3.html"
+     data-key="org-ch3" data-total="26">
+    <div class="card-top"><span class="chapter-num">Chapter 3</span></div>
+    <div class="chapter-title">Alcohols, Ethers & Grignard</div>
+    <div class="chapter-desc">LAH, NaBH₄, DIBAL-H, PCC oxidation, Williamson ether synthesis, Pinacol rearrangement, Grignard with all carbonyl partners.</div>
     <div class="chapter-tags">
-      <span class="tag">Alcohols</span>
-      <span class="tag">Ethers</span>
-      <span class="tag">Grignard</span>
+      <span class="tag">Alcohols</span><span class="tag">Ethers</span>
+      <span class="tag">Grignard</span><span class="tag">Pinacol</span>
     </div>
-    <div class="chapter-count">— cards</div>
+    <div class="chapter-count">26 cards</div>
+    <div class="chapter-progress-wrap">
+      <div class="chapter-progress"><div class="chapter-prog-fill"></div></div>
+      <div class="chapter-prog-label"><span class="prog-seen">Not started</span><span class="prog-pct zero">0%</span></div>
+    </div>
   </a>
 
-  <!-- Ch 4 coming -->
-  <a class="chapter-card coming" href="#">
-    <div class="card-top">
-      <span class="chapter-num">Chapter 4</span>
-      <span class="wip-badge">Coming soon</span>
-    </div>
+  <!-- Ch 4 -->
+  <a class="chapter-card" href="org-ch4.html"
+     data-key="org-ch4" data-total="18">
+    <div class="card-top"><span class="chapter-num">Chapter 4</span></div>
     <div class="chapter-title">Reduction, Oxidation & Hydrolysis</div>
-    <div class="chapter-desc">LiAlH₄, NaBH₄, KMnO₄, OsO₄, ozonolysis and all hydrolysis reactions.</div>
+    <div class="chapter-desc">Rosenmund, Stephen's, Birch (ring), MPV, Red P/HI, KMnO₄ (Baeyer's + cleavage), Wacker, Oxo process, periodate, hydrolysis of all functional groups.</div>
     <div class="chapter-tags">
-      <span class="tag">Reduction</span>
-      <span class="tag">Oxidation</span>
-      <span class="tag">Hydrolysis</span>
+      <span class="tag">LAH vs NaBH₄</span><span class="tag">KMnO₄</span>
+      <span class="tag">Wacker</span><span class="tag">Hydrolysis</span>
     </div>
-    <div class="chapter-count">— cards</div>
+    <div class="chapter-count">18 cards</div>
+    <div class="chapter-progress-wrap">
+      <div class="chapter-progress"><div class="chapter-prog-fill"></div></div>
+      <div class="chapter-prog-label"><span class="prog-seen">Not started</span><span class="prog-pct zero">0%</span></div>
+    </div>
   </a>
 
-  <!-- Ch 5 coming -->
-  <a class="chapter-card coming" href="#">
-    <div class="card-top">
-      <span class="chapter-num">Chapter 5</span>
-      <span class="wip-badge">Coming soon</span>
-    </div>
+  <!-- Ch 5 -->
+  <a class="chapter-card" href="org-ch5.html"
+     data-key="org-ch5" data-total="30">
+    <div class="card-top"><span class="chapter-num">Chapter 5</span></div>
     <div class="chapter-title">Aromatic Compounds</div>
-    <div class="chapter-desc">Benzene EAS reactions, phenols, aniline, nitrobenzene, and diazonium salts.</div>
+    <div class="chapter-desc">Phenols (Kolbe–Schmidt, Reimer–Tiemann, Fries), EAS reactions, o/p & meta directors, aniline, diazonium (Sandmeyer, Balz–Schiemann, Gomberg, coupling).</div>
     <div class="chapter-tags">
-      <span class="tag">EAS</span>
-      <span class="tag">Phenols</span>
-      <span class="tag">Aniline</span>
-      <span class="tag">Diazonium</span>
+      <span class="tag">Phenols</span><span class="tag">EAS</span>
+      <span class="tag">Aniline</span><span class="tag">Diazonium</span><span class="tag">Nitrobenzene</span>
     </div>
-    <div class="chapter-count">— cards</div>
+    <div class="chapter-count">30 cards</div>
+    <div class="chapter-progress-wrap">
+      <div class="chapter-progress"><div class="chapter-prog-fill"></div></div>
+      <div class="chapter-prog-label"><span class="prog-seen">Not started</span><span class="prog-pct zero">0%</span></div>
+    </div>
   </a>
 
-  <!-- Ch 6 coming -->
-  <a class="chapter-card coming" href="#">
-    <div class="card-top">
-      <span class="chapter-num">Chapter 6</span>
-      <span class="wip-badge">Coming soon</span>
-    </div>
-    <div class="chapter-title">Aldehydes, Ketones & Acids</div>
-    <div class="chapter-desc">Carbonyl reactions, carboxylic acid derivatives, and heating effects.</div>
+  <!-- Ch 6 -->
+  <a class="chapter-card" href="org-ch6.html"
+     data-key="org-ch6" data-total="24">
+    <div class="card-top"><span class="chapter-num">Chapter 6</span></div>
+    <div class="chapter-title">Aldehydes, Ketones & Carboxylic Acids</div>
+    <div class="chapter-desc">Carbonyl prep & reactions, Aldol, Cannizzaro, Perkin, Knoevenagel, Reformatsky, Wittig, haloform/iodoform, Beckmann & Hofmann rearrangements.</div>
     <div class="chapter-tags">
-      <span class="tag">Aldol</span>
-      <span class="tag">Cannizzaro</span>
-      <span class="tag">COOH</span>
-      <span class="tag">Heating</span>
+      <span class="tag">Aldol</span><span class="tag">Cannizzaro</span>
+      <span class="tag">Wittig</span><span class="tag">Haloform</span><span class="tag">Beckmann</span>
     </div>
-    <div class="chapter-count">— cards</div>
+    <div class="chapter-count">24 cards</div>
+    <div class="chapter-progress-wrap">
+      <div class="chapter-progress"><div class="chapter-prog-fill"></div></div>
+      <div class="chapter-prog-label"><span class="prog-seen">Not started</span><span class="prog-pct zero">0%</span></div>
+    </div>
   </a>
 
 </div>
 
 <footer>
-  Progress is saved per chapter · Dark mode is remembered<br>
-  Based on your Organic Notes (128 pages)
+  Progress saved per chapter · Dark mode remembered<br>
+  Based on your 128-page Organic Notes
 </footer>
 
 <script>
@@ -388,6 +250,8 @@ if (localStorage.getItem('darkMode') === '1') {
   document.getElementById('dark-btn').textContent = '☀️';
 }
 
+let grandGot = 0, grandNope = 0;
+
 document.querySelectorAll('.chapter-card[data-key]').forEach(card => {
   const key   = 'fc_progress_' + card.dataset.key;
   const total = parseInt(card.dataset.total) || 0;
@@ -398,21 +262,25 @@ document.querySelectorAll('.chapter-card[data-key]').forEach(card => {
     const data  = JSON.parse(localStorage.getItem(key) || '{}');
     const g     = Object.values(data).filter(v => v === 'got').length;
     const n     = Object.values(data).filter(v => v === 'nope').length;
-    const total_seen = g + n;
-    const percent = total > 0 ? Math.round((total_seen / total) * 100) : 0;
-    if (fill) fill.style.width = percent + '%';
-    if (total_seen === 0) {
+    grandGot  += g; grandNope += n;
+    const ts = g + n;
+    const p  = total > 0 ? Math.round((ts / total) * 100) : 0;
+    if (fill) fill.style.width = p + '%';
+    if (ts === 0) {
       if (seen) seen.textContent = 'Not started';
       if (pct)  { pct.textContent = '0%'; pct.classList.add('zero'); }
-    } else if (total_seen >= total) {
+    } else if (ts >= total) {
       if (seen) seen.textContent = g + ' known · ' + n + ' to review';
       if (pct)  { pct.textContent = '100%'; pct.classList.remove('zero'); }
     } else {
-      if (seen) seen.textContent = total_seen + ' / ' + total + ' seen · ' + g + ' ✓';
-      if (pct)  { pct.textContent = percent + '%'; pct.classList.remove('zero'); }
+      if (seen) seen.textContent = ts + ' / ' + total + ' seen · ' + g + ' ✓';
+      if (pct)  { pct.textContent = p + '%'; pct.classList.remove('zero'); }
     }
   } catch(e) {}
 });
+
+document.getElementById('sp-known').textContent  = 'Known: '     + grandGot;
+document.getElementById('sp-review').textContent = 'To review: ' + grandNope;
 </script>
 </body>
 </html>
