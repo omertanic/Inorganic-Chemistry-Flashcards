@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chemistry in Everyday Life — JEE Advanced</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0d0d0d; --s1: #141414; --s2: #1c1c1c; --border: #2a2a2a;
+  --text: #e8e8e0; --muted: #666; --dim: #333;
+  --amber: #f0b040; --green: #4ecb8d; --blue: #5599ee;
+  --coral: #ee6655; --purple: #aa88ff; --pink: #ee88bb;
+  --mono: 'IBM Plex Mono', monospace; --sans: 'IBM Plex Sans', sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:14px;padding:1.5rem 1rem 3rem;}
+.header{text-align:center;margin-bottom:2rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border);}
+.header h1{font-family:var(--mono);font-size:18px;font-weight:700;color:var(--amber);letter-spacing:.1em;text-transform:uppercase;}
+.header p{font-size:12px;color:var(--muted);margin-top:6px;font-family:var(--mono);}
+.section-title{font-family:var(--mono);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin:2rem 0 0.75rem;padding-left:4px;border-left:3px solid var(--amber);}
+.section-title.g{border-left-color:var(--green);}
+.section-title.b{border-left-color:var(--blue);}
+.section-title.p{border-left-color:var(--purple);}
+.section-title.c{border-left-color:var(--coral);}
+.tricks{background:#0f1a0f;border:1px solid #1e3a1e;border-radius:8px;padding:1rem 1.25rem;margin-bottom:2rem;}
+.tricks h3{font-family:var(--mono);font-size:10px;font-weight:700;color:var(--green);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;}
+.tricks ul{list-style:none;display:flex;flex-direction:column;gap:7px;}
+.tricks li{font-size:12.5px;color:var(--muted);padding-left:14px;position:relative;line-height:1.5;}
+.tricks li::before{content:'⚡';position:absolute;left:0;font-size:10px;}
+.tricks li strong{color:var(--green);}
+.tbl{width:100%;border-collapse:collapse;margin-bottom:2rem;font-size:12.5px;}
+.tbl th{font-family:var(--mono);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);padding:8px 10px;border-bottom:1px solid var(--border);text-align:left;white-space:nowrap;}
+.tbl td{padding:9px 10px;border-bottom:1px solid #1e1e1e;vertical-align:top;line-height:1.5;}
+.tbl tr:hover td{background:#181818;}
+.name{font-weight:500;color:var(--text);}
+.mono-sm{font-family:var(--mono);font-size:11px;color:var(--blue);}
+.use{color:var(--muted);font-size:12px;}
+.highlight{color:var(--coral);font-weight:500;}
+.eg{color:var(--green);font-size:12px;}
+.sv{font-family:var(--mono);font-size:13px;font-weight:700;color:var(--coral);}
+.tag{display:inline-block;font-family:var(--mono);font-size:9px;font-weight:700;padding:1px 6px;border-radius:3px;text-transform:uppercase;letter-spacing:.05em;white-space:nowrap;}
+.td{background:#1a1a30;color:var(--blue);}
+.tg{background:#1a2a10;color:var(--green);}
+.ta{background:#2a1a10;color:var(--amber);}
+.tn{background:#2a1020;color:var(--pink);}
+.tp{background:#1a1020;color:var(--purple);}
+.tc{background:#201010;color:var(--coral);}
+.facts-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:2rem;}
+.fact-card{background:var(--s1);border:1px solid var(--border);border-radius:8px;padding:1rem;}
+.fact-card h3{font-family:var(--mono);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;color:var(--amber);}
+.fact-card h3.g{color:var(--green);}
+.fact-card h3.b{color:var(--blue);}
+.fact-card h3.c{color:var(--coral);}
+.fact-card h3.p{color:var(--purple);}
+.fact-card ul{list-style:none;display:flex;flex-direction:column;gap:5px;}
+.fact-card li{font-size:12px;color:var(--muted);padding-left:12px;position:relative;line-height:1.5;}
+.fact-card li::before{content:'→';position:absolute;left:0;color:var(--dim);}
+.fact-card li strong{color:var(--text);}
+.linkage-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:2rem;}
+.lcard{flex:1;min-width:140px;background:var(--s1);border:1px solid var(--border);border-radius:8px;padding:0.75rem;}
+.lcard-title{font-family:var(--mono);font-size:10px;font-weight:700;text-transform:uppercase;margin-bottom:6px;}
+.lcard p{font-size:12px;color:var(--muted);line-height:1.6;}
+.lcard p strong{color:var(--text);}
+@media(max-width:500px){.facts-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Chemistry in Everyday Life</h1>
+  <p>Unit 16 · JEE Advanced Quick Reference · Drugs · Food · Cleansing Agents</p>
+</div>
+
+<!-- TRICKS -->
+<div class="tricks">
+  <h3>⚡ Memory tricks before the tables</h3>
+  <ul>
+    <li><strong>Chemotherapy</strong> = use of chemicals for therapeutic effect. Drug mol. mass ≈ 100–500 u.</li>
+    <li><strong>Agonist</strong> = mimics natural messenger, switches receptor ON. <strong>Antagonist</strong> = blocks receptor, switches OFF.</li>
+    <li><strong>Competitive inhibitor</strong> = competes at active site. <strong>Non-competitive</strong> = binds allosteric site → distorts active site shape.</li>
+    <li><strong>Cimetidine (Tegamet)</strong> → antacid. <strong>Ranitidine (Zantac)</strong> → replaced cimetidine. Both = H₂ receptor antagonists at stomach wall.</li>
+    <li><strong>Antacids ≠ Antihistamines</strong> → both interfere with histamine but at DIFFERENT receptors, so they don't interfere with each other.</li>
+    <li><strong>Aspirin</strong> = inhibits prostaglandin synthesis → anti-inflammatory + antipyretic + anti-platelet (prevents heart attacks).</li>
+    <li><strong>Morphine/Heroin/Codeine</strong> = narcotic opiates from opium poppy. Addictive.</li>
+    <li><strong>Barbiturates</strong> = barbituric acid derivatives (veronal, amytal, luminal, seconal, nembutal). Hypnotic = sleep-producing.</li>
+    <li><strong>Noradrenaline low</strong> → depression → need MAO inhibitors (Iproniazid, Phenelzine) to slow degradation → neurotransmitter active longer.</li>
+    <li><strong>Penicillin G</strong> = narrow spectrum. <strong>Ampicillin / Amoxycillin</strong> = broad spectrum (synthetic penicillin mods).</li>
+    <li><strong>Phenol:</strong> 0.2% = antiseptic · 1% = disinfectant. Same substance, different concentration.</li>
+    <li><strong>Dettol</strong> = chloroxylenol + terpineol. <strong>Bithionol</strong> → added to soaps. <strong>Tincture of iodine</strong> = 2–3% I₂ in alcohol-water.</li>
+    <li><strong>Saccharin 550×</strong> · <strong>Aspartame 100×</strong> (unstable at high T) · <strong>Sucralose 600×</strong> (stable, zero cal) · <strong>Alitame 2000×</strong> (hard to control).</li>
+    <li><strong>Soap fails in hard water</strong>: Ca²⁺/Mg²⁺ form insoluble scum → gummy on fabric/hair. Detergents work in hard water.</li>
+    <li><strong>Branched chain detergents</strong> = non-biodegradable → river foaming. Use <strong>straight chain</strong>.</li>
+    <li><strong>Norethindrone</strong> = synthetic progesterone (most used antifertility). Used with <strong>ethynylestradiol (novestrol)</strong>.</li>
+  </ul>
+</div>
+
+<!-- DRUG CLASSIFICATION -->
+<div class="section-title">Drug Classification — 4 Bases</div>
+<div class="facts-grid">
+  <div class="fact-card">
+    <h3>Pharmacological Effect</h3>
+    <ul>
+      <li>Based on <strong>what the drug does</strong> to body</li>
+      <li>Most useful for <strong>doctors</strong></li>
+      <li>E.g. all analgesics = pain killers</li>
+      <li>E.g. all antiseptics = kill/inhibit microbes</li>
+      <li>"Ranitidine is an antacid" → refers to <strong>this classification</strong></li>
+    </ul>
+  </div>
+  <div class="fact-card">
+    <h3>Drug Action</h3>
+    <ul>
+      <li>Based on <strong>biochemical process</strong> affected</li>
+      <li>E.g. all antihistamines inhibit action of histamine</li>
+      <li>Same biochemical target, different receptors possible</li>
+      <li>Antacids and antiallergics → both act via histamine but <strong>different receptors</strong></li>
+    </ul>
+  </div>
+  <div class="fact-card">
+    <h3>Chemical Structure</h3>
+    <ul>
+      <li>Drugs with <strong>common structural features</strong> grouped</li>
+      <li>Usually share pharmacological activity</li>
+      <li>E.g. all <strong>sulphonamides</strong> share –SO₂NH– group</li>
+      <li>Sulphanilamide, Sulphapyridine, Prontosil</li>
+    </ul>
+  </div>
+  <div class="fact-card">
+    <h3>Molecular Targets ★ Most Useful</h3>
+    <ul>
+      <li>Most useful for <strong>medicinal chemists</strong></li>
+      <li>Based on which biomolecule the drug interacts with</li>
+      <li>Targets: proteins, carbohydrates, lipids, nucleic acids</li>
+      <li>Same structural features → same mechanism on target</li>
+    </ul>
+  </div>
+</div>
+
+<!-- DRUG-TARGET INTERACTION -->
+<div class="section-title b">Drug–Target Interaction</div>
+<div class="linkage-row">
+  <div class="lcard">
+    <div class="lcard-title" style="color:var(--blue);">Enzyme as Target</div>
+    <p>Enzymes: (1) hold substrate at <strong>active site</strong>, (2) provide functional groups to react.<br><br>
+    Binding forces: ionic, H-bonding, van der Waals, dipole–dipole.<br><br>
+    <strong>Competitive inhibitor</strong> → competes with substrate at active site.<br>
+    <strong>Non-competitive inhibitor</strong> → binds allosteric site → shape of active site changes → substrate can't bind.<br>
+    <strong>Covalent (irreversible)</strong> → enzyme permanently blocked → body degrades complex → synthesises new enzyme.</p>
+  </div>
+  <div class="lcard">
+    <div class="lcard-title" style="color:var(--green);">Receptor as Target</div>
+    <p>Receptors = proteins embedded in cell membrane. Active site projects <strong>outside</strong> cell.<br><br>
+    Chemical messengers bind → shape change → message transferred <strong>without messenger entering cell</strong>.<br><br>
+    Different receptors → different shape, structure, amino acid composition → selectivity.<br><br>
+    <strong>Antagonist</strong> → blocks receptor (used when blocking needed).<br>
+    <strong>Agonist</strong> → mimics messenger, activates receptor (used when natural messenger is deficient).</p>
+  </div>
+</div>
+
+<!-- THERAPEUTIC DRUG CLASSES TABLE -->
+<div class="section-title g">Therapeutic Drug Classes — Complete Table</div>
+<table class="tbl">
+  <thead>
+    <tr><th>Class</th><th>Drug / Example</th><th>Brand</th><th>Mechanism / Key Note</th><th>Uses</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="name">Antacids</span><br><span class="tag td">Antacid</span></td>
+      <td><span class="eg">NaHCO₃, Al(OH)₃, Mg(OH)₂</span><br><span class="eg">Cimetidine, Ranitidine</span></td>
+      <td><span class="mono-sm">Tegamet<br>Zantac</span></td>
+      <td><span class="use">Metal hydroxides better (insoluble, don't raise pH above neutral). Cimetidine/Ranitidine = <span class="highlight">H₂ receptor antagonists</span> → block histamine from stimulating acid in stomach wall.</span></td>
+      <td><span class="use">Hyperacidity, stomach ulcers</span></td>
+    </tr>
+    <tr>
+      <td><span class="name">Antihistamines</span><br><span class="tag tp">Antiallergic</span></td>
+      <td><span class="eg">Brompheniramine</span><br><span class="eg">Terfenadine</span></td>
+      <td><span class="mono-sm">Dimetapp<br>Seldane</span></td>
+      <td><span class="use">Compete with histamine at allergy receptor binding sites. Act on <span class="highlight">different receptors</span> than antacids → don't reduce acid secretion.</span></td>
+      <td><span class="use">Nasal congestion, allergic response, common cold, pollen allergy</span></td>
+    </tr>
+    <tr>
+      <td><span class="name">Tranquilizers</span><br><span class="tag td">Neurological</span></td>
+      <td><span class="eg">Iproniazid, Phenelzine</span><br><span class="eg">Chlordiazepoxide, Meprobamate</span><br><span class="eg">Equanil, Valium, Serotonin</span><br><span class="eg">Barbiturates: veronal, amytal, nembutal, luminal, seconal</span></td>
+      <td><span class="mono-sm">Nardil<br>—</span></td>
+      <td><span class="use">MAO inhibitors (Iproniazid, Phenelzine) → inhibit enzymes degrading <strong>noradrenaline</strong> → longer activation → counteracts depression. Barbiturates = <span class="highlight">hypnotic</span> (sleep-producing). Valium, serotonin also tranquilizers.</span></td>
+      <td><span class="use">Depression, anxiety, stress, hypertension, sleeping pills</span></td>
+    </tr>
+    <tr>
+      <td><span class="name">Non-narcotic Analgesics</span><br><span class="tag">Non-addictive</span></td>
+      <td><span class="eg">Aspirin, Paracetamol</span></td>
+      <td><span class="mono-sm">—</span></td>
+      <td><span class="use">Aspirin inhibits synthesis of <span class="highlight">prostaglandins</span> (cause inflammation + pain). Antipyretic. Anti-platelet coagulation → <strong>prevents heart attacks</strong>.</span></td>
+      <td><span class="use">Skeletal pain, arthritis, fever reduction, heart attack prevention</span></td>
+    </tr>
+    <tr>
+      <td><span class="name">Narcotic Analgesics</span><br><span class="tag tn">Addictive</span></td>
+      <td><span class="eg">Morphine, Heroin, Codeine</span></td>
+      <td><span class="mono-sm">Opiates</span></td>
+      <td><span class="use">From opium poppy. Relieve pain + produce sleep at med doses. Poisonous doses → stupor, coma, convulsions, death. Highly addictive.</span></td>
+      <td><span class="use">Post-op pain, cardiac pain, terminal cancer, childbirth</span></td>
+    </tr>
+    <tr>
+      <td><span class="name">Antibiotics (Broad)</span><br><span class="tag tg">Broad Spectrum</span></td>
+      <td><span class="eg">Chloramphenicol (1947)</span><br><span class="eg">Ampicillin, Amoxycillin</span><br><span class="eg">Vancomycin, Ofloxacin</span></td>
+      <td><span class="mono-sm">—</span></td>
+      <td><span class="use">Kill/inhibit both Gram+ve and Gram–ve bacteria. Chloramphenicol rapidly absorbed orally. Ampicillin/Amoxycillin = <strong>synthetic mods of penicillin</strong>. Dysidazirine → toxic to some cancer cells.</span></td>
+      <td><span class="use">Typhoid, dysentery, meningitis, pneumonia, UTI, fever</span></td>
+    </tr>
+    <tr>
+      <td><span class="name">Antibiotics (Narrow)</span><br><span class="tag tc">Narrow Spectrum</span></td>
+      <td><span class="eg">Penicillin G</span></td>
+      <td><span class="mono-sm">—</span></td>
+      <td><span class="use">Fleming 1929, from Penicillium fungus. Nobel Prize 1945 (Fleming + Florey). Test allergy before giving. Bactericidal. Made at <strong>Hindustan Antibiotics, Pimpri</strong> in India.</span></td>
+      <td><span class="use">Specific bacterial infections</span></td>
+    </tr>
+    <tr>
+      <td><span class="name">Antiseptics</span><br><span class="tag tg">Living Tissue</span></td>
+      <td><span class="eg">Dettol (chloroxylenol + terpineol)</span><br><span class="eg">Bithionol (soaps), Iodoform</span><br><span class="eg">Tincture of iodine (2–3% I₂)</span><br><span class="eg">Boric acid (dilute) — weak, eyes</span></td>
+      <td><span class="mono-sm">—</span></td>
+      <td><span class="use">Applied to <span class="highlight">living tissues</span> (wounds, cuts, skin). NOT ingested. Furacine, soframicine = other examples.</span></td>
+      <td><span class="use">Wound dressing, skin infections, eye wash</span></td>
+    </tr>
+    <tr>
+      <td><span class="name">Disinfectants</span><br><span class="tag ta">Inanimate</span></td>
+      <td><span class="eg">Phenol 1% · Cl₂ (0.2–0.4 ppm)</span><br><span class="eg">SO₂ (very low conc.)</span></td>
+      <td><span class="mono-sm">—</span></td>
+      <td><span class="use">Applied to <span class="highlight">inanimate objects</span>. Phenol: <strong>0.2% = antiseptic, 1% = disinfectant</strong> — concentration-dependent switch.</span></td>
+      <td><span class="use">Floors, drainage, instruments</span></td>
+    </tr>
+    <tr>
+      <td><span class="name">Antifertility</span><br><span class="tag tp">Hormonal</span></td>
+      <td><span class="eg">Norethindrone</span><br><span class="eg">Ethynylestradiol (Novestrol)</span></td>
+      <td><span class="mono-sm">—</span></td>
+      <td><span class="use">Birth control pills = synthetic estrogen + synthetic progesterone together. Progesterone <span class="highlight">suppresses ovulation</span>. Synthetic derivatives more potent. Norethindrone = most widely used.</span></td>
+      <td><span class="use">Contraception / family planning</span></td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- BACTERICIDAL vs BACTERIOSTATIC -->
+<div class="section-title p">Bactericidal vs Bacteriostatic</div>
+<div class="facts-grid">
+  <div class="fact-card">
+    <h3 class="c">Bactericidal — Kills Bacteria</h3>
+    <ul>
+      <li><strong>Penicillin</strong></li>
+      <li><strong>Aminoglycosides</strong></li>
+      <li><strong>Ofloxacin</strong></li>
+    </ul>
+  </div>
+  <div class="fact-card">
+    <h3 class="b">Bacteriostatic — Inhibits Growth</h3>
+    <ul>
+      <li><strong>Erythromycin</strong></li>
+      <li><strong>Tetracycline</strong></li>
+      <li><strong>Chloramphenicol</strong></li>
+    </ul>
+  </div>
+</div>
+
+<!-- SULPHA DRUG HISTORY -->
+<div class="section-title c">Sulpha Drugs — Historical Chain (JEE loves this)</div>
+<div class="linkage-row">
+  <div class="lcard">
+    <div class="lcard-title" style="color:var(--amber);">Paul Ehrlich · 1908 Nobel</div>
+    <p>Arsenic-based compounds for syphilis. Developed <strong>Arsphenamine (Salvarsan)</strong> — first effective treatment for syphilis. Noted –As=As– resembles –N=N– of azodyes → searched azodye-like antibacterial compounds.</p>
+  </div>
+  <div class="lcard">
+    <div class="lcard-title" style="color:var(--amber);">Prontosil 1932 → Sulphanilamide</div>
+    <p>Ehrlich prepared <strong>prontosil</strong>, first effective antibacterial agent. Structurally resembles salvarsan. In body: prontosil → <strong>sulphanilamide</strong> (actual active compound). → Sulpha drug era began. Best: <strong>Sulphapyridine</strong>.</p>
+  </div>
+  <div class="lcard">
+    <div class="lcard-title" style="color:var(--amber);">Alexander Fleming · 1945 Nobel</div>
+    <p>1929: Discovered antibacterial properties of <strong>Penicillium fungus</strong>. Isolation + purification took <strong>13 years</strong>. Shared Nobel with H.W. Florey. Real revolution in antibacterial therapy.</p>
+  </div>
+</div>
+
+<!-- ARTIFICIAL SWEETENERS -->
+<div class="section-title">Artificial Sweeteners Table</div>
+<table class="tbl">
+  <thead>
+    <tr><th>Sweetener</th><th>Sweetness vs Cane Sugar</th><th>Chemical Nature</th><th>Key Note</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="name">Aspartame</span></td>
+      <td><span class="sv">100×</span></td>
+      <td><span class="use">Methyl ester of dipeptide (aspartic acid + phenylalanine)</span></td>
+      <td><span class="use">Most widely used. <span class="highlight">Unstable at cooking temperature</span> — cold foods and soft drinks only.</span></td>
+    </tr>
+    <tr>
+      <td><span class="name">Saccharin</span></td>
+      <td><span class="sv">550×</span></td>
+      <td><span class="use">Ortho-sulphobenzimide</span></td>
+      <td><span class="use">First popular artificial sweetener (discovered 1879). Excreted unchanged in urine. Useful for diabetics.</span></td>
+    </tr>
+    <tr>
+      <td><span class="name">Sucralose</span></td>
+      <td><span class="sv">600×</span></td>
+      <td><span class="use">Trichloro derivative of sucrose</span></td>
+      <td><span class="use"><span class="highlight">Stable at cooking temperature</span>. Looks and tastes like sugar. Zero calories.</span></td>
+    </tr>
+    <tr>
+      <td><span class="name">Alitame</span></td>
+      <td><span class="sv">2000×</span></td>
+      <td><span class="use">High potency sweetener</span></td>
+      <td><span class="use">More stable than aspartame. <span class="highlight">Problem: difficult to control sweetness</span> of food.</span></td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- FOOD PRESERVATIVES -->
+<div class="section-title">Food Preservatives & Additives</div>
+<div class="facts-grid">
+  <div class="fact-card">
+    <h3>Common Preservatives</h3>
+    <ul>
+      <li><strong>Table salt</strong> — osmotic dehydration of microbes</li>
+      <li><strong>Sugar</strong> — reduces water activity</li>
+      <li><strong>Vegetable oils</strong> — air exclusion</li>
+      <li><strong>Sodium benzoate (C₆H₅COONa)</strong> — most common synthetic; metabolised in body; used in limited quantity</li>
+      <li>Salts of <strong>sorbic acid</strong> and <strong>propanoic acid</strong></li>
+    </ul>
+  </div>
+  <div class="fact-card">
+    <h3>7 Categories of Food Additives</h3>
+    <ul>
+      <li>Food colours</li>
+      <li>Flavours and sweeteners</li>
+      <li>Fat emulsifiers and stabilising agents</li>
+      <li>Flour improvers (antistaling, bleaches)</li>
+      <li>Antioxidants</li>
+      <li>Preservatives</li>
+      <li><strong>Nutritional supplements</strong> (minerals, vitamins, amino acids) — <span class="highlight">only category with nutritive value</span></li>
+    </ul>
+  </div>
+</div>
+
+<!-- SOAPS vs DETERGENTS -->
+<div class="section-title g">Cleansing Agents — Soaps vs Synthetic Detergents</div>
+<table class="tbl">
+  <thead>
+    <tr><th>Property</th><th>Soaps</th><th>Synthetic Detergents</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="name">Chemical nature</span></td>
+      <td><span class="use">Na/K salts of long-chain fatty acids (stearic, oleic, palmitic)</span></td>
+      <td><span class="use">Sodium salts of sulphonated long-chain alcohols/hydrocarbons, or ammonium salts, or polyglycol esters</span></td>
+    </tr>
+    <tr>
+      <td><span class="name">Preparation</span></td>
+      <td><span class="use"><strong>Saponification</strong>: fat + 3NaOH → 3 RCOONa + glycerol. NaCl added to precipitate soap. Glycerol recovered by fractional distillation.</span></td>
+      <td><span class="use">Long-chain alcohol + H₂SO₄ → alkyl H₂SO₄ → NaOH → anionic detergent. Or alkylbenzene sulphonic acid + NaOH.</span></td>
+    </tr>
+    <tr>
+      <td><span class="name">Hard water</span></td>
+      <td><span class="use"><span class="highlight">Fails in hard water.</span> Ca²⁺/Mg²⁺ form insoluble soaps (scum). Gummy mass on fabric. Dull hair. Uneven dye absorption.</span></td>
+      <td><span class="use" style="color:var(--green);">Works in hard water (and ice cold water for some types).</span></td>
+    </tr>
+    <tr>
+      <td><span class="name">Biodegradability</span></td>
+      <td><span class="use">Biodegradable</span></td>
+      <td><span class="use"><strong>Straight chain</strong> = biodegradable (preferred). <strong>Branched chain</strong> = non-biodegradable → accumulates → river/pond foaming → pollution.</span></td>
+    </tr>
+    <tr>
+      <td><span class="name">Cleansing action</span></td>
+      <td colspan="2"><span class="use">Both: <strong>micelle formation</strong>. Hydrophobic tails trap grease/oil in core. Hydrophilic heads face water. Grease dispersed and removed.</span></td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- DETERGENT TYPES -->
+<div class="section-title g">Three Types of Synthetic Detergents</div>
+<div class="linkage-row">
+  <div class="lcard">
+    <div class="lcard-title" style="color:var(--green);">Anionic Detergents</div>
+    <p><strong>Anionic part</strong> does the cleansing.<br>Na salts of sulphonated long-chain alcohols or alkylbenzene sulphonates.<br><br>
+    E.g. <strong>Sodium dodecylbenzenesulphonate</strong><br>(dodecylbenzene + H₂SO₄ → sulphonic acid + NaOH → product)<br><br>
+    Use: <strong>Household cleaning, toothpastes</strong></p>
+  </div>
+  <div class="lcard">
+    <div class="lcard-title" style="color:var(--purple);">Cationic Detergents</div>
+    <p><strong>Quaternary ammonium salts</strong> of amines. Long hydrocarbon chain + <strong>positive N</strong> (acetates, chlorides, bromides as anions).<br><br>
+    E.g. <strong>Cetyltrimethylammonium bromide</strong><br><br>
+    Have <strong>germicidal properties</strong>. Expensive → limited use.<br>
+    Use: <strong>Hair conditioners</strong></p>
+  </div>
+  <div class="lcard">
+    <div class="lcard-title" style="color:var(--amber);">Non-ionic Detergents</div>
+    <p><strong>No ions</strong> in structure.<br>E.g. stearic acid + polyethyleneglycol → product<br><br>
+    Same micelle cleansing mechanism (removes grease/oil).<br><br>
+    Use: <strong>Liquid dishwashing, emulsifying agents, wetting agents</strong></p>
+  </div>
+</div>
+
+<!-- SOAP TYPES -->
+<div class="section-title g">Types of Soaps</div>
+<div class="facts-grid">
+  <div class="fact-card">
+    <h3 class="g">Soap Varieties</h3>
+    <ul>
+      <li><strong>Toilet soaps</strong> — better fats, excess alkali removed, colour + perfume added</li>
+      <li><strong>Floating soaps</strong> — air bubbles beaten in before hardening</li>
+      <li><strong>Transparent soaps</strong> — dissolved in ethanol, solvent evaporated</li>
+      <li><strong>Medicated soaps</strong> — medicinal/deodorant substances added</li>
+      <li><strong>Shaving soaps</strong> — glycerol (prevents drying) + rosin → sodium rosinate (lathers well)</li>
+      <li><strong>Laundry soaps</strong> — fillers: Na rosinate, Na silicate, borax, Na₂CO₃</li>
+      <li><strong>Soap powders</strong> — soap + abrasive (pumice/sand) + builders (Na₂CO₃, Na₃PO₄)</li>
+    </ul>
+  </div>
+  <div class="fact-card">
+    <h3 class="b">Key Soap Chemistry</h3>
+    <ul>
+      <li>Only <strong>Na and K soaps</strong> are water-soluble</li>
+      <li><strong>K soaps</strong> are softer to skin than Na soaps</li>
+      <li>Saponification: fat (glyceryl ester) + NaOH → soap + glycerol</li>
+      <li>Soap precipitated out by adding NaCl (<strong>salting out</strong>)</li>
+      <li>Glycerol recovered from leftover by <strong>fractional distillation</strong></li>
+      <li>Hard water scum = insoluble Ca/Mg soaps — gummy mass on fabric</li>
+    </ul>
+  </div>
+</div>
+
+<!-- NAMED DRUGS QUICK FIRE TABLE -->
+<div class="section-title c">Named Drugs & Chemicals — Quick Reference</div>
+<table class="tbl">
+  <thead>
+    <tr><th>Name</th><th>Brand/Alias</th><th>Class</th><th>Key Identity Fact</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><span class="name">Cimetidine</span></td><td><span class="mono-sm">Tegamet</span></td><td><span class="tag td">Antacid</span></td><td><span class="use">First H₂ receptor antagonist. Was world's largest-selling drug until ranitidine.</span></td></tr>
+    <tr><td><span class="name">Ranitidine</span></td><td><span class="mono-sm">Zantac</span></td><td><span class="tag td">Antacid</span></td><td><span class="use">Replaced cimetidine. Blocks histamine H₂ receptors in stomach wall.</span></td></tr>
+    <tr><td><span class="name">Brompheniramine</span></td><td><span class="mono-sm">Dimetapp</span></td><td><span class="tag tp">Antihistamine</span></td><td><span class="use">Competes with histamine at allergy receptors. Doesn't reduce acid secretion.</span></td></tr>
+    <tr><td><span class="name">Terfenadine</span></td><td><span class="mono-sm">Seldane</span></td><td><span class="tag tp">Antihistamine</span></td><td><span class="use">Same mechanism as brompheniramine. Antiallergic, not antacid.</span></td></tr>
+    <tr><td><span class="name">Iproniazid</span></td><td><span class="mono-sm">—</span></td><td><span class="tag td">Antidepressant</span></td><td><span class="use">MAO inhibitor → slows degradation of noradrenaline → longer receptor activation.</span></td></tr>
+    <tr><td><span class="name">Phenelzine</span></td><td><span class="mono-sm">Nardil</span></td><td><span class="tag td">Antidepressant</span></td><td><span class="use">Same MAO inhibitor mechanism as iproniazid.</span></td></tr>
+    <tr><td><span class="name">Equanil</span></td><td><span class="mono-sm">Meprobamate</span></td><td><span class="tag td">Tranquilizer</span></td><td><span class="use">Controls depression and hypertension.</span></td></tr>
+    <tr><td><span class="name">Chlordiazepoxide</span></td><td><span class="mono-sm">—</span></td><td><span class="tag td">Tranquilizer</span></td><td><span class="use">Mild tranquilizer for relieving tension. Relatively safe.</span></td></tr>
+    <tr><td><span class="name">Aspirin</span></td><td><span class="mono-sm">—</span></td><td><span class="tag">Non-narcotic</span></td><td><span class="use">Inhibits prostaglandin synthesis. Antipyretic + anti-platelet → prevents heart attacks.</span></td></tr>
+    <tr><td><span class="name">Morphine / Heroin / Codeine</span></td><td><span class="mono-sm">Opiates</span></td><td><span class="tag tn">Narcotic</span></td><td><span class="use">From opium poppy. Pain relief at med doses. Stupor/coma/death at high doses. Addictive.</span></td></tr>
+    <tr><td><span class="name">Arsphenamine (Salvarsan)</span></td><td><span class="mono-sm">—</span></td><td><span class="tag td">Antibacterial</span></td><td><span class="use">Paul Ehrlich. First effective treatment for syphilis. Arsenic-based. Nobel 1908.</span></td></tr>
+    <tr><td><span class="name">Prontosil</span></td><td><span class="mono-sm">—</span></td><td><span class="tag td">Sulpha drug</span></td><td><span class="use">1932, Ehrlich. First effective antibacterial agent. Converted to sulphanilamide in body.</span></td></tr>
+    <tr><td><span class="name">Sulphanilamide → Sulphapyridine</span></td><td><span class="mono-sm">—</span></td><td><span class="tag td">Sulpha drug</span></td><td><span class="use">Real active compound of prontosil. Sulphapyridine = most effective sulphonamide analogue.</span></td></tr>
+    <tr><td><span class="name">Penicillin G</span></td><td><span class="mono-sm">—</span></td><td><span class="tag tc">Narrow spectrum</span></td><td><span class="use">Fleming 1929, from Penicillium fungus. Nobel 1945. Made at Hindustan Antibiotics, Pimpri.</span></td></tr>
+    <tr><td><span class="name">Chloramphenicol</span></td><td><span class="mono-sm">—</span></td><td><span class="tag tg">Broad spectrum</span></td><td><span class="use">Isolated 1947. Rapidly absorbed orally. Typhoid, dysentery, meningitis, pneumonia.</span></td></tr>
+    <tr><td><span class="name">Norethindrone</span></td><td><span class="mono-sm">—</span></td><td><span class="tag tp">Antifertility</span></td><td><span class="use">Most widely used synthetic progesterone derivative. Suppresses ovulation.</span></td></tr>
+    <tr><td><span class="name">Ethynylestradiol</span></td><td><span class="mono-sm">Novestrol</span></td><td><span class="tag tp">Antifertility</span></td><td><span class="use">Synthetic estrogen. Used with norethindrone in birth control pills.</span></td></tr>
+    <tr><td><span class="name">Saccharin</span></td><td><span class="mono-sm">—</span></td><td><span class="tag ta">Sweetener</span></td><td><span class="use">Ortho-sulphobenzimide. 550×. First popular artificial sweetener (1879). Diabetics.</span></td></tr>
+    <tr><td><span class="name">Aspartame</span></td><td><span class="mono-sm">—</span></td><td><span class="tag ta">Sweetener</span></td><td><span class="use">100×. Dipeptide ester (Asp+Phe). Unstable at high T → cold drinks only.</span></td></tr>
+    <tr><td><span class="name">Sucralose</span></td><td><span class="mono-sm">—</span></td><td><span class="tag ta">Sweetener</span></td><td><span class="use">600×. Trichloro sucrose. Stable at cooking T. Zero calories.</span></td></tr>
+    <tr><td><span class="name">Alitame</span></td><td><span class="mono-sm">—</span></td><td><span class="tag ta">Sweetener</span></td><td><span class="use">2000×. Stable. Problem: hard to control sweetness of food.</span></td></tr>
+    <tr><td><span class="name">Sodium benzoate</span></td><td><span class="mono-sm">C₆H₅COONa</span></td><td><span class="tag ta">Preservative</span></td><td><span class="use">Most common synthetic preservative. Metabolised in body. Limited quantities.</span></td></tr>
+    <tr><td><span class="name">Dettol</span></td><td><span class="mono-sm">—</span></td><td><span class="tag tg">Antiseptic</span></td><td><span class="use">Mixture of chloroxylenol + terpineol.</span></td></tr>
+    <tr><td><span class="name">Bithionol</span></td><td><span class="mono-sm">Bithional</span></td><td><span class="tag tg">Antiseptic</span></td><td><span class="use">Added to soaps to impart antiseptic properties.</span></td></tr>
+    <tr><td><span class="name">Tincture of iodine</span></td><td><span class="mono-sm">—</span></td><td><span class="tag tg">Antiseptic</span></td><td><span class="use">2–3% I₂ solution in alcohol-water. Powerful antiseptic for wounds.</span></td></tr>
+    <tr><td><span class="name">Iodoform</span></td><td><span class="mono-sm">CHI₃</span></td><td><span class="tag tg">Antiseptic</span></td><td><span class="use">Used as antiseptic for wounds.</span></td></tr>
+    <tr><td><span class="name">Cetyltrimethylammonium bromide</span></td><td><span class="mono-sm">—</span></td><td><span class="tag tp">Cationic detergent</span></td><td><span class="use">Popular cationic detergent. Germicidal. Used in hair conditioners.</span></td></tr>
+  </tbody>
+</table>
+
+<div style="text-align:center;font-family:var(--mono);font-size:11px;color:var(--dim);margin-top:2rem;">
+  JEE Advanced 2026 · Chemistry in Everyday Life · Unit 16 Quick Reference
+</div>
+</body>
+</html>
