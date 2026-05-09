@@ -33,7 +33,7 @@ window.CARDS = [
   { cat:'op-order', cl:'c-sb-op',
     f:'Write the overall oxidising power (O.P.) order for common OAs?', fs:'Image 1 — top line',
     b:'F₂ > O₃ > CaOCl₂ > S₂O₈²⁻ > Bi⁺⁵ > Pb⁺⁴ > MnO₄⁻, H⁺ > H₂O₂ > Cr₂O₇²⁻, H⁺\nCl₂ > HNO₃ > H₂SO₄ > Br₂ > HNO₂ >\nI₂ > H₂O₂ / on⁻',
-    bs:'F₂ is the strongest, on⁻ (hypochlorite) weakest in this list', n:'' },
+    bs:'F₂ is the strongest, on⁻ (hypochlorite) weakest in this list', n:'' , imp:true },
 
   // ── H₂ PREPARATION ──
   { cat:'h2-prep', cl:'c-sb-h2',
@@ -55,22 +55,22 @@ window.CARDS = [
   { cat:'syngas', cl:'c-sb-syn',
     f:'CH₄ + H₂O →(1270K, Ni) ? [Steam reforming]', fs:'Syngas preparation',
     b:'CH₄ + H₂O → CO + 3H₂ (syngas / water gas)',
-    bs:'Used industrially to produce H₂', n:'' },
+    bs:'Used industrially to produce H₂', n:'' , imp:true },
 
   { cat:'syngas', cl:'c-sb-syn',
     f:'C(s) + H₂O →(1270K) ? [Coal gasification]', fs:'',
     b:'C + H₂O → CO + H₂ (water gas)\nC + O₂ → CO₂; CO₂ + C → 2CO (producer gas)',
-    bs:'Producer gas = CO + N₂; Water gas = CO + H₂', n:'' },
+    bs:'Producer gas = CO + N₂; Water gas = CO + H₂', n:'' , imp:true },
 
   { cat:'syngas', cl:'c-sb-syn',
     f:'CO(g) + H₂O(g) →(673K) ? [Water gas shift reaction]', fs:'',
     b:'CO + H₂O → CO₂ + H₂↑\nUsed to increase H₂ yield and remove CO',
-    bs:'Catalyst: Fe₂O₃/Cr₂O₃', n:'' },
+    bs:'Catalyst: Fe₂O₃/Cr₂O₃', n:'' , imp:true },
 
   { cat:'syngas', cl:'c-sb-syn',
     f:'3H₂ + N₂ →(Fe, 673K, 200 atm) ? [Haber\'s process]', fs:'',
     b:'N₂ + 3H₂ →(Fe, 400–500°C, 200 atm) → 2NH₃(g), ΔH = −ve\nFe is catalyst; Al₂O₃ is promoter',
-    bs:'High P favours product; compromise T = 450°C', n:'' },
+    bs:'High P favours product; compromise T = 450°C', n:'' , imp:true },
 
   { cat:'syngas', cl:'c-sb-syn',
     f:'CO + H₂ + R−CH=CH₂ →(Co catalyst) ? [Hydroformylation / Oxo process]', fs:'',
@@ -102,7 +102,7 @@ window.CARDS = [
   { cat:'water', cl:'c-sb-h2o',
     f:'Na + H₂O → ? / F₂ + H₂O → ?', fs:'Metal and halogen with water',
     b:'2Na + 2H₂O → 2NaOH + H₂↑\nF₂ + H₂O → HF + O₂ (+ O₃ trace)\nCl₂ + H₂O ⇌ HCl + HClO',
-    bs:'F₂ oxidises water; alkali metals reduce it', n:'' },
+    bs:'F₂ oxidises water; alkali metals reduce it', n:'' , imp:true },
 
   { cat:'water', cl:'c-sb-h2o',
     f:'6CO₂ + 12H₂O →(hν, chlorophyll) ? [Photosynthesis]', fs:'',
@@ -133,17 +133,17 @@ window.CARDS = [
   { cat:'h2o2-prep', cl:'c-sb-h2o2',
     f:'BaO₂·8H₂O + H₂SO₄ → ? [Lab prep of H₂O₂]', fs:'',
     b:'BaO₂·8H₂O + H₂SO₄ → BaSO₄↓ + H₂O₂ + H₂O\nBaSO₄ filtered off → pure H₂O₂',
-    bs:'', n:'' },
+    bs:'', n:'' , imp:true },
 
   { cat:'h2o2-prep', cl:'c-sb-h2o2',
     f:'Industrial prep of H₂O₂ — 2-ethylanthraquinol method?', fs:'Anthraquinone / Riedl-Pfleiderer process',
     b:'2-Ethylanthraquinol + O₂ → H₂O₂ + 2-ethylanthraquinone\nMost industrial H₂O₂ made this way',
-    bs:'Anthraquinone is regenerated and recycled', n:'' },
+    bs:'Anthraquinone is regenerated and recycled', n:'' , imp:true },
 
   { cat:'h2o2-prep', cl:'c-sb-h2o2',
     f:'K₂S₂O₈ + D₂O → ? / Electrolysis of H₂SO₄ → K₂S₂O₈ → H₂O₂', fs:'',
     b:'K₂S₂O₈ + D₂O → D₂O₂ + K₂SO₄ (deuterium peroxide)\nElectrolysis: 2H₂SO₄ → H₂S₂O₈ →(hydrolysis) → H₂O₂',
-    bs:'', n:'' },
+    bs:'', n:'' , imp:true },
 
   // ── H₂O₂ PROPERTIES ──
   { cat:'h2o2-props', cl:'c-sb-h2o2',
@@ -154,44 +154,44 @@ window.CARDS = [
   { cat:'h2o2-props', cl:'c-sb-h2o2',
     f:'H₂O₂ → ? (decomposition) / What stabilises H₂O₂?', fs:'',
     b:'2H₂O₂ → 2H₂O + O₂↑ (disproportionation)\nCatalysed by: MnO₂, Fe³⁺, dust, light, base\nStabilised by: glycerol, acetanilide, phosphoric acid (slightly acidic)\nStored in wax-lined containers away from light',
-    bs:'Pure H₂O₂ is pale blue oily liquid, bp 150°C', n:'' },
+    bs:'Pure H₂O₂ is pale blue oily liquid, bp 150°C', n:'' , imp:true },
 
   { cat:'h2o2-props', cl:'c-sb-h2o2',
     f:'H₂O₂ acts as oxidising bleach or reducing bleach?', fs:'',
     b:'Primary action = oxidation → oxidising bleach\nBleaches hair, silk, feathers, ivory\nNa₂S₂O₃ = reducing bleach (primary action = reduction)',
-    bs:'H₂O₂ can act as both OA and RA', n:'' },
+    bs:'H₂O₂ can act as both OA and RA', n:'' , imp:true },
 
   // ── H₂O₂ REACTIONS ──
   { cat:'h2o2-rxns', cl:'c-sb-h2o2',
     f:'H₂O₂ as OA (acidic medium) — 3 reactions?', fs:'H₂O₂ oxidising',
     b:'Fe²⁺ + H₂O₂ + H⁺ → Fe³⁺ + H₂O (Fenton\'s reagent)\nPbS + H₂O₂ → PbSO₄ + H₂O (restores paintings — PbS blackens, H₂O₂ whitens)\nI⁻ + H₂O₂ + H⁺ → I₂ + H₂O',
-    bs:'', n:'' },
+    bs:'', n:'' , imp:true },
 
   { cat:'h2o2-rxns', cl:'c-sb-h2o2',
     f:'H₂O₂ as RA (acidic medium) — 3 reactions?', fs:'H₂O₂ reducing',
     b:'MnO₄⁻ + H₂O₂ + H⁺ → Mn²⁺ + O₂↑ + H₂O\nMnO₂ + H₂O₂ + H⁺ → Mn²⁺ + O₂↑ + H₂O\nCl₂ + H₂O₂ → 2HCl + O₂↑',
-    bs:'Powerful OA like MnO₄⁻ oxidise H₂O₂ to O₂', n:'' },
+    bs:'Powerful OA like MnO₄⁻ oxidise H₂O₂ to O₂', n:'' , imp:true },
 
   { cat:'h2o2-rxns', cl:'c-sb-h2o2',
     f:'H₂O₂ as RA (basic medium) — 2 reactions?', fs:'',
     b:'MnO₄⁻ + H₂O₂ + OH⁻ → MnO₂↓ + O₂↑ + H₂O\nI₂ + H₂O₂ + OH⁻ → I⁻ + O₂↑ + H₂O',
-    bs:'', n:'' },
+    bs:'', n:'' , imp:true },
 
   { cat:'h2o2-rxns', cl:'c-sb-h2o2',
     f:'H₂O₂ + MnSO₄ + NH₃ → ? / H₂O₂ as OA in basic medium?', fs:'',
     b:'MnSO₄ + H₂O₂ + NH₃ → MnO(OH)↓ (brown ppt) + (NH₄)₂SO₄\nH₂O₂ oxidises Mn²⁺ → MnO(OH) in basic medium\nAlso: H₂O₂ + Mn⁴⁺ → Mn²⁺ + O₂ (OA)\nH₂O₂ + Mn⁷⁺ + H⁺ → Mn²⁺ + O₂ (RA)',
-    bs:'', n:'' },
+    bs:'', n:'' , imp:true },
 
   // ── ALKALI METAL OXIDES (S-Block 1) ──
   { cat:'s1-oxides', cl:'c-sb-s1',
     f:'Li + O₂ → ? / Na + O₂ → ? / K,Rb,Cs + O₂ → ?', fs:'Alkali metals + O₂',
     b:'4Li + O₂ → 2Li₂O (normal oxide)\n2Na + O₂ → Na₂O₂ (peroxide, O₂²⁻)\nK/Rb/Cs + O₂ → KO₂/RbO₂/CsO₂ (superoxide, O₂⁻)',
-    bs:'Li=oxide; Na=peroxide; K,Rb,Cs=superoxide', n:'' },
+    bs:'Li=oxide; Na=peroxide; K,Rb,Cs=superoxide', n:'' , imp:true },
 
   { cat:'s1-oxides', cl:'c-sb-s1',
     f:'Na₂O₂ + H₂O → ? / Na₂O₂ + CO₂ → ? / KO₂ + H₂O → ?', fs:'Peroxide and superoxide reactions',
     b:'2Na₂O₂ + 2H₂O → 4NaOH + O₂↑\n2Na₂O₂ + 2CO₂ → 2Na₂CO₃ + O₂↑ (used in submarines — absorbs CO₂, releases O₂)\n4KO₂ + 2H₂O → 4KOH + 3O₂↑\n4KO₂ + 2CO₂ → 2K₂CO₃ + 3O₂↑',
-    bs:'Superoxide releases more O₂ per mole', n:'' },
+    bs:'Superoxide releases more O₂ per mole', n:'' , imp:true },
 
   { cat:'s1-oxides', cl:'c-sb-s1',
     f:'K/Rb/Cs also form carbonates — K + CO₂ → ? / Rb + CO₂ → ?', fs:'',
@@ -213,12 +213,12 @@ window.CARDS = [
   { cat:'s1-nitrates', cl:'c-sb-s1',
     f:'LiNO₃ →(Δ) ? / NaNO₃ →(<500°C) ? / KNO₃/RbNO₃/CsNO₃ →(Δ) ?', fs:'Alkali metal nitrate decomposition',
     b:'LiNO₃ → Li₂O + NO₂↑ + O₂↑ (like Mg — diagonal)\nNaNO₃ (<500°C) → NaNO₂ + O₂↑\nNaNO₃ (>500°C) → Na₂O + N₂ + O₂\nKNO₃/RbNO₃/CsNO₃ → MNO₂ + O₂↑',
-    bs:'Li = oxide (diagonal with Mg); others = nitrite', n:'' },
+    bs:'Li = oxide (diagonal with Mg); others = nitrite', n:'' , imp:true },
 
   { cat:'s1-nitrates', cl:'c-sb-s1',
     f:'NH₄HCO₃ + NaCl → NaHCO₃↓ + NH₄Cl [Solvay] / NaHCO₃ →(Δ) ?', fs:'Solvay process',
     b:'NH₃ + H₂O + CO₂ → (NH₄)₂CO₃ → NH₄HCO₃\nNH₄HCO₃ + NaCl → NaHCO₃↓ + NH₄Cl (NaHCO₃ precipitates)\n2NaHCO₃ →(Δ) → Na₂CO₃ + CO₂ + H₂O (calcination)\nNH₄Cl + Ca(OH)₂ → CaCl₂ + NH₃↑ (NH₃ recovered)',
-    bs:'', n:'' },
+    bs:'', n:'' , imp:true },
 
   { cat:'s1-nitrates', cl:'c-sb-s1',
     f:'NH₄NO₃ → NaHCO₃ / NaHCO₃ + NaCl reaction — what precipitates?', fs:'',
@@ -229,12 +229,12 @@ window.CARDS = [
   { cat:'s1-carbonate', cl:'c-sb-s1',
     f:'Na₂CO₃·10H₂O →(Δ) ? / Na₂CO₃·H₂O →(>373K) ?', fs:'Efflorescence of washing soda',
     b:'Na₂CO₃·10H₂O →(Δ) → Na₂CO₃·H₂O + 9H₂O (effloresces in air)\nNa₂CO₃·H₂O →(>100°C) → anhydrous Na₂CO₃\nNaHCO₃ →(>373K) → Na₂CO₃ + H₂O + CO₂ (soda ash — white solid)',
-    bs:'', n:'' },
+    bs:'', n:'' , imp:true },
 
   { cat:'s1-carbonate', cl:'c-sb-s1',
     f:'NaHCO₃ + NaOH → ? / Na₂CO₃ + CO₂ + H₂O → ?', fs:'Carbonate reactions',
     b:'NaHCO₃ + NaOH → Na₂CO₃ + H₂O\nNa₂CO₃ + CO₂ + H₂O → 2NaHCO₃\nNa₂CO₃ + H₂SO₄ → Na₂SO₄ + H₂O + CO₂↑',
-    bs:'', n:'' },
+    bs:'', n:'' , imp:true },
 
   { cat:'s1-carbonate', cl:'c-sb-s1',
     f:'NH₄NO₃ + NaCl + CO₂ + H₂O → NaHCO₃ + NH₄Cl [Solvay] / NH₄HCO₃ + NaCl → ?', fs:'',
@@ -262,12 +262,12 @@ window.CARDS = [
   { cat:'s2-be', cl:'c-sb-s2',
     f:'BeO + C + Cl₂ → ? / (NH₄)₂BeF₄ →(Δ) ? / BeCl₂ + LiAlH₄ → ?', fs:'Be compound prep',
     b:'BeO + C + Cl₂ → BeCl₂ + CO\n(NH₄)₂BeF₄ →(Δ) → BeF₂ + 2NH₄F → BeF₂ + 2NH₃ + 2HF\nBeCl₂ + LiAlH₄ → BeH₂ + LiCl + AlCl₃',
-    bs:'', n:'' },
+    bs:'', n:'' , imp:true },
 
   { cat:'s2-be', cl:'c-sb-s2',
     f:'Be(NO₃)₂ →(Δ) ? [Anomalous behaviour of Be]', fs:'',
     b:'Be(NO₃)₂ →(Δ) → Be(MgO or) → BeO + NO₂↑ + O₂↑\nSimilar to Mg(NO₃)₂ → MgO + NO₂ + O₂',
-    bs:'Be shows diagonal relationship with Al; Li with Mg', n:'' },
+    bs:'Be shows diagonal relationship with Al; Li with Mg', n:'' , imp:true },
 
   { cat:'s2-be', cl:'c-sb-s2',
     f:'BeCH₄ structure? / BeH₂ + NMe₃ → ? / BeCH₄ in organic vs ionic?', fs:'',
@@ -278,7 +278,7 @@ window.CARDS = [
   { cat:'s2-mg', cl:'c-sb-s2',
     f:'Mg + N₂ → ? / Mg + O₂ → ? / Mg burning in CO₂ → ?', fs:'Mg reactions',
     b:'3Mg + N₂ → Mg₃N₂ (magnesium nitride)\n2Mg + O₂ → 2MgO\n2Mg + CO₂ → 2MgO + C (Mg burns in CO₂)',
-    bs:'Mg burns in CO₂ — don\'t use CO₂ extinguisher on Mg fire!', n:'' },
+    bs:'Mg burns in CO₂ — don\'t use CO₂ extinguisher on Mg fire!', n:'' , imp:true },
 
   { cat:'s2-mg', cl:'c-sb-s2',
     f:'Mg(HCO₃)₂ →(Δ) ? / MgCO₃ →(Δ) ? / MgO + H₂O → ?', fs:'',
@@ -294,27 +294,27 @@ window.CARDS = [
   { cat:'s2-ca', cl:'c-sb-s2',
     f:'CaO →(+H₂O) ? / CaO →(+CO₂) ? / CaO →(+SiO₂) ? / CaO →(+P₄O₁₀) ?', fs:'Quicklime (CaO) reactions',
     b:'CaO + H₂O → Ca(OH)₂ (slaked lime, strong exothermic)\nCaO + CO₂ → CaCO₃\nCaO + SiO₂ → CaSiO₃ (slag — used in metallurgy)\nCaO + P₄O₁₀ → Ca₃(PO₄)₂',
-    bs:'', n:'' },
+    bs:'', n:'' , imp:true },
 
   { cat:'s2-ca', cl:'c-sb-s2',
     f:'CaCO₃ →(Δ, >840°C) ? / CaCO₃ + CO₂ + H₂O → ? / CaCO₃ + 2HCl → ?', fs:'Limestone reactions',
     b:'CaCO₃ →(Δ) → CaO + CO₂↑ (calcination)\nCaCO₃ + CO₂ + H₂O → Ca(HCO₃)₂ (soluble — limestone caves)\nCaCO₃ + 2HCl → CaCl₂ + H₂O + CO₂↑',
-    bs:'', n:'' },
+    bs:'', n:'' , imp:true },
 
   { cat:'s2-ca', cl:'c-sb-s2',
     f:'Ca(OH)₂ + Cl₂ → ? [Bleaching powder] / Bleaching powder + H₂O → ? + CO₂ → ?', fs:'',
     b:'Ca(OH)₂ + Cl₂ → CaCl₂·Ca(OCl)₂·Ca(OH)₂ (bleaching powder)\nBleaching powder: Ca(OCl)Cl (bleaching agent = OCl⁻)\n+ CO₂+H₂O → CaCO₃ + HClO (active bleach = HClO)\n+ dil H₂SO₄ → Cl₂↑ (disinfection)',
-    bs:'Milk of lime (Ca(OH)₂) + excess Cl₂ → bleaching powder', n:'' },
+    bs:'Milk of lime (Ca(OH)₂) + excess Cl₂ → bleaching powder', n:'' , imp:true },
 
   { cat:'s2-ca', cl:'c-sb-s2',
     f:'Ca(OH)₂ + CO₂ → CaCO₃ + H₂O [Lime water test] / excess CO₂ → ?', fs:'',
     b:'Ca(OH)₂ + CO₂ → CaCO₃↓ (white, milky) + H₂O\nCaCO₃ + CO₂(excess) + H₂O → Ca(HCO₃)₂(aq) → milkiness disappears\n(SO₂ also gives milkiness — use K₂Cr₂O₇ paper to distinguish)',
-    bs:'', n:'' },
+    bs:'', n:'' , imp:true },
 
   { cat:'s2-ca', cl:'c-sb-s2',
     f:'CaSO₄·2H₂O →(120°C) ? [P.O.P.] / P.O.P. + H₂O → ? [Setting]', fs:'Gypsum and Plaster of Paris',
     b:'CaSO₄·2H₂O →(120°C) → CaSO₄·½H₂O (plaster of Paris) + 1½H₂O\nCaSO₄·½H₂O + 1½H₂O → CaSO₄·2H₂O (hardens/sets)\nDead burnt plaster: heated >393K → CaSO₄ (anhydrous, no longer sets)',
-    bs:'P.O.P. expands on setting — good for casts', n:'' },
+    bs:'P.O.P. expands on setting — good for casts', n:'' , imp:true },
 
   { cat:'s2-ca', cl:'c-sb-s2',
     f:'CaD₂ + D₂O → Ca(OD)₂ + C₂D₂ / Ca(HCO₃)₂ →(Δ) ? / CaCl₂(aq) + Na₂CO₃ → ?', fs:'',
@@ -324,12 +324,12 @@ window.CARDS = [
   { cat:'s2-ca', cl:'c-sb-s2',
     f:'Cement: composition and what forms on setting?', fs:'Portland cement',
     b:'CaO > SiO₂ > Al₂O₃ (in ratio ~4:1:1)\n→ Aluminosilicate of calcium\nSetting: hydration + hydrolysis of calcium silicate/aluminate gels\n→ interlocking crystal network',
-    bs:'', n:'' },
+    bs:'', n:'' , imp:true },
 
   { cat:'s2-ca', cl:'c-sb-s2',
     f:'CaC₂ + N₂ →(1100°C) ? [Calcium cyanamide] / Li + N-C≡C-N → ?', fs:'Calcium carbide reactions',
     b:'CaC₂ + N₂ →(>1100°C) → CaCN₂ (calcium cyanamide, nitrolim) + C\nCaCN₂ + H₂O → CaCO₃ + NH₃ (used as fertiliser — releases NH₃)\nLi + N≡C−C≡N →(Δ) → X (high IE — not relevant)',
-    bs:'Nitrolim = nitrogenous fertiliser', n:'' },
+    bs:'Nitrolim = nitrogenous fertiliser', n:'' , imp:true },
 
   { cat:'s2-ca', cl:'c-sb-s2',
     f:'CaCl₂(aq) + Na₂CO₃ → ? / MgSO₄ + Na₂CO₃ → ? / BaSO₄ + Na₂CO₃ → ?', fs:'Double decomposition — removing hardness',
@@ -345,7 +345,7 @@ window.CARDS = [
   { cat:'s2-misc', cl:'c-sb-s2',
     f:'Ba + O₂ → BaO₂ / BaO₂ + H₂SO₄ → H₂O₂ + BaSO₄ / Ba + H₂O → ?', fs:'Barium reactions',
     b:'2Ba + O₂ → 2BaO (or BaO₂ with excess O₂)\nBaO₂·8H₂O + H₂SO₄ → H₂O₂ + BaSO₄↓ + H₂O\nBa + 2H₂O → Ba(OH)₂ + H₂↑\nBa(OH)₂ is most soluble alkaline earth hydroxide',
-    bs:'', n:'' },
+    bs:'', n:'' , imp:true },
 
   { cat:'s2-misc', cl:'c-sb-s2',
     f:'BaO₂ + D₂O → ? / MgSO₄·7H₂O (Epsom salt) → uses?', fs:'',

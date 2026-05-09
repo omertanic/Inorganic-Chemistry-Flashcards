@@ -39,7 +39,7 @@ window.CARDS = [
   { cat:'d-overview', cl:'c-db-ov',
     f:'d-block elements — definition of transition elements?', fs:'V.Imp',
     b:'All d-block elements are metals\nTransition elements = those which show incomplete d-orbitals in ground state OR in any common oxidation state\nException: Zn, Cd, Hg are NOT transition elements (completely filled d¹⁰ in ground state AND common OS)',
-    bs:'Most common OS of d-block = +2', n:'Coinage metals: Cu, Ag, Au\nVolatile metals (low MP): Zn, Cd, Hg\nNoble metals: Cu, Ag, Hg, Au, Pt' },
+    bs:'Most common OS of d-block = +2', n:'Coinage metals: Cu, Ag, Au\nVolatile metals (low MP): Zn, Cd, Hg\nNoble metals: Cu, Ag, Hg, Au, Pt' , imp:true },
 
   { cat:'d-overview', cl:'c-db-ov',
     f:'4 d-block series — elements and group numbers?', fs:'3d, 4d, 5d, 6d',
@@ -49,7 +49,7 @@ window.CARDS = [
   { cat:'d-config', cl:'c-db-ov',
     f:'Electronic configurations of Cr and Cu — why exceptions?', fs:'3d series',
     b:'Cr (Z=24): 3d⁵4s¹ (half-filled d — extra stable)\nCu (Z=29): 3d¹⁰4s¹ (fully-filled d — extra stable)\nBoth have unusually high IE₂ because removing 2nd e⁻ breaks stable d⁵ or d¹⁰ config',
-    bs:'', n:'' },
+    bs:'', n:'' , imp:true },
 
   // ══════════════════════════════════════════
   // ATOMIC RADII
@@ -62,7 +62,7 @@ window.CARDS = [
   { cat:'d-radii', cl:'c-db-prop',
     f:'Lanthanide contraction — cause and consequence on 4d vs 5d radii?', fs:'Imp',
     b:'Cause: poor shielding of f-electrons → Zeff increases steadily across lanthanides → size contracts\nConsequence on atomic radii:\nSc < Y < La\nTi < Zr ≅ Hf\nV < Nb ≅ Ta\nNi < Pd ≅ Pt\nCu < Ag ≅ Au',
-    bs:'4d and 5d elements of same group have nearly identical radii', n:'14 f-electrons filled across Ce→Lu; 4f & 5f series = 14+14 = 28 elements; all have group no. = 3' },
+    bs:'4d and 5d elements of same group have nearly identical radii', n:'14 f-electrons filled across Ce→Lu; 4f & 5f series = 14+14 = 28 elements; all have group no. = 3' , imp:true },
 
   // ══════════════════════════════════════════
   // MP & DENSITY
@@ -91,12 +91,12 @@ window.CARDS = [
   { cat:'d-os', cl:'c-db-prop',
     f:'Which 3 d-block elements do NOT show variable oxidation states?', fs:'V.Imp',
     b:'Sc: only +3\nZn, Cd: only +2\n(Remember these 3)\nAll others show variable OS differing by 1 — due to small differences in successive IEs',
-    bs:'Most common OS of d-block = +2', n:'MnO (+2) is ionic; Mn₂O₇ (+7) is covalent\nHigher OS → more covalent character\nMn(OH)₃ more covalent than Mn(OH)₂' },
+    bs:'Most common OS of d-block = +2', n:'MnO (+2) is ionic; Mn₂O₇ (+7) is covalent\nHigher OS → more covalent character\nMn(OH)₃ more covalent than Mn(OH)₂' , imp:true },
 
   { cat:'d-os', cl:'c-db-prop',
     f:'Oxidation states of 3d series elements — highest OS rule?', fs:'',
     b:'Max OS = total valence electrons (up to Mn then falls)\nSc: +3 | Ti: +2,3,4 | V: +2,3,4,5 | Cr: +2,3,4,5,6 | Mn: +2,3,4,6,7\nFe: +2,3,4,6 | Co: +2,3,4 | Ni: +2,3,4 | Cu: +1,+2 | Zn: +2',
-    bs:'', n:'FeO₄²⁻ (Fe in +6) is also known' },
+    bs:'', n:'FeO₄²⁻ (Fe in +6) is also known' , imp:true },
 
   { cat:'d-os', cl:'c-db-prop',
     f:'Stability of high OS in d-block vs p-block — key differences?', fs:'',
@@ -106,12 +106,12 @@ window.CARDS = [
   { cat:'d-os', cl:'c-db-prop',
     f:'Why is Mn³⁺ a powerful O.A. whereas Cr²⁺ is a powerful R.A.?', fs:'NCERT classic Q',
     b:'Mn³⁺: 3d⁴4s⁰; gains e⁻ → Mn²⁺ (3d⁵4s⁰, half-filled, highly stable) → powerful O.A.\nCr²⁺: 3d⁴4s⁰ (stable OS); loses e⁻ → Cr³⁺ (3d³4s⁰, t₂g³eg⁰, stable due to high CFSE released) → powerful R.A.',
-    bs:'', n:'Cr²⁺, V²⁺, Ti²⁺ are good R.A. → liberate H₂ from dil HCl\nVF₅ stable at room temp; other pentahalides hydrolyse → VOX₃ → VO³⁺ (oxycation)' },
+    bs:'', n:'Cr²⁺, V²⁺, Ti²⁺ are good R.A. → liberate H₂ from dil HCl\nVF₅ stable at room temp; other pentahalides hydrolyse → VOX₃ → VO³⁺ (oxycation)' , imp:true },
 
   { cat:'d-os', cl:'c-db-prop',
     f:'CuI₂, FeI₃ — do they exist? Why?', fs:'',
     b:'CuI₂ does NOT exist: Cu²⁺ (O.A.) + I⁻ (R.A.) → redox reaction\n2Cu²⁺ + I⁻ → CuI↓ + I₃⁻ (aq)\nFeI₃ does NOT exist: Fe³⁺ (O.A.) + I⁻ (R.A.) → Fe³⁺ + I⁻ → Fe²⁺ + I₃⁻\nCuCl₂ and FeCl₃ DO exist (Cl⁻ is not a strong enough R.A.)',
-    bs:'', n:'Many Cu⁺ compounds in aq medium disproportionate:\n2Cu⁺(aq) → Cu(s) + Cu²⁺(aq)\nCu²⁺(aq) is more stable than Cu⁺(aq)' },
+    bs:'', n:'Many Cu⁺ compounds in aq medium disproportionate:\n2Cu⁺(aq) → Cu(s) + Cu²⁺(aq)\nCu²⁺(aq) is more stable than Cu⁺(aq)' , imp:true },
 
   // ══════════════════════════════════════════
   // SRP VALUES
@@ -119,12 +119,12 @@ window.CARDS = [
   { cat:'d-srp', cl:'c-db-prop',
     f:'SRP values: M³⁺/M²⁺ for Mn and Co — significance?', fs:'Standard reduction potential',
     b:'More –ve SRP → more stable cation in that OS\nMn (M³⁺/M²⁺) = +1.57V → Mn³⁺ highly unstable (Mn²⁺ = 3d⁵, half-filled, very stable)\nCo (M³⁺/M²⁺) = +1.97V → Co³⁺ highly unstable in aq. medium\nCu (M²⁺/M(s)) = +0.34V → +ve SRP, Cu has less tendency to form Cu²⁺',
-    bs:'SRP depends on ΔHsub, ΔH_IE, ΔH_HE', n:'Co³⁺ highly unstable in aq medium (SRP M³⁺/M²⁺/Pt = 1.97V)\nIn aq medium, Co is more stable in +2 OS\nCu(s) + dil HCl → no dissolution (no H₂ liberated) — +ve SRP' },
+    bs:'SRP depends on ΔHsub, ΔH_IE, ΔH_HE', n:'Co³⁺ highly unstable in aq medium (SRP M³⁺/M²⁺/Pt = 1.97V)\nIn aq medium, Co is more stable in +2 OS\nCu(s) + dil HCl → no dissolution (no H₂ liberated) — +ve SRP' , imp:true },
 
   { cat:'d-srp', cl:'c-db-prop',
     f:'Extra stability of Mn²⁺ — explain via SRP?', fs:'',
     b:'Mn²⁺: 3d⁵4s⁰ (half-filled, extra stable)\nMn³⁺ → Mn²⁺ is highly favourable → Mn³⁺ is powerful O.A.\nSRP (Mn³⁺/Mn²⁺) = +1.57V (highly +ve → Mn³⁺ reduced easily)',
-    bs:'', n:'' },
+    bs:'', n:'' , imp:true },
 
   // ══════════════════════════════════════════
   // MAGNETIC PROPERTIES
@@ -132,7 +132,7 @@ window.CARDS = [
   { cat:'d-magnetic', cl:'c-db-prop',
     f:'Diamagnetic vs paramagnetic — definition, formula, examples?', fs:'',
     b:'Diamagnetic: zero unpaired e⁻; spin mag moment = 0\nExamples: Zn²⁺, Cd²⁺, Sc³⁺\nParamagnetic: one or more unpaired e⁻; spin mag moment ≠ 0\nFormula: μ = √(x(x+2)) BM where x = no. of unpaired e⁻\nExamples: Fe²⁺, Fe³⁺, Co²⁺, Co³⁺, Cu²⁺',
-    bs:'', n:'' },
+    bs:'', n:'' , imp:true },
 
   // ══════════════════════════════════════════
   // COLOURED IONS
@@ -140,7 +140,7 @@ window.CARDS = [
   { cat:'d-colour', cl:'c-db-prop',
     f:'Colours of d-block ions — complete list?', fs:'Colour due to d-d transition (Imp)',
     b:'Sc³⁺: colourless | Ti⁴⁺: colourless | Ti³⁺: purple (Imp)\nV⁴⁺: blue | V³⁺: green | V²⁺: violet\nCr³⁺: violet (pure) / green (impure)\nMn²⁺: pink (circled Imp) | Fe²⁺: green | Fe³⁺: yellow\nCo²⁺: pink (Imp) | Co³⁺: blue\nNi²⁺: green | Cu²⁺: blue | Zn²⁺: colourless',
-    bs:'Colour due to d-d transition', n:'Colourless ions have d⁰ (Sc³⁺, Ti⁴⁺) or d¹⁰ (Zn²⁺, Cu⁺) config → no d-d transition possible' },
+    bs:'Colour due to d-d transition', n:'Colourless ions have d⁰ (Sc³⁺, Ti⁴⁺) or d¹⁰ (Zn²⁺, Cu⁺) config → no d-d transition possible' , imp:true },
 
   // ══════════════════════════════════════════
   // CATALYTIC PROPERTIES
@@ -148,7 +148,7 @@ window.CARDS = [
   { cat:'d-catalytic', cl:'c-db-cat',
     f:'Why are transition metals good catalysts? Key industrial examples?', fs:'',
     b:'They adopt variable OS in compounds → act as intermediate oxidant/reductant\nFe³⁺ catalyses oxidation of I⁻ by S₂O₈²⁻:\n2I⁻ + 2Fe³⁺ → I₂ + 2Fe²⁺\n2Fe²⁺ + S₂O₈²⁻ → 2Fe³⁺ + 2SO₄²⁻\nNet: 2I⁻ + S₂O₈²⁻ → I₂ + 2SO₄²⁻',
-    bs:'', n:'Contact process (H₂SO₄) → V₂O₅\nHaber\'s process (NH₃) → Fe\nHydrogenation of oils → Ni(s)\nOstwald\'s process (HNO₃) → Pt' },
+    bs:'', n:'Contact process (H₂SO₄) → V₂O₅\nHaber\'s process (NH₃) → Fe\nHydrogenation of oils → Ni(s)\nOstwald\'s process (HNO₃) → Pt' , imp:true },
 
   // ══════════════════════════════════════════
   // INTERSTITIAL COMPOUNDS
@@ -172,12 +172,12 @@ window.CARDS = [
   { cat:'d-kmno4', cl:'c-db-cmpd',
     f:'KMnO₄ preparation — commercial (from pyrolusite) and lab methods?', fs:'V.Imp',
     b:'Commercial (from MnO₂ ore):\nMnO₂ + KOH/K₂CO₃ + O₂/KNO₃ →(fusion)→ K₂MnO₄(green, +6) + H₂O\nThen oxidise K₂MnO₄:\nK₂MnO₄ + Cl₂/O₃ (O.A.) → KMnO₄ (+7, purple) + KCl/O₂\nOr electrolytic oxidation in basic medium:\nAnode: K₂MnO₄ → KMnO₄\nCathode: H₂↑\nLab: Mn²⁺ + S₂O₈²⁻ + H₂O → MnO₄⁻ + SO₄²⁻',
-    bs:'', n:'K₂MnO₄ stable only in strongly basic medium\nIn neutral/weakly basic: K₂MnO₄ → KMnO₄ + MnO₂↓\nIn acidic: KMnO₄ + MnO₂↓ (disproportionation)' },
+    bs:'', n:'K₂MnO₄ stable only in strongly basic medium\nIn neutral/weakly basic: K₂MnO₄ → KMnO₄ + MnO₂↓\nIn acidic: KMnO₄ + MnO₂↓ (disproportionation)' , imp:true },
 
   { cat:'d-kmno4', cl:'c-db-cmpd',
     f:'KMnO₄ properties — thermal decomp, reaction with H₂SO₄, oxidising nature in 3 media?', fs:'',
     b:'Thermal decomp: 2KMnO₄(s) →(513K,Δ)→ K₂MnO₄ + MnO₂(s) + O₂↑ (purple solid)\nWith excess conc H₂SO₄: KMnO₄ + conc H₂SO₄ → Mn₂O₇ + KHSO₄ + H₂O (explosive Mn₂O₇)\nOxidising nature:\nAcidic (H⁺): MnO₄⁻ → Mn²⁺ (pink to colourless)\nWeakly basic/neutral: MnO₄⁻ → MnO₂↓\nStrongly basic: MnO₄⁻ → MnO₄²⁻',
-    bs:'', n:'Substrates oxidised: C₂O₄²⁻, H₂S, S²⁻, NO₂⁻, I⁻, Fe²⁺, H₂O₂\nVIP: I⁻ + KMnO₄ + OH⁻ → IO₃⁻ + MnO₂↓ (basic medium)\nMn²⁺ + KMnO₄ + H₂O →(ZnO/ZnSO₄ catalyst)→ MnO₂↓' },
+    bs:'', n:'Substrates oxidised: C₂O₄²⁻, H₂S, S²⁻, NO₂⁻, I⁻, Fe²⁺, H₂O₂\nVIP: I⁻ + KMnO₄ + OH⁻ → IO₃⁻ + MnO₂↓ (basic medium)\nMn²⁺ + KMnO₄ + H₂O →(ZnO/ZnSO₄ catalyst)→ MnO₂↓' , imp:true },
 
   // ══════════════════════════════════════════
   // K₂Cr₂O₇
@@ -185,12 +185,12 @@ window.CARDS = [
   { cat:'d-k2cr2o7', cl:'c-db-cmpd',
     f:'K₂Cr₂O₇ preparation from chromite ore — full steps?', fs:'Orange-red solid',
     b:'Step 1: Roasting chromite ore:\n4FeCr₂O₄(s) + 8Na₂CO₃(s) + 7O₂(g) → 8Na₂CrO₄(yellow) + 2Fe₂O₃(s) + 8CO₂↑\nStep 2: Na₂CrO₄ + H₂SO₄(aq) → Na₂Cr₂O₇ (orange)\nStep 3: Na₂Cr₂O₇ + KCl(aq) → K₂Cr₂O₇(orange-red crystals) + NaCl',
-    bs:'', n:'Cr₂O₇²⁻(orange-red) ⇌ CrO₄²⁻(yellow) with OH⁻/H⁺\nBoth ions are tetrahedral\nHeating: K₂Cr₂O₇(s) → K₂CrO₄(s) + Cr₂O₃(s) + O₂↑' },
+    bs:'', n:'Cr₂O₇²⁻(orange-red) ⇌ CrO₄²⁻(yellow) with OH⁻/H⁺\nBoth ions are tetrahedral\nHeating: K₂Cr₂O₇(s) → K₂CrO₄(s) + Cr₂O₃(s) + O₂↑' , imp:true },
 
   { cat:'d-k2cr2o7', cl:'c-db-cmpd',
     f:'K₂Cr₂O₇ oxidising nature — substrates and products?', fs:'Used in acidic medium',
     b:'K₂Cr₂O₇ + H⁺ (O.A.) oxidises:\nFe²⁺ → Fe³⁺\nH₂O₂ → O₂\nAsO₃³⁻ → AsO₄³⁻\nI⁻ → I₂\nSO₃²⁻ → SO₄²⁻\nCr goes from +6 to +3',
-    bs:'Uses: primary titrant (volumetric analysis), good O.A., making chrome alum (K₂SO₄·Cr₂(SO₄)₃·24H₂O), leather industry, azo compounds', n:'' },
+    bs:'Uses: primary titrant (volumetric analysis), good O.A., making chrome alum (K₂SO₄·Cr₂(SO₄)₃·24H₂O), leather industry, azo compounds', n:'' , imp:true },
 
   // ══════════════════════════════════════════
   // f-BLOCK OVERVIEW
@@ -211,12 +211,12 @@ window.CARDS = [
   { cat:'f-lanthanides', cl:'c-fb-ln',
     f:'Lanthanide oxidation states — most common, and exceptions?', fs:'',
     b:'Most common OS = +3\nLn³⁺ EC: 4fⁿ (n = 1 to 14)\nAlso show +2 and +4:\nCe⁴⁺ is a powerful O.A. (Ce(SO₄)₂ used in analytical chemistry)\nEu²⁺: 4f⁷ (half-filled) — V.Imp: though Eu²⁺ has stable half-filled EC, it is a good R.A. and converts to Eu³⁺',
-    bs:'', n:'' },
+    bs:'', n:'' , imp:true },
 
   { cat:'f-lanthanides', cl:'c-fb-ln',
     f:'Lanthanoid contraction — cause, effect on atomic/ionic radii?', fs:'',
     b:'Cause: imperfect shielding of one 4f-electron by another in same f-subshell → Zeff increases → size decreases\nAtomic radius decreases L→R irregularly\nException (V.Imp): Eu has LARGEST atomic radius among all 4f series elements\nLn³⁺ size decreases regularly from Ce³⁺ to Lu³⁺\n4f orbitals more buried/contracted than 5f',
-    bs:'', n:'IE₁ and IE₂ of most 4f series elements match Ca\nEarly members reactivity matches Ca; heavier members match Al' },
+    bs:'', n:'IE₁ and IE₂ of most 4f series elements match Ca\nEarly members reactivity matches Ca; heavier members match Al' , imp:true },
 
   { cat:'f-lanthanides', cl:'c-fb-ln',
     f:'General properties of lanthanides?', fs:'',
@@ -239,7 +239,7 @@ window.CARDS = [
   { cat:'f-actinoids', cl:'c-fb-ac',
     f:'Actinoids vs lanthanoids — 4 key differences?', fs:'',
     b:'1. Actinoids show more variety of OS (+3,+4,+5,+6,+7) vs Ln (+3 mainly)\n2. Actinoid contraction > Lanthanoid contraction (5f orbitals less buried → less shielding)\n3. All actinoids are radioactive; Ln only Pm is radioactive\n4. Ln³⁺ form coloured ions; actinoid ions also coloured\nActinoids show more variety due to small energy gap between 5f, 6d, 7s orbitals',
-    bs:'', n:'4f orbitals in lanthanoids are more buried (poor shielding of one f-electron into another in 4f subshell)' },
+    bs:'', n:'4f orbitals in lanthanoids are more buried (poor shielding of one f-electron into another in 4f subshell)' , imp:true },
 
   { cat:'f-actinoids', cl:'c-fb-ac',
     f:'General properties of actinoids?', fs:'',
@@ -258,51 +258,51 @@ window.CARDS = [
 
   { cat:'d-srp', cl:'c-df',
     f:'Cu²⁺ + I⁻ → ? (why CuI₂ doesn\'t exist but CuI does)', fs:'Cu redox with I⁻',
-    b:'2Cu²⁺ + 4I⁻ → 2CuI↓ + I₂\nCuI₂ doesn\'t exist because Cu²⁺ oxidises I⁻ to I₂ spontaneously\nCuI (Cu⁺) is more stable with I⁻ (soft-soft interaction)', bs:'', n:'' },
+    b:'2Cu²⁺ + 4I⁻ → 2CuI↓ + I₂\nCuI₂ doesn\'t exist because Cu²⁺ oxidises I⁻ to I₂ spontaneously\nCuI (Cu⁺) is more stable with I⁻ (soft-soft interaction)', bs:'', n:'' , imp:true },
 
   { cat:'d-srp', cl:'c-df',
     f:'Cu⁺(aq) → Cu²⁺(aq) + Cu(s) — why does Cu⁺ disproportionate in water?', fs:'',
-    b:'Cu⁺(aq) → Cu²⁺(aq) + Cu(s)\nSRP: Cu²⁺/Cu⁺ = +0.15V; Cu⁺/Cu = +0.52V\nSince E°(Cu⁺/Cu) > E°(Cu²⁺/Cu⁺), disproportionation is spontaneous', bs:'', n:'' },
+    b:'Cu⁺(aq) → Cu²⁺(aq) + Cu(s)\nSRP: Cu²⁺/Cu⁺ = +0.15V; Cu⁺/Cu = +0.52V\nSince E°(Cu⁺/Cu) > E°(Cu²⁺/Cu⁺), disproportionation is spontaneous', bs:'', n:'' , imp:true },
 
   { cat:'d-os', cl:'c-df',
     f:'Fe³⁺ + I⁻ → ? / I⁻ + S₂O₈²⁻ → ? / Fe²⁺ + S₂O₈²⁻ → ?', fs:'Redox reactions involving I⁻ and S₂O₈²⁻',
-    b:'2Fe³⁺ + 2I⁻ → 2Fe²⁺ + I₂ (Fe³⁺ oxidises I⁻)\nI⁻ + S₂O₈²⁻ → I₂ + SO₄²⁻\nFe²⁺ + S₂O₈²⁻ → Fe³⁺ + SO₄²⁻ (peroxydisulphate OA)', bs:'', n:'' },
+    b:'2Fe³⁺ + 2I⁻ → 2Fe²⁺ + I₂ (Fe³⁺ oxidises I⁻)\nI⁻ + S₂O₈²⁻ → I₂ + SO₄²⁻\nFe²⁺ + S₂O₈²⁻ → Fe³⁺ + SO₄²⁻ (peroxydisulphate OA)', bs:'', n:'' , imp:true },
 
   { cat:'d-k2cr2o7', cl:'c-df',
     f:'FeCl₂O₄ + Na₂CO₃ + O₂ →(fusion) ? (Chromite ore → dichromate)', fs:'K₂Cr₂O₇ industrial prep from ore',
-    b:'4FeCr₂O₄ + 8Na₂CO₃ + 7O₂ → 8Na₂CrO₄ + 2Fe₂O₃ + 8CO₂\nNa₂CrO₄ + H⁺ → Na₂Cr₂O₇ + H₂O\nNa₂Cr₂O₇ + KCl → K₂Cr₂O₇↓ + NaCl', bs:'', n:'' },
+    b:'4FeCr₂O₄ + 8Na₂CO₃ + 7O₂ → 8Na₂CrO₄ + 2Fe₂O₃ + 8CO₂\nNa₂CrO₄ + H⁺ → Na₂Cr₂O₇ + H₂O\nNa₂Cr₂O₇ + KCl → K₂Cr₂O₇↓ + NaCl', bs:'', n:'' , imp:true },
 
   { cat:'d-k2cr2o7', cl:'c-df',
     f:'Na₂CrO₄ + H⁺ ⇌ Na₂Cr₂O₇ + OH⁻ / CrO₄²⁻(yellow) ⇌ Cr₂O₇²⁻(orange)', fs:'Chromate-dichromate equilibrium',
-    b:'2CrO₄²⁻ + 2H⁺ ⇌ Cr₂O₇²⁻ + H₂O\nIn acid → dichromate (orange-red); in base → chromate (yellow)\nThis is the basis of the colour change test', bs:'', n:'' },
+    b:'2CrO₄²⁻ + 2H⁺ ⇌ Cr₂O₇²⁻ + H₂O\nIn acid → dichromate (orange-red); in base → chromate (yellow)\nThis is the basis of the colour change test', bs:'', n:'' , imp:true },
 
   { cat:'d-kmno4', cl:'c-df',
     f:'MnO₂ + KOH + O₂ →(fusion) K₂MnO₄ / K₂MnO₄ →(electrolysis, alk) KMnO₄', fs:'KMnO₄ from pyrolusite',
-    b:'MnO₂ + KOH + O₂ → K₂MnO₄ + H₂O (fusion)\nK₂MnO₄ + H⁺ → KMnO₄ + MnO₂ + H₂O (disproportionation)\nOR electrolytic oxidation in alkaline medium → KMnO₄\nMnO₄²⁻ →(electro, alk) MnO₄⁻', bs:'', n:'' },
+    b:'MnO₂ + KOH + O₂ → K₂MnO₄ + H₂O (fusion)\nK₂MnO₄ + H⁺ → KMnO₄ + MnO₂ + H₂O (disproportionation)\nOR electrolytic oxidation in alkaline medium → KMnO₄\nMnO₄²⁻ →(electro, alk) MnO₄⁻', bs:'', n:'' , imp:true },
 
   { cat:'d-kmno4', cl:'c-df',
     f:'MnO₄²⁻ + H⁺ → MnO₄⁻ + MnO₂ + H₂O / MnO₄²⁻ →(electro, alk) MnO₄⁻', fs:'Manganate to permanganate',
-    b:'3MnO₄²⁻ + 4H⁺ → 2MnO₄⁻ + MnO₂↓ + 2H₂O (disproportionation)\nMnO₄²⁻ → MnO₄⁻ (electrolytic oxidation in alk medium)', bs:'', n:'' },
+    b:'3MnO₄²⁻ + 4H⁺ → 2MnO₄⁻ + MnO₂↓ + 2H₂O (disproportionation)\nMnO₄²⁻ → MnO₄⁻ (electrolytic oxidation in alk medium)', bs:'', n:'' , imp:true },
 
   { cat:'d-kmno4', cl:'c-df',
     f:'MnO₄⁻ + I⁻ →(acid) ? / MnO₄⁻ + Fe²⁺ →(acid) ? / KMnO₄ ANB values?', fs:'KMnO₄ equivalent weights',
-    b:'MnO₄⁻ + 8H⁺ + 5e⁻ → Mn²⁺ + 4H₂O (acidic, n=5, ANB=31.6)\nMnO₄⁻ + 4H⁺ + 3e⁻ → MnO₂ + 2H₂O (neutral, n=3)\nMnO₄⁻ + e⁻ → MnO₄²⁻ (basic, n=1, ANB=158)\nMnO₄⁻ + I⁻ (acid) → I₂ + Mn²⁺\nMnO₄⁻ + Fe²⁺ → Fe³⁺ + Mn²⁺', bs:'Acidic n=5; Neutral n=3; Basic n=1', n:'' },
+    b:'MnO₄⁻ + 8H⁺ + 5e⁻ → Mn²⁺ + 4H₂O (acidic, n=5, ANB=31.6)\nMnO₄⁻ + 4H⁺ + 3e⁻ → MnO₂ + 2H₂O (neutral, n=3)\nMnO₄⁻ + e⁻ → MnO₄²⁻ (basic, n=1, ANB=158)\nMnO₄⁻ + I⁻ (acid) → I₂ + Mn²⁺\nMnO₄⁻ + Fe²⁺ → Fe³⁺ + Mn²⁺', bs:'Acidic n=5; Neutral n=3; Basic n=1', n:'' , imp:true },
 
   { cat:'d-kmno4', cl:'c-df',
     f:'MnO₄⁻ + SO₃²⁻ → SO₄²⁻ + Mn²⁺ / MnO₄⁻ + SO₂ → SO₄²⁻ + Mn²⁺', fs:'KMnO₄ + sulphite/sulphur dioxide',
-    b:'2KMnO₄ + 3H₂SO₄ + 5H₂SO₃ → 2MnSO₄ + K₂SO₄ + 8H₂O\nMnO₄⁻ + SO₃²⁻ → Mn²⁺ + SO₄²⁻ (acidic)\nMnO₄⁻ + SO₂ → Mn²⁺ + SO₄²⁻', bs:'', n:'' },
+    b:'2KMnO₄ + 3H₂SO₄ + 5H₂SO₃ → 2MnSO₄ + K₂SO₄ + 8H₂O\nMnO₄⁻ + SO₃²⁻ → Mn²⁺ + SO₄²⁻ (acidic)\nMnO₄⁻ + SO₂ → Mn²⁺ + SO₄²⁻', bs:'', n:'' , imp:true },
 
   { cat:'d-kmno4', cl:'c-df',
     f:'MnO₄⁻ + C₂O₄²⁻ + H⁺ → Mn²⁺ + CO₂ / MnO₄⁻ + I⁻ →(basic) MnO₂ + IO₃⁻', fs:'',
-    b:'2MnO₄⁻ + 5C₂O₄²⁻ + 16H⁺ → 2Mn²⁺ + 10CO₂ + 8H₂O (acidic)\nIn basic: MnO₄⁻ + I⁻ → MnO₂ + IO₃⁻\nMnO₄⁻ + S₂O₃²⁻ →(basic) → MnO₂ + SO₄²⁻', bs:'', n:'' },
+    b:'2MnO₄⁻ + 5C₂O₄²⁻ + 16H⁺ → 2Mn²⁺ + 10CO₂ + 8H₂O (acidic)\nIn basic: MnO₄⁻ + I⁻ → MnO₂ + IO₃⁻\nMnO₄⁻ + S₂O₃²⁻ →(basic) → MnO₂ + SO₄²⁻', bs:'', n:'' , imp:true },
 
   { cat:'d-kmno4', cl:'c-df',
     f:'MnO₄⁻ + Mn²⁺ →(Znsey) MnO₂ / KMnO₄ →(Δ) K₂MnO₄ + MnO₂ + O₂', fs:'',
-    b:'2MnO₄⁻ + 3Mn²⁺ + 2H₂O → 5MnO₂↓ + 4H⁺ (Mn²⁺ as R.A.)\n2KMnO₄ →(Δ) → K₂MnO₄ + MnO₂ + O₂↑ (thermal decomp)', bs:'', n:'' },
+    b:'2MnO₄⁻ + 3Mn²⁺ + 2H₂O → 5MnO₂↓ + 4H⁺ (Mn²⁺ as R.A.)\n2KMnO₄ →(Δ) → K₂MnO₄ + MnO₂ + O₂↑ (thermal decomp)', bs:'', n:'' , imp:true },
 
   { cat:'d-k2cr2o7', cl:'c-df',
     f:'Cr₂O₇²⁻ + I⁻ / Fe²⁺ / Sn²⁺ → ? in acid medium?', fs:'K₂Cr₂O₇ as OA',
-    b:'Cr₂O₇²⁻ + 14H⁺ + 6e⁻ → 2Cr³⁺ + 7H₂O (n=6 in acid)\nCr₂O₇²⁻ + 6Fe²⁺ + 14H⁺ → 2Cr³⁺ + 6Fe³⁺ + 7H₂O\nCr₂O₇²⁻ + 6I⁻ + 14H⁺ → 2Cr³⁺ + 3I₂ + 7H₂O\nCr₂O₇²⁻ + 3Sn²⁺ → 2Cr³⁺ + 3Sn⁴⁺', bs:'Cr³⁺ is green', n:'' },
+    b:'Cr₂O₇²⁻ + 14H⁺ + 6e⁻ → 2Cr³⁺ + 7H₂O (n=6 in acid)\nCr₂O₇²⁻ + 6Fe²⁺ + 14H⁺ → 2Cr³⁺ + 6Fe³⁺ + 7H₂O\nCr₂O₇²⁻ + 6I⁻ + 14H⁺ → 2Cr³⁺ + 3I₂ + 7H₂O\nCr₂O₇²⁻ + 3Sn²⁺ → 2Cr³⁺ + 3Sn⁴⁺', bs:'Cr³⁺ is green', n:'' , imp:true },
 
   { cat:'d-k2cr2o7', cl:'c-df',
     f:'MnO₄⁻ + CrO₄²⁻ → ? (MnO₄⁻ oxidises Cr³⁺ to CrO₄²⁻ or vice versa?)', fs:'',
